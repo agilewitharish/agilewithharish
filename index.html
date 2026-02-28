@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harish Raju | Scrum • PM • TPM Coaching</title>
+  <meta name="description" content="Two-tier journey for Scrum Masters, PMs, and aspiring TPMs: Delivery Leadership Mastery (Core) + PM/TPM Interview Intensive." />
+  <meta name="theme-color" content="#0b1220" />
+  <style>
+:root{
+  --bg:#0b1220; --panel:#0f1a33; --panel2:#0c1730; --text:#eaf0ff; --muted:#b9c5e6;
+  --line:rgba(255,255,255,.12); --brand:#7c5cff; --brand2:#00d4ff; --ok:#41d7a7; --warn:#ffd24d;
+  --shadow: 0 18px 50px rgba(0,0,0,.35); --radius:18px; --radius2:26px; --max:1120px;
+  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; font-family:var(--font);
+  background: radial-gradient(1200px 600px at 70% 10%, rgba(124,92,255,.25), transparent 55%),
+              radial-gradient(900px 500px at 10% 10%, rgba(0,212,255,.18), transparent 55%),
+              linear-gradient(180deg, var(--bg), #070b14 70%);
+  color:var(--text);
+}
+a{color:inherit; text-decoration:none}
+.container{max-width:var(--max); margin:0 auto; padding:0 20px}
+.nav{
+  position:sticky; top:0; z-index:50;
+  backdrop-filter: blur(12px);
+  background: rgba(11,18,32,.55);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0; gap:16px;
+}
+.brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
+.brand-badge{
+  width:40px; height:40px; border-radius:14px;
+  background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.85));
+  display:grid; place-items:center;
+  box-shadow: 0 10px 24px rgba(124,92,255,.25);
+  font-weight:900;
+}
+.nav-links{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
+.nav-links a{font-size:14px; color:var(--muted); padding:8px 10px; border-radius:12px; border:1px solid transparent;}
+.nav-links a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.04)}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:12px 14px; border-radius:14px; border:1px solid var(--line);
+  background: rgba(255,255,255,.04); color:var(--text); font-weight:700;
+}
+.btn:hover{background:rgba(255,255,255,.07)}
+.btn-primary{
+  border:none; background: linear-gradient(135deg, var(--brand), var(--brand2)); color:#041023;
+  box-shadow: 0 18px 42px rgba(0,212,255,.16), 0 18px 42px rgba(124,92,255,.14);
+}
+.btn-primary:hover{filter:saturate(1.05) brightness(1.02)}
+.pill{
+  display:inline-flex; gap:10px; align-items:center;
+  padding:8px 12px; border-radius:999px; border:1px solid var(--line);
+  background: rgba(255,255,255,.03); color:var(--muted); font-size:13px;
+}
+.dot{
+  width:8px; height:8px; border-radius:99px;
+  background: linear-gradient(135deg, var(--ok), var(--brand2));
+  box-shadow: 0 0 0 4px rgba(65,215,167,.12);
+}
+.hero{padding:54px 0 34px}
+.hero-grid{display:grid; gap:26px; grid-template-columns: 1.2fr .8fr; align-items:stretch;}
+.card{
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border-radius: var(--radius2);
+  box-shadow: var(--shadow);
+}
+.hero-left{padding:30px}
+.kicker{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px}
+h1{margin:0 0 14px; font-size:44px; line-height:1.05; letter-spacing:-.6px;}
+.sub{color:var(--muted); font-size:16px; line-height:1.65; margin:0 0 18px; max-width:62ch;}
+.hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 0}
+.micro{margin-top:16px; color:var(--muted); font-size:13px; line-height:1.6;}
+.hero-right{padding:18px; display:flex; flex-direction:column; gap:14px}
+.mini{
+  padding:18px; border-radius: var(--radius);
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(15,26,51,.85), rgba(12,23,48,.65));
+}
+.mini h3{margin:0 0 8px; font-size:15px}
+.mini p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
+.stats{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;}
+.stat{padding:14px; border-radius: var(--radius); border:1px solid var(--line); background: rgba(255,255,255,.03);}
+.stat b{display:block; font-size:18px}
+.stat span{color:var(--muted); font-size:12px}
+section{padding:36px 0}
+.section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:18px;}
+.section-title h2{margin:0; font-size:26px; letter-spacing:-.3px}
+.section-title p{margin:0; color:var(--muted); font-size:14px; line-height:1.6; max-width:64ch}
+.grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+.grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
+.tile{
+  padding:18px; border-radius: var(--radius);
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(15,26,51,.75), rgba(12,23,48,.45));
+}
+.tile h3{margin:0 0 10px; font-size:16px}
+.tile p{margin:0; color:var(--muted); font-size:13px; line-height:1.65}
+.list{margin:12px 0 0; padding:0; list-style:none}
+.list li{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.6; display:flex; gap:10px;}
+.check{
+  width:18px; height:18px; border-radius:6px;
+  background: rgba(65,215,167,.12);
+  border:1px solid rgba(65,215,167,.35);
+  display:grid; place-items:center;
+  margin-top:2px; flex:0 0 18px;
+}
+.offer{
+  padding:20px; border-radius: var(--radius2); border:1px solid var(--line);
+  background: radial-gradient(600px 320px at 80% 0%, rgba(124,92,255,.16), transparent 55%),
+              linear-gradient(180deg, rgba(15,26,51,.82), rgba(12,23,48,.55));
+  position:relative; overflow:hidden;
+}
+.tag{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:12px; color:var(--muted);
+  border:1px solid var(--line); background: rgba(255,255,255,.03);
+  padding:8px 10px; border-radius:999px; margin-bottom:10px;
+}
+.price{margin-top:12px; display:flex; align-items:baseline; gap:8px; flex-wrap:wrap;}
+.price b{font-size:26px}
+.price span{color:var(--muted); font-size:13px}
+.offer .btn{width:100%; margin-top:14px}
+.note{color:var(--muted); font-size:12px; line-height:1.6; margin-top:10px}
+.cta{
+  padding:22px; border-radius: var(--radius2); border:1px solid var(--line);
+  background: linear-gradient(135deg, rgba(124,92,255,.22), rgba(0,212,255,.12));
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px;
+}
+.cta h3{margin:0; font-size:18px}
+.cta p{margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
+footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line); margin-top:30px;}
+.foot{display:flex; gap:12px; flex-wrap:wrap; justify-content:space-between; align-items:center;}
+.small{font-size:12px}
+.floating{
+  position:fixed; right:18px; bottom:18px; z-index:60;
+  display:flex; flex-direction:column; gap:10px;
+}
+@media (max-width: 920px){
+  .hero-grid{grid-template-columns: 1fr}
+  h1{font-size:36px}
+  .grid-3{grid-template-columns: 1fr}
+  .grid-2{grid-template-columns: 1fr}
+  .stats{grid-template-columns: 1fr 1fr 1fr}
+  .floating{right:12px; bottom:12px}
+}
+@media (max-width: 520px){
+  .stats{grid-template-columns: 1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="container">
+    <div class="nav-inner">
+      <div class="brand">
+        <div class="brand-badge">HR</div>
+        <div>
+          <div style="font-size:14px; color:var(--muted); font-weight:700;">Harish Raju</div>
+          <div style="font-size:12px; color:rgba(185,197,230,.8);">Scrum • Program Mgmt • Technical Program Leadership</div>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#journey">Your Journey</a>
+        <a href="#tier1">Tier 1 (Core)</a>
+        <a href="#tier2">Tier 2 (Interview)</a>
+        <a href="#proof">Testimonials</a>
+        <a href="#samples">Free Samples</a>
+      </div>
+
+      <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book on Topmate</a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="card hero-left">
+        <div class="kicker">
+          <span class="pill"><span class="dot"></span> Hyderabad (IST) • Working Globally</span>
+          <span class="pill">Scrum Masters • PMs • Aspiring TPMs</span>
+          <span class="pill">#AgileWithHarish</span>
+        </div>
+
+        <h1>Become a delivery leader — and transition into <span style="background:linear-gradient(135deg,var(--brand),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">PM / TPM</span> with confidence.</h1>
+
+        <p class="sub">
+          A simple two-tier journey designed for working professionals:
+          <b>Tier 1</b> builds predictable delivery + stakeholder influence.
+          <b>Tier 2</b> accelerates PM/TPM outcomes with portfolio + interview assets.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#journey">Choose Your Tier</a>
+          <a class="btn" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book a Session</a>
+          <a class="btn" href="#samples">Download Samples</a>
+        </div>
+
+        <p class="micro">
+          Verified bookings & reviews via Topmate. No fluff — practical systems you can use immediately at work.
+        </p>
+      </div>
+
+      <aside class="card hero-right">
+        <div class="mini">
+          <h3>What you’ll gain</h3>
+          <p>Predictable delivery, executive-ready communication, and a role transition plan that feels realistic and actionable.</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat"><b>Scrum</b><span>Outcome-driven Agile</span></div>
+          <div class="stat"><b>PM</b><span>Governance & alignment</span></div>
+          <div class="stat"><b>TPM</b><span>Tech + business lens</span></div>
+        </div>
+
+        <div class="mini">
+          <h3>Quick contact</h3>
+          <p>Email: <b>your.email@domain.com</b><br/>Phone: <b>+91-XXXXXXXXXX</b></p>
+          <p style="margin-top:10px; font-size:12px; color:#b9c5e6;">✔ Verified sessions & testimonials via Topmate</p>
+        </div>
+
+        <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book Now</a>
+      </aside>
+    </div>
+  </div>
+</header>
+
+<section id="journey">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>Your journey (2-tier model)</h2>
+        <p>Choose your starting point. Many professionals start with Tier 1, then move to Tier 2 when targeting PM/TPM interviews.</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="offer" id="tier1">
+        <div class="tag">Tier 1 • Core</div>
+        <h3>Delivery Leadership Mastery (4–6 weeks)</h3>
+        <p class="sub" style="margin:0; font-size:13px;">For <b>Scrum Masters + PMs</b> who want predictable delivery, stronger stakeholder influence, and leadership-ready execution systems.</p>
+        <ul class="list">
+          <li><span class="check">✓</span> Predictability system (readiness, scope control, metrics)</li>
+          <li><span class="check">✓</span> RAID + dependency management routines</li>
+          <li><span class="check">✓</span> Stakeholder updates that build trust</li>
+          <li><span class="check">✓</span> Coaching on your real project (not theory)</li>
+        </ul>
+        <div class="note"><b>Outcome:</b> You become a delivery leader — not just a ceremony facilitator.</div>
+        <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book Tier 1 on Topmate</a>
+      </div>
+
+      <div class="offer" id="tier2">
+        <div class="tag">Tier 2 • Interview Intensive</div>
+        <h3>PM/TPM Career Acceleration (2–3 weeks)</h3>
+        <p class="sub" style="margin:0; font-size:13px;">For professionals targeting <b>PM/TPM roles</b> with a portfolio, strong narratives, and confident interview performance.</p>
+        <ul class="list">
+          <li><span class="check">✓</span> Role mapping: PM vs TPM + gap closure plan</li>
+          <li><span class="check">✓</span> 3–5 STAR stories with metrics</li>
+          <li><span class="check">✓</span> Portfolio artifacts (RAID, exec updates, launch plan)</li>
+          <li><span class="check">✓</span> Mock interviews + actionable feedback</li>
+        </ul>
+        <div class="note"><b>Outcome:</b> Clear positioning + interview-ready proof of impact.</div>
+        <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book Tier 2 on Topmate</a>
+      </div>
+    </div>
+
+    <div class="cta" style="margin-top:14px;">
+      <div>
+        <h3>Not sure which tier fits you?</h3>
+        <p>Book a short call on Topmate — I’ll recommend Tier 1 or Tier 2 based on your current role and goals.</p>
+      </div>
+      <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book a Quick Call</a>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>Testimonials (verified)</h2>
+        <p>See real reviews on Topmate. You can also paste 4–8 short testimonials here if you want stronger on-page trust.</p>
+      </div>
+      <a class="btn" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">View on Topmate →</a>
+    </div>
+
+    <div class="grid-2">
+      <div class="tile">
+        <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
+          <div style="font-weight:800;">★★★★★</div>
+          <div style="color:var(--muted); font-size:12px;">Verified</div>
+        </div>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.65;">“Thank Harish for the inputs and sharing the network. It is always nice talking to you.”</p>
+        <div style="margin-top:10px; font-weight:700; font-size:13px;">— Akshay Danak</div>
+      </div>
+
+      <div class="tile">
+        <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
+          <div style="font-weight:800;">★★★★★</div>
+          <div style="color:var(--muted); font-size:12px;">Verified</div>
+        </div>
+        <p style="margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.65;">“Conversation with Harish was very insightful… his approach of keeping things simple stood out.”</p>
+        <div style="margin-top:10px; font-weight:700; font-size:13px;">— P ARABIND</div>
+      </div>
+    </div>
+
+    <div class="cta" style="margin-top:14px;">
+      <div>
+        <h3>Book directly where reviews are hosted</h3>
+        <p>Topmate manages scheduling, payments, and review verification for transparency.</p>
+      </div>
+      <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Go to Topmate</a>
+    </div>
+  </div>
+</section>
+
+<section id="samples">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>Free samples (download)</h2>
+        <p>These are immediate downloads. Keep PDFs in the same folder as this HTML file when you host it.</p>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="tile">
+        <h3>RAID Log Template</h3>
+        <p>Risks, assumptions, issues, dependencies — leadership visibility in one place.</p>
+        <a class="btn btn-primary" href="Sample_RAID_Log_Template.pdf" download>Download PDF</a>
+      </div>
+      <div class="tile">
+        <h3>Weekly Stakeholder Update</h3>
+        <p>One-page update that builds trust through consistency.</p>
+        <a class="btn btn-primary" href="Sample_Stakeholder_Update_Template.pdf" download>Download PDF</a>
+      </div>
+      <div class="tile">
+        <h3>Sprint Predictability Checklist</h3>
+        <p>Checklist to reduce spillover and improve commitment reliability.</p>
+        <a class="btn btn-primary" href="Sample_Sprint_Predictability_Checklist.pdf" download>Download PDF</a>
+      </div>
+    </div>
+
+    <div class="cta" style="margin-top:14px;">
+      <div>
+        <h3>Want the full pack + personalized walkthrough?</h3>
+        <p>Book a session and I’ll tailor these to your exact role and org context.</p>
+      </div>
+      <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book on Topmate</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="foot">
+      <div class="small">
+        © <span id="year"></span> Harish Raju • Hyderabad, India • <span style="opacity:.9">#AgileWithHarish</span><br/>
+        Email: <b>your.email@domain.com</b> • Phone: <b>+91-XXXXXXXXXX</b>
+      </div>
+      <div class="small">
+        <span class="pill">#TechnicalProgramManager</span>
+        <span class="pill">#AgileLeadership</span>
+        <span class="pill">#ScrumMaster</span>
+        <span class="pill">#ProgramManagement</span>
+        <span class="pill">#DeliveryLeadership</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="floating">
+  <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book Session</a>
+  <a class="btn" href="#journey">Choose Tier</a>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
