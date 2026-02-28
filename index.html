@@ -248,6 +248,119 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
   transform: translateY(10px);
 }
 
+
+/* Feedback + insights */
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.field label{
+  font-size:12px;
+  color:rgba(185,197,230,.9);
+  font-weight:700;
+}
+.input, .select, .textarea{
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color:var(--text);
+  border-radius: 14px;
+  padding:12px 12px;
+  outline:none;
+}
+.textarea{min-height:120px; resize:vertical}
+.kpi{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:14px;
+  border-radius: var(--radius);
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+}
+.kpi b{font-size:18px}
+.kpi span{color:var(--muted); font-size:12px}
+
+
+/* Quick feedback popup (Google Form logger) */
+.feedback-pop{
+  position:fixed;
+  left:16px;
+  bottom:16px;
+  z-index:80;
+  width:min(360px, calc(100% - 32px));
+  border-radius: var(--radius2);
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(15,26,51,.92), rgba(12,23,48,.82));
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  transform: translateY(16px);
+  opacity:0;
+  pointer-events:none;
+  transition: opacity .25s ease, transform .25s ease;
+}
+.feedback-pop.show{
+  transform: translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
+.feedback-pop .head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:10px;
+  padding:14px 14px 8px;
+}
+.feedback-pop .title{
+  font-weight:900;
+  letter-spacing:-.2px;
+  font-size:14px;
+}
+.feedback-pop .desc{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+  margin-top:4px;
+}
+.feedback-pop .body{
+  padding:0 14px 14px;
+}
+.feedback-pop .actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:10px;
+}
+.fb-emoji{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 12px;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  font-weight:900;
+  cursor:pointer;
+  user-select:none;
+}
+.fb-emoji:hover{background:rgba(255,255,255,.06)}
+.fb-close{
+  border:none;
+  background: rgba(255,255,255,.06);
+  color:var(--text);
+  border-radius:12px;
+  padding:8px 10px;
+  cursor:pointer;
+  font-weight:800;
+}
+.fb-close:hover{background:rgba(255,255,255,.10)}
+.fb-note{
+  color:var(--muted);
+  font-size:11px;
+  margin-top:8px;
+}
+
 </style>
 </head>
 
@@ -270,6 +383,8 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
           <a href="#aidemo">AI Demo</a>
           <a href="#proof">Testimonials</a>
           <a href="#samples">Free Samples</a>
+          <a href="#feedback">Feedback</a>
+          <a href="#insights">Insights</a>
         </div>
 
         <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book on Topmate</a>
@@ -313,7 +428,7 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
             <span class="pill">#AgileWithHarish</span>
           </div>
 
-          <h1>Become a delivery leader — and transition into <span style="background:linear-gradient(135deg,var(--brand),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">PM / TPM</span> with confidence (with practical <span style="background:linear-gradient(135deg,var(--ok),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">AI workflows</span>).</h1>
+          <h1>Level up from <span style="background:linear-gradient(135deg,var(--brand),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Scrum / Delivery</span> to <span style="background:linear-gradient(135deg,var(--ok),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">PM / TPM</span> — with practical AI workflows.</h1>
 
           <p class="sub">
             A simple two-tier journey designed for working professionals:
@@ -674,7 +789,112 @@ Project updates:
     </div>
   </section>
 
-  <footer>
+  <section id="feedback">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>Website feedback</h2>
+        <p>Tell me what you liked, what confused you, and what you want to see next. I read every message.</p>
+      </div>
+      <a class="btn" href="mailto:hello@agilewithharish.com?subject=Feedback%20for%20AgileWithHarish%20Website" rel="noopener">Email feedback →</a>
+    </div>
+
+    <div class="grid-2">
+      <div class="tile">
+        <h3>Quick feedback form</h3>
+        <p style="margin-top:-6px; color:var(--muted); font-size:13px; line-height:1.6;">
+          This form works without any backend by opening your email app. If you later want “submit without email”, I can connect it to Google Forms or Formspree.
+        </p>
+
+        <form id="feedbackForm" style="margin-top:12px; display:grid; gap:12px;">
+          <div class="field">
+            <label for="fbName">Name (optional)</label>
+            <input class="input" id="fbName" type="text" placeholder="Your name" />
+          </div>
+
+          <div class="field">
+            <label for="fbRole">You are a…</label>
+            <select class="select" id="fbRole">
+              <option value="Scrum Master">Scrum Master</option>
+              <option value="Project/Program Manager">Project/Program Manager</option>
+              <option value="Aspiring TPM">Aspiring TPM</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="fbMsg">Your feedback</label>
+            <textarea class="textarea" id="fbMsg" placeholder="What should I improve on this site? What do you want next?" required></textarea>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Send Feedback</button>
+          <div class="note">Tip: If your phone blocks mailto, use the “Email feedback →” button above.</div>
+        </form>
+      </div>
+
+      <div class="tile">
+        <h3>What feedback helps most</h3>
+        <ul class="list">
+          <li><span class="check">✓</span> Which section felt most valuable?</li>
+          <li><span class="check">✓</span> Where did you feel confused?</li>
+          <li><span class="check">✓</span> What do you want templates for?</li>
+          <li><span class="check">✓</span> Which tier are you likely to book?</li>
+        </ul>
+        <div class="cta" style="margin-top:14px;">
+          <div>
+            <h3 style="margin:0;">Prefer WhatsApp?</h3>
+            <p style="margin-top:6px;">You can also message me directly.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/917083273689" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="insights">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>Visitor insights</h2>
+        <p>For true global visitor counts, you need analytics (GitHub Pages is static). I added a simple “this device” counter + optional analytics hooks.</p>
+      </div>
+    </div>
+
+    <div class="grid-3">
+      <div class="kpi">
+        <div>
+          <b id="deviceVisits">—</b>
+          <span>This device visits</span>
+        </div>
+        <span class="pill">Local</span>
+      </div>
+
+      <div class="tile">
+        <h3>Global visitor count (recommended)</h3>
+        <p>Enable a free analytics tool and you’ll see real visitors, countries, referrers, and top pages.</p>
+        <ul class="list">
+          <li><span class="check">✓</span> Google Analytics (needs Measurement ID)</li>
+          <li><span class="check">✓</span> Cloudflare Web Analytics (privacy-friendly)</li>
+          <li><span class="check">✓</span> Plausible / Simple Analytics (paid)</li>
+        </ul>
+        <div class="note">I can help you set this up once you choose one.</div>
+      </div>
+
+      <div class="tile">
+        <h3>What you’ll learn from analytics</h3>
+        <ul class="list">
+          <li><span class="check">✓</span> Which sections people read most</li>
+          <li><span class="check">✓</span> Where people drop off</li>
+          <li><span class="check">✓</span> Which countries you’re reaching</li>
+          <li><span class="check">✓</span> How many clicks go to Topmate</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
     <div class="container">
       <div class="foot">
         <div class="small">
@@ -801,6 +1021,180 @@ Project updates:
     // rotate every 6 seconds
     setInterval(rotate, 6000);
   })();
+</script>
+
+
+<script>
+  // Feedback form -> opens email (no backend required)
+  (function(){
+    const form = document.getElementById("feedbackForm");
+    if(form){
+      form.addEventListener("submit", function(e){
+        e.preventDefault();
+        const name = (document.getElementById("fbName")?.value || "").trim();
+        const role = (document.getElementById("fbRole")?.value || "").trim();
+        const msg  = (document.getElementById("fbMsg")?.value || "").trim();
+        if(!msg) return;
+
+        const subject = encodeURIComponent("Website feedback (AgileWithHarish)");
+        const body = encodeURIComponent(
+          "Name: " + (name || "Anonymous") + "\n" +
+          "Role: " + (role || "—") + "\n\n" +
+          msg + "\n\n" +
+          "Sent from: " + window.location.href
+        );
+
+        window.location.href = "mailto:hello@agilewithharish.com?subject=" + subject + "&body=" + body;
+        form.reset();
+      });
+    }
+  })();
+
+  // Simple visitor indicator (local device only)
+  (function(){
+    const key = "awh_device_visits_v1";
+    const current = parseInt(localStorage.getItem(key) || "0", 10) || 0;
+    const next = current + 1;
+    localStorage.setItem(key, String(next));
+    const el = document.getElementById("deviceVisits");
+    if(el) el.textContent = next.toString();
+  })();
+
+  /*
+    OPTIONAL: Real global visitor counts (choose one):
+
+    1) Google Analytics 4:
+       - Create GA4 property, get Measurement ID like G-XXXXXXXXXX
+       - Paste this before 
+<!-- Quick Feedback Popup -->
+<div class="feedback-pop" id="feedbackPop" role="dialog" aria-label="Quick feedback">
+  <div class="head">
+    <div>
+      <div class="title">Was this page helpful?</div>
+      <div class="desc">Tap 👍 or 👎 — it helps me improve this site.</div>
+    </div>
+    <button class="fb-close" id="fbClose" aria-label="Close">✕</button>
+  </div>
+  <div class="body">
+    <div class="actions">
+      <div class="fb-emoji" id="fbUp" aria-label="Helpful">👍 Yes</div>
+      <div class="fb-emoji" id="fbDown" aria-label="Not helpful">👎 No</div>
+      <a class="btn" href="#feedback" style="padding:10px 12px; border-radius:14px;">Leave detailed feedback</a>
+    </div>
+    <div class="fb-note">Logging is anonymous. No personal data is collected unless you share it in the detailed form.</div>
+  </div>
+</div>
+
+
+<script>
+  // Quick feedback popup -> logs to Google Forms (static-site friendly)
+  (function(){
+    // ---- CONFIG (replace these 3 values after you create your Google Form) ----
+    // 1) Open your Google Form > Send > Link > copy the form link
+    // 2) Replace FORM_ACTION with the "formResponse" URL (instructions in the section below)
+    // 3) Replace ENTRY_HELPFUL and ENTRY_PAGE with your form's entry IDs (entry.123456...)
+    const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSc8Cz-dqS-Sw6NacJSlZLJkcJLjDUBxoAQGLhxdaVS7KMYt9g/formResponse";
+    const ENTRY_HELPFUL = "entry.818560775"; // question: "Was this page helpful?"
+    const ENTRY_PAGE = "entry.1133500847";    // question: "Page URL" (short answer)
+    // ------------------------------------------------------------------------
+
+    const pop = document.getElementById("feedbackPop");
+    const closeBtn = document.getElementById("fbClose");
+    const up = document.getElementById("fbUp");
+    const down = document.getElementById("fbDown");
+
+    if(!pop || !closeBtn || !up || !down) return;
+
+    // Show at most once per day per device
+    const key = "awh_quick_feedback_last_shown";
+    const today = new Date().toISOString().slice(0,10);
+    const lastShown = localStorage.getItem(key);
+    const alreadySubmitted = localStorage.getItem("awh_quick_feedback_submitted_" + today) === "1";
+
+    // Don't show if already submitted today
+    if(alreadySubmitted) return;
+
+    // Show after 10s OR after user scrolls a bit
+    let shown = false;
+    function show(){
+      if(shown) return;
+      shown = true;
+      localStorage.setItem(key, today);
+      pop.classList.add("show");
+    }
+    setTimeout(show, 10000);
+    window.addEventListener("scroll", function(){
+      if(window.scrollY > 600) show();
+    }, {passive:true});
+
+    function hide(){
+      pop.classList.remove("show");
+    }
+    closeBtn.addEventListener("click", hide);
+
+    function logResponse(isHelpful){
+      // If user hasn't configured the form yet, just thank and close
+      if(!FORM_ACTION || FORM_ACTION.includes("PASTE_YOUR_GOOGLE_FORM")){
+        alert("Thanks! Quick feedback captured. (Next: connect Google Form IDs to log it.)");
+        localStorage.setItem("awh_quick_feedback_submitted_" + today, "1");
+        hide();
+        return;
+      }
+
+      const data = new FormData();
+      data.append(ENTRY_HELPFUL, isHelpful ? "Yes" : "No");
+      data.append(ENTRY_PAGE, window.location.href);
+
+      // Google Forms accepts POST to formResponse. no-cors works on static sites.
+      fetch(FORM_ACTION, { method:"POST", mode:"no-cors", body:data })
+        .catch(function(){ /* ignore */ })
+        .finally(function(){
+          localStorage.setItem("awh_quick_feedback_submitted_" + today, "1");
+          hide();
+        });
+    }
+
+    up.addEventListener("click", function(){ logResponse(true); });
+    down.addEventListener("click", function(){ logResponse(false); });
+
+    /*
+      HOW TO CONNECT YOUR GOOGLE FORM (2 minutes)
+
+      A) Create Google Form with 2 questions:
+         1) "Was this page helpful?" (Multiple choice: Yes, No)
+         2) "Page URL" (Short answer)
+
+      B) Get FORM_ACTION:
+         - Open the form in browser (the public link)
+         - The URL looks like:
+             https://docs.google.com/forms/d/e/FORM_ID/viewform
+         - Replace "viewform" with "formResponse":
+             https://docs.google.com/forms/d/e/FORM_ID/formResponse
+         - Paste into FORM_ACTION.
+
+      C) Get ENTRY IDs (ENTRY_HELPFUL and ENTRY_PAGE):
+         - Open the form > click 3 dots (⋮) > "Get pre-filled link"
+         - Fill sample answers for both questions > Create link
+         - The generated URL contains parameters like:
+             entry.123456789=Yes&entry.987654321=https://...
+         - Copy the two entry numbers into ENTRY_HELPFUL / ENTRY_PAGE.
+    */
+  })();
+</script>
+
+</body> and replace G-XXXXXXXXXX
+
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-XXXXXXXXXX');
+       </script>
+
+    2) Cloudflare Web Analytics (privacy-friendly):
+       - Enable in Cloudflare dashboard, paste their snippet here.
+  */
 </script>
 
 </body>
