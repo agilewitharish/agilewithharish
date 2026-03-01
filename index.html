@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harish Raju | Scrum • PM • TPM • AI Coaching</title>
-  <meta name="description" content="Two-tier journey for Scrum Masters, PMs, and aspiring TPMs — now with practical AI workflows: Tier 1 (Core) + Tier 2 (Interview Intensive)." />
+  <title>Harish Raju | Scrum • Program Manager • TPM • AI Coaching</title>
+  <meta name="description" content="Two-tier journey for Scrum Masters, Program Managers, and aspiring TPMs — now with practical AI workflows: Tier 1 (Core) + Tier 2 (Interview Intensive)." />
   <meta name="theme-color" content="#0b1220" />
 
   <style>
 :root{
   --bg:#0b1220; --panel:#0f1a33; --panel2:#0c1730; --text:#eaf0ff; --muted:#b9c5e6;
   --line:rgba(255,255,255,.12); --brand:#7c5cff; --brand2:#00d4ff; --ok:#41d7a7; --warn:#ffd24d;
-  --shadow: 0 18px 50px rgba(0,0,0,.35); --radius:18px; --radius2:26px; --max:1120px;
+  --shadow: 0 18px 50px rgba(0,0,0,.35); --radius:18px; --radius2:26px; --max:1320px;
   --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
 }
 *{box-sizing:border-box}
@@ -361,6 +361,28 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
   margin-top:8px;
 }
 
+
+/* Prevent horizontal overflow / side scroll */
+body{overflow-x:hidden}
+.tile, .card, .offer{max-width:100%}
+textarea{max-width:100%}
+/* Reduce "black side" distraction on wide screens */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 420px at 15% 60%, rgba(124,92,255,.10), transparent 60%),
+    radial-gradient(900px 420px at 85% 55%, rgba(0,212,255,.08), transparent 60%);
+  mix-blend-mode: screen;
+  opacity:.85;
+}
+
+
+/* Keep buttons inside cards on small screens */
+.btn{max-width:100%}
+
 </style>
 </head>
 
@@ -372,7 +394,7 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
           <div class="brand-badge">HR</div>
           <div>
             <div style="font-size:14px; color:var(--muted); font-weight:700;">Harish Raju</div>
-            <div style="font-size:12px; color:rgba(185,197,230,.8);">Scrum • Program Mgmt • TPM • AI Enablement</div>
+            <div style="font-size:12px; color:rgba(185,197,230,.8);">Scrum • Program Management • TPM • AI Enablement</div>
           </div>
         </div>
 
@@ -386,7 +408,7 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
           <a href="#feedback">Feedback</a>
 </div>
 
-        <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book on Topmate</a>
+        <a class="btn btn-primary" href="#request-call" >Request a Call</a>
       </div>
     </div>
   </div>
@@ -423,21 +445,21 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
         <div class="card hero-left">
           <div class="kicker">
             <span class="pill"><span class="dot"></span> Hyderabad (IST) • Working Globally</span>
-            <span class="pill">Scrum Masters • PMs • Aspiring TPMs</span>
+            <span class="pill">Scrum Masters • Program Managers • Aspiring TPMs</span>
             <span class="pill">#AgileWithHarish</span>
           </div>
 
           <h1>
   Grow from aspiring professional →
   <span style="background:linear-gradient(135deg,var(--brand),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Scrum Master</span> →
-  <span style="background:linear-gradient(135deg,var(--ok),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">PM / TPM</span>
+  <span style="background:linear-gradient(135deg,var(--ok),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Program Manager / TPM</span>
   with practical Agile and AI-powered workflows.
 </h1>
 
           <p class="sub">
             A simple two-tier journey designed for working professionals:
             <b>Tier 1</b> builds predictable delivery + stakeholder influence.
-            <b>Tier 2</b> accelerates PM/TPM outcomes with portfolio + interview assets.
+            <b>Tier 2</b> accelerates Program Manager / TPM outcomes with portfolio + interview assets.
             <br><br>
             Bonus: Learn AI workflows to write better updates, spot risks early, and save time — without coding.
           </p>
@@ -448,28 +470,28 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
             <a class="btn" href="#samples">Download Samples</a>
           </div>
 
-          <p class="micro">Verified bookings & reviews via Topmate. No fluff — practical systems you can use immediately at work.</p>
+          <p class="micro">Coaching designed for working professionals. No fluff — practical systems you can use immediately at work.</p>
         </div>
 
         <aside class="card hero-right">
           <div class="mini">
             <h3>What you’ll gain</h3>
-            <p>Predictable delivery, executive-ready communication, and a realistic PM/TPM transition plan — powered by AI workflows.</p>
+            <p>Predictable delivery, executive-ready communication, and a realistic Program Manager / TPM transition plan — powered by AI workflows.</p>
           </div>
 
           <div class="stats">
             <div class="stat"><b>Scrum</b><span>Outcome-driven Agile</span></div>
-            <div class="stat"><b>PM</b><span>Governance & alignment</span></div>
+            <div class="stat"><b>Program Manager</b><span>Governance & alignment</span></div>
             <div class="stat"><b>TPM</b><span>Tech + business lens</span></div>
           </div>
 
           <div class="mini">
             <h3>Quick contact</h3>
             <p>Email: <b>hello@agilewithharish.com</b><br/>Phone: <b>+91-7083273689</b></p>
-            <p style="margin-top:10px; font-size:12px; color:#b9c5e6;">✔ Verified sessions & testimonials via Topmate</p>
+            <p style="margin-top:10px; font-size:12px; color:#b9c5e6;">✔ Practical coaching + real templates</p>
           </div>
 
-          <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book Now</a>
+          <a class="btn btn-primary" href="#request-call" >Request a Call</a>
         </aside>
       </div>
     </div>
@@ -520,7 +542,7 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
       <div class="section-title">
         <div>
           <h2>Your journey (2-tier model)</h2>
-          <p>Choose your starting point. Many professionals start with Tier 1, then move to Tier 2 when targeting PM/TPM interviews.</p>
+          <p>Choose your starting point. Many professionals start with Tier 1, then move to Tier 2 when targeting Program Manager / TPM interviews.</p>
         </div>
       </div>
 
@@ -528,7 +550,7 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
         <div class="offer" id="tier1">
           <div class="tag">Tier 1 • Core</div>
           <h3>Delivery Leadership Mastery (4–6 weeks)</h3>
-          <p class="sub" style="margin:0; font-size:13px;">For <b>Scrum Masters + PMs</b> who want predictable delivery, stronger stakeholder influence, and leadership-ready execution systems.</p>
+          <p class="sub" style="margin:0; font-size:13px;">For <b>Scrum Masters + Program Managers</b> who want predictable delivery, stronger stakeholder influence, and leadership-ready execution systems.</p>
           <ul class="list">
             <li><span class="check">✓</span> Predictability system (readiness, scope control, metrics)</li>
             <li><span class="check">✓</span> RAID + dependency management routines</li>
@@ -536,21 +558,21 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
             <li><span class="check">✓</span> AI-assisted artifacts (optional)</li>
           </ul>
           <div class="note"><b>Outcome:</b> You become a delivery leader — not just a ceremony facilitator.</div>
-          <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book Tier 1 on Topmate</a>
+          <a class="btn btn-primary" href="#request-call" >Request Tier 1 Call</a>
         </div>
 
         <div class="offer" id="tier2">
           <div class="tag">Tier 2 • Interview Intensive</div>
-          <h3>PM/TPM Career Acceleration (2–3 weeks)</h3>
-          <p class="sub" style="margin:0; font-size:13px;">For professionals targeting <b>PM/TPM roles</b> with a portfolio, strong narratives, and confident interview performance.</p>
+          <h3>Program Manager / TPM Career Acceleration (2–3 weeks)</h3>
+          <p class="sub" style="margin:0; font-size:13px;">For professionals targeting <b>Program Manager / TPM roles</b> with a portfolio, strong narratives, and confident interview performance.</p>
           <ul class="list">
-            <li><span class="check">✓</span> Role mapping: PM vs TPM + gap closure plan</li>
+            <li><span class="check">✓</span> Role mapping: Program Manager vs TPM + gap closure plan</li>
             <li><span class="check">✓</span> 3–5 STAR stories with metrics</li>
             <li><span class="check">✓</span> Portfolio artifacts (RAID, exec updates, launch plan)</li>
             <li><span class="check">✓</span> Mock interviews + actionable feedback</li>
           </ul>
           <div class="note"><b>Outcome:</b> Clear positioning + interview-ready proof of impact.</div>
-          <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book Tier 2 on Topmate</a>
+          <a class="btn btn-primary" href="#request-call" >Request Tier 2 Call</a>
         </div>
       </div>
 
@@ -559,7 +581,7 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
           <h3>Not sure which tier fits you?</h3>
           <p>Book a short call on Topmate — I’ll recommend Tier 1 or Tier 2 based on your current role and goals.</p>
         </div>
-        <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book a Quick Call</a>
+        <a class="btn btn-primary" href="#request-call" >Request a Quick Call</a>
       </div>
     </div>
   </section>
@@ -596,7 +618,7 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
 
         <div class="tile">
           <h3>AI-Powered Career Growth</h3>
-          <p>Build STAR stories, refine metrics, and practice PM/TPM interviews with AI.</p>
+          <p>Build STAR stories, refine metrics, and practice Program Manager / TPM interviews with AI.</p>
           <ul class="list">
             <li><span class="check">✓</span> STAR story builder</li>
             <li><span class="check">✓</span> Resume/LinkedIn positioning</li>
@@ -664,7 +686,7 @@ footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line)
              ✔ Build templates + prompts for your role<br>
              ✔ Practice using your real project updates</p>
         </div>
-        <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book AI Coaching Session</a>
+        <a class="btn btn-primary" href="#request-call" >Request AI Coaching Call</a>
       </div>
     </div>
   </section>
@@ -707,7 +729,7 @@ Project updates:
           </ul>
           <a class="btn btn-primary" href="#ai-coaching">See AI Coaching</a>
           <div style="height:10px"></div>
-          <a class="btn" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book on Topmate</a>
+          <a class="btn" href="#request-call" >Request a Call</a>
         </div>
       </div>
     </div>
@@ -720,7 +742,7 @@ Project updates:
           <h2>Testimonials (verified)</h2>
           <p>See real reviews on Topmate.</p>
         </div>
-        <a class="btn" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">View on Topmate →</a>
+        <a class="btn" href="#request-call" >See more feedback →</a>
       </div>
 
       <div class="grid-2">
@@ -736,7 +758,7 @@ Project updates:
     </p>
 
     <div id="testimonialAuthor" style="margin-top:10px; font-weight:700; font-size:13px;"></div>
-    <div class="note" style="margin-top:10px;">Rotates automatically — for full reviews, click “View on Topmate →”.</div>
+    <div class="note" style="margin-top:10px;">Rotates automatically — for full reviews, click “See more feedback →”.</div>
   </div>
 
   <div class="tile">
@@ -744,10 +766,10 @@ Project updates:
     <ul class="list">
       <li><span class="check">✓</span> Clear stakeholder updates and executive-ready communication</li>
       <li><span class="check">✓</span> Better predictability using readiness + risk routines</li>
-      <li><span class="check">✓</span> Strong PM/TPM interview stories with metrics</li>
+      <li><span class="check">✓</span> Strong Program Manager / TPM interview stories with metrics</li>
       <li><span class="check">✓</span> Practical AI workflows that save hours every week</li>
     </ul>
-    <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">See all reviews on Topmate</a>
+    <a class="btn btn-primary" href="#request-call" >See more feedback below</a>
   </div>
 
 </div>
@@ -755,9 +777,9 @@ Project updates:
     <div class="cta" style="margin-top:14px;">
         <div>
           <h3>Book directly where reviews are hosted</h3>
-          <p>Topmate manages scheduling, payments, and review verification for transparency.</p>
+          <p>I respond personally. Use the request and feedback options on this page to reach me quickly.</p>
         </div>
-        <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Go to Topmate</a>
+        <a class="btn btn-primary" href="#request-call" >Request a Call</a>
       </div>
     </div>
   </section>
@@ -794,7 +816,7 @@ Project updates:
           <h3>Want the full pack + personalized walkthrough?</h3>
           <p>Book a session and I’ll tailor templates + AI workflows to your exact role and org context.</p>
         </div>
-        <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book on Topmate</a>
+        <a class="btn btn-primary" href="#request-call" >Request a Call</a>
       </div>
     </div>
   </section>
@@ -806,14 +828,14 @@ Project updates:
         <h2>Website feedback</h2>
         <p>Tell me what you liked, what confused you, and what you want to see next. I read every message.</p>
       </div>
-      <a class="btn" href="mailto:hello@agilewithharish.com?subject=Feedback%20for%20AgileWithHarish%20Website" rel="noopener">Email feedback →</a>
+      <a class="btn" href="mailto:hello@agilewithharish.com?subject=Feedback%20for%20AgileWithHarish%20Website" >Email feedback →</a>
     </div>
 
     <div class="grid-2">
       <div class="tile">
         <h3>Quick feedback form</h3>
         <p style="margin-top:-6px; color:var(--muted); font-size:13px; line-height:1.6;">
-          This form works without any backend by opening your email app. If you later want “submit without email”, I can connect it to Google Forms or Formspree.
+          This form captures feedback on this page without redirecting you anywhere. If you later want “submit without email”, I can connect it to Google Forms or Formspree.
         </p>
 
         <form id="feedbackForm" style="margin-top:12px; display:grid; gap:12px;">
@@ -838,7 +860,7 @@ Project updates:
           </div>
 
           <button class="btn btn-primary" type="submit">Send Feedback</button>
-          <div class="note">Tip: If your phone blocks mailto, use the “Email feedback →” button above.</div>
+          <div class="note">Tip: Share specific sections you liked or found confusing — it helps improve the site fast.</div>
         </form>
       </div>
 
@@ -855,7 +877,65 @@ Project updates:
             <h3 style="margin:0;">Prefer WhatsApp?</h3>
             <p style="margin-top:6px;">You can also message me directly.</p>
           </div>
-          <a class="btn btn-primary" href="https://wa.me/917083273689" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-primary" href="https://wa.me/917083273689" >WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="request-call">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>Request a call</h2>
+        <p>Share your goal and I’ll reply with the best next step (Tier 1, Tier 2, or AI coaching). No redirects.</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="tile">
+        <h3>Quick request</h3>
+        <form id="callForm" style="margin-top:12px; display:grid; gap:12px;">
+          <div class="field">
+            <label for="cName">Name</label>
+            <input class="input" id="cName" type="text" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input class="input" id="cEmail" type="email" placeholder="you@example.com" required />
+          </div>
+          <div class="field">
+            <label for="cGoal">Your goal</label>
+            <select class="select" id="cGoal">
+              <option value="Become a Scrum Master">Become a Scrum Master</option>
+              <option value="Grow as a Scrum Master / Delivery Leader">Grow as a Scrum Master / Delivery Leader</option>
+              <option value="Program Management growth">Program Management growth</option>
+              <option value="Transition to TPM">Transition to TPM</option>
+              <option value="AI workflows for delivery leaders">AI workflows for delivery leaders</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cMsg">Context (optional)</label>
+            <textarea class="textarea" id="cMsg" placeholder="2–3 lines about your background + timeline"></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Submit Request</button>
+          <div class="note">This stores your request locally and shows next steps (no redirect).</div>
+        </form>
+      </div>
+
+      <div class="tile">
+        <h3>Fastest ways to reach me</h3>
+        <ul class="list">
+          <li><span class="check">✓</span> Email: <b>hello@agilewithharish.com</b></li>
+          <li><span class="check">✓</span> WhatsApp: <b>+91-7083273689</b></li>
+        </ul>
+        <div class="cta" style="margin-top:14px;">
+          <div>
+            <h3 style="margin:0;">Want a faster response?</h3>
+            <p style="margin-top:6px;">Send a WhatsApp message with your goal and I’ll reply with available slots.</p>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/917083273689">WhatsApp</a>
         </div>
       </div>
     </div>
@@ -881,7 +961,7 @@ Project updates:
   </footer>
 
   <div class="floating">
-    <a class="btn btn-primary" href="https://topmate.io/harish_raju/" target="_blank" rel="noopener">Book Session</a>
+    <a class="btn btn-primary" href="#request-call" >Book Session</a>
     <a class="btn" href="#journey">Choose Tier</a>
   </div>
 
@@ -1012,7 +1092,8 @@ Project updates:
           "Sent from: " + window.location.href
         );
 
-        window.location.href = "mailto:hello@agilewithharish.com?subject=" + subject + "&body=" + body;
+        localStorage.setItem("awh_feedback_last", JSON.stringify({name:name||"", role:role||"", msg:msg||"", page:window.location.href, ts:Date.now()}));
+alert("Thanks! Your feedback is captured. Harish will review it.");
         form.reset();
       });
     }
@@ -1129,8 +1210,33 @@ Project updates:
   })();
 </script>
 
-</body>
-</script>
 
-</body>
+<script>
+  // Request-a-call form (no redirect). Stores locally + shows confirmation.
+  (function(){
+    const form = document.getElementById("callForm");
+    if(!form) return;
+
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      const payload = {
+        name: (document.getElementById("cName")?.value || "").trim(),
+        email: (document.getElementById("cEmail")?.value || "").trim(),
+        goal: (document.getElementById("cGoal")?.value || "").trim(),
+        msg: (document.getElementById("cMsg")?.value || "").trim(),
+        page: window.location.href,
+        ts: Date.now()
+      };
+      if(!payload.name || !payload.email) return;
+
+      const key = "awh_call_requests_v1";
+      const list = JSON.parse(localStorage.getItem(key) || "[]");
+      list.push(payload);
+      localStorage.setItem(key, JSON.stringify(list));
+
+      alert("Thanks! Your request is captured.\n\nNext step: Please WhatsApp or email Harish so he can share available slots.\nEmail: hello@agilewithharish.com\nWhatsApp: +91-7083273689");
+      form.reset();
+    });
+  })();
+
 </html>
