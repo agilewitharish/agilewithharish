@@ -387,7 +387,7 @@ body::before{
 /* Smart sticky progress indicator */
 .progress{
   position:sticky;
-  top:64px; /* sits under main nav */
+  top:64px;
   z-index:49;
   padding:10px 0 12px;
   backdrop-filter: blur(10px);
@@ -428,7 +428,7 @@ body::before{
   flex:0 0 10px;
 }
 .step.active{
-  color: #041023;
+  color:#041023;
   border-color: transparent;
   background: linear-gradient(135deg, var(--brand), var(--brand2));
 }
@@ -610,7 +610,60 @@ body::before{
 </section>
 
 
-  <section id="journey">
+  
+<section id="pillars">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>Your growth, built on 4 pillars</h2>
+        <p>Inspired by practical cohort-style programs: clear path, real artifacts, and measurable outcomes — designed for beginners and working professionals.</p>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="tile">
+        <h3>1) Become a Scrum Master</h3>
+        <p>Start from scratch: Scrum basics, facilitation, stakeholder handling, and real workplace expectations.</p>
+        <ul class="list">
+          <li><span class="check">✓</span> Roles, events, artifacts</li>
+          <li><span class="check">✓</span> User stories + estimation</li>
+          <li><span class="check">✓</span> Live practice with templates</li>
+        </ul>
+      </div>
+
+      <div class="tile">
+        <h3>2) Delivery Leadership</h3>
+        <p>Move beyond ceremonies into outcomes: predictability, blockers, flow, and decision-making patterns.</p>
+        <ul class="list">
+          <li><span class="check">✓</span> Predictability system</li>
+          <li><span class="check">✓</span> RAID + escalation routines</li>
+          <li><span class="check">✓</span> Metrics leaders care about</li>
+        </ul>
+      </div>
+
+      <div class="tile">
+        <h3>3) Program Management</h3>
+        <p>Operate at scale: sequencing, governance, dependencies, and crisp executive communication.</p>
+        <ul class="list">
+          <li><span class="check">✓</span> Planning + sequencing</li>
+          <li><span class="check">✓</span> Executive updates</li>
+          <li><span class="check">✓</span> Decision briefs</li>
+        </ul>
+      </div>
+
+      <div class="tile">
+        <h3>4) AI Workflows (Practical)</h3>
+        <p>Use AI safely to save time and raise quality across planning, communication, and interview prep.</p>
+        <ul class="list">
+          <li><span class="check">✓</span> Prompts for ceremonies</li>
+          <li><span class="check">✓</span> Exec comms in minutes</li>
+          <li><span class="check">✓</span> STAR stories + portfolio</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="journey">
     <div class="container">
       <div class="section-title">
         <div>
@@ -870,17 +923,17 @@ Project updates:
         <div class="tile">
           <h3>RAID Log Template</h3>
           <p>Risks, assumptions, issues, dependencies — leadership visibility in one place.</p>
-          <a class="btn btn-primary" href="Sample_RAID_Log_Template_Edited.pdf" download>Download PDF</a>
+          <a class="btn btn-primary" href="./Sample_RAID_Log_Template.pdf" download download="Harish_Raju_RAID_Log_Template.pdf">Download PDF</a>
         </div>
         <div class="tile">
           <h3>Weekly Stakeholder Update</h3>
           <p>One-page update that builds trust through consistency.</p>
-          <a class="btn btn-primary" href="Sample_Stakeholder_Update_Template.pdf" download>Download PDF</a>
+          <a class="btn btn-primary" href="./Sample_Stakeholder_Update_Template.pdf" download download="Harish_Raju_Weekly_Stakeholder_Update.pdf">Download PDF</a>
         </div>
         <div class="tile">
           <h3>Sprint Predictability Checklist</h3>
           <p>Checklist to reduce spillover and improve commitment reliability.</p>
-          <a class="btn btn-primary" href="Sample_Sprint_Predictability_Checklist.pdf" download>Download PDF</a>
+          <a class="btn btn-primary" href="./Sample_Sprint_Predictability_Checklist.pdf" download download="Harish_Raju_Sprint_Predictability_Checklist.pdf">Download PDF</a>
         </div>
       </div>
 
@@ -1319,25 +1372,15 @@ alert("Thanks! Your feedback is captured. Harish will review it.");
   (function(){
     const steps = Array.from(document.querySelectorAll(".step[data-target]"));
     if(!steps.length) return;
-
     const sections = steps.map(s => document.querySelector(s.getAttribute("data-target"))).filter(Boolean);
-    const stepById = new Map();
-    steps.forEach(s => {
-      const sel = s.getAttribute("data-target");
-      if(sel && sel.startsWith("#")) stepById.set(sel.slice(1), s);
-    });
 
     function setActive(activeId){
-      // active + done states
       let activeIndex = sections.findIndex(sec => sec.id === activeId);
       if(activeIndex < 0) activeIndex = 0;
-
       steps.forEach((s, idx) => {
         s.classList.toggle("active", idx === activeIndex);
         s.classList.toggle("done", idx < activeIndex);
       });
-
-      // keep active step visible in horizontal scroller
       const activeStep = steps[activeIndex];
       const wrap = document.getElementById("progressInner");
       if(activeStep && wrap){
@@ -1349,44 +1392,24 @@ alert("Thanks! Your feedback is captured. Harish will review it.");
       }
     }
 
-    // click-to-scroll
-    steps.forEach(step => {
-      step.addEventListener("click", () => {
-        const target = document.querySelector(step.getAttribute("data-target"));
-        if(target){
-          target.scrollIntoView({behavior:"smooth", block:"start"});
-        }
-      });
-    });
+    steps.forEach(step => step.addEventListener("click", () => {
+      const target = document.querySelector(step.getAttribute("data-target"));
+      if(target) target.scrollIntoView({behavior:"smooth", block:"start"});
+    }));
 
-    // Observe sections
     let current = sections[0]?.id;
     setActive(current);
 
     const observer = new IntersectionObserver((entries) => {
-      // pick the most visible entry
-      const visible = entries
-        .filter(e => e.isIntersecting)
+      const visible = entries.filter(e => e.isIntersecting)
         .sort((a,b) => (b.intersectionRatio - a.intersectionRatio))[0];
-      if(visible && visible.target && visible.target.id){
+      if(visible?.target?.id){
         current = visible.target.id;
         setActive(current);
       }
-    }, { root: null, threshold: [0.12, 0.22, 0.35, 0.5] });
+    }, { threshold: [0.12, 0.22, 0.35, 0.5] });
 
     sections.forEach(sec => observer.observe(sec));
-
-    // Fallback for browsers without IO: update on scroll
-    if(!("IntersectionObserver" in window)){
-      window.addEventListener("scroll", () => {
-        const fromTop = window.scrollY + 140;
-        let found = sections[0]?.id;
-        for(const sec of sections){
-          if(sec.offsetTop <= fromTop) found = sec.id;
-        }
-        setActive(found);
-      }, {passive:true});
-    }
   })();
 </script>
 
