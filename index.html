@@ -383,6 +383,79 @@ body::before{
 /* Keep buttons inside cards on small screens */
 .btn{max-width:100%}
 
+
+/* Smart sticky progress indicator */
+.progress{
+  position:sticky;
+  top:64px; /* sits under main nav */
+  z-index:49;
+  padding:10px 0 12px;
+  backdrop-filter: blur(10px);
+  background: rgba(11,18,32,.40);
+  border-bottom:1px solid var(--line);
+}
+.progress-inner{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  overflow:auto;
+  padding:0 4px;
+  -webkit-overflow-scrolling: touch;
+}
+.step{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 10px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  color:var(--muted);
+  font-size:12px;
+  font-weight:800;
+  white-space:nowrap;
+  cursor:pointer;
+  user-select:none;
+  transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
+}
+.step:hover{background:rgba(255,255,255,.06); color:var(--text)}
+.step .dot2{
+  width:10px;
+  height:10px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.25);
+  background: rgba(255,255,255,.06);
+  flex:0 0 10px;
+}
+.step.active{
+  color: #041023;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+}
+.step.active .dot2{
+  border-color: rgba(4,16,35,.35);
+  background: rgba(4,16,35,.25);
+}
+.step.done{
+  color: var(--text);
+  border-color: rgba(65,215,167,.35);
+  background: rgba(65,215,167,.10);
+}
+.step.done .dot2{
+  border-color: rgba(65,215,167,.55);
+  background: rgba(65,215,167,.22);
+}
+.progress-label{
+  display:none;
+  font-size:12px;
+  color:var(--muted);
+  margin-right:8px;
+  white-space:nowrap;
+}
+@media (min-width: 920px){
+  .progress-label{display:block}
+}
+
 </style>
 </head>
 
@@ -1238,5 +1311,84 @@ alert("Thanks! Your feedback is captured. Harish will review it.");
       form.reset();
     });
   })();
+</script>
+
+
+<script>
+  // Smart progress indicator: highlights current section + marks completed steps
+  (function(){
+    const steps = Array.from(document.querySelectorAll(".step[data-target]"));
+    if(!steps.length) return;
+
+    const sections = steps.map(s => document.querySelector(s.getAttribute("data-target"))).filter(Boolean);
+    const stepById = new Map();
+    steps.forEach(s => {
+      const sel = s.getAttribute("data-target");
+      if(sel && sel.startsWith("#")) stepById.set(sel.slice(1), s);
+    });
+
+    function setActive(activeId){
+      // active + done states
+      let activeIndex = sections.findIndex(sec => sec.id === activeId);
+      if(activeIndex < 0) activeIndex = 0;
+
+      steps.forEach((s, idx) => {
+        s.classList.toggle("active", idx === activeIndex);
+        s.classList.toggle("done", idx < activeIndex);
+      });
+
+      // keep active step visible in horizontal scroller
+      const activeStep = steps[activeIndex];
+      const wrap = document.getElementById("progressInner");
+      if(activeStep && wrap){
+        const r = activeStep.getBoundingClientRect();
+        const wr = wrap.getBoundingClientRect();
+        if(r.left < wr.left || r.right > wr.right){
+          activeStep.scrollIntoView({behavior:"smooth", inline:"center", block:"nearest"});
+        }
+      }
+    }
+
+    // click-to-scroll
+    steps.forEach(step => {
+      step.addEventListener("click", () => {
+        const target = document.querySelector(step.getAttribute("data-target"));
+        if(target){
+          target.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+      });
+    });
+
+    // Observe sections
+    let current = sections[0]?.id;
+    setActive(current);
+
+    const observer = new IntersectionObserver((entries) => {
+      // pick the most visible entry
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => (b.intersectionRatio - a.intersectionRatio))[0];
+      if(visible && visible.target && visible.target.id){
+        current = visible.target.id;
+        setActive(current);
+      }
+    }, { root: null, threshold: [0.12, 0.22, 0.35, 0.5] });
+
+    sections.forEach(sec => observer.observe(sec));
+
+    // Fallback for browsers without IO: update on scroll
+    if(!("IntersectionObserver" in window)){
+      window.addEventListener("scroll", () => {
+        const fromTop = window.scrollY + 140;
+        let found = sections[0]?.id;
+        for(const sec of sections){
+          if(sec.offsetTop <= fromTop) found = sec.id;
+        }
+        setActive(found);
+      }, {passive:true});
+    }
+  })();
+</script>
+
 
 </html>
