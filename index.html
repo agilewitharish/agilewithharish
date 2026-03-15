@@ -456,6 +456,113 @@ body::before{
   .progress-label{display:block}
 }
 
+
+/* Infographic enhancements */
+.visual-band{
+  padding:20px;
+  border-radius: var(--radius2);
+  border:1px solid var(--line);
+  background:
+    radial-gradient(500px 220px at 0% 0%, rgba(124,92,255,.16), transparent 55%),
+    radial-gradient(500px 220px at 100% 100%, rgba(0,212,255,.12), transparent 55%),
+    linear-gradient(180deg, rgba(15,26,51,.82), rgba(12,23,48,.55));
+}
+.icon-badge{
+  width:46px; height:46px; border-radius:14px;
+  display:grid; place-items:center;
+  background: linear-gradient(135deg, rgba(124,92,255,.25), rgba(0,212,255,.22));
+  border:1px solid var(--line);
+  font-size:22px;
+  margin-bottom:10px;
+}
+.flow{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:12px;
+}
+.flow-step{
+  padding:18px;
+  border-radius: var(--radius);
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  position:relative;
+}
+.flow-step:not(:last-child)::after{
+  content:"→";
+  position:absolute;
+  right:-10px; top:50%;
+  transform:translateY(-50%);
+  width:20px; height:20px;
+  display:grid; place-items:center;
+  color:var(--muted);
+  background:#0b1220;
+  border-radius:999px;
+  border:1px solid var(--line);
+  font-weight:900;
+}
+.mini-kpis{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:12px;
+}
+.mini-kpi{
+  padding:16px;
+  border-radius: var(--radius);
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.03);
+  text-align:center;
+}
+.mini-kpi b{
+  display:block;
+  font-size:22px;
+  margin-bottom:4px;
+}
+.pillar-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:12px;
+}
+.pillar{
+  padding:18px;
+  border-radius: var(--radius2);
+  border:1px solid var(--line);
+  background: linear-gradient(180deg, rgba(15,26,51,.85), rgba(12,23,48,.52));
+}
+.pillar-num{
+  font-size:28px;
+  font-weight:900;
+  line-height:1;
+  margin-bottom:8px;
+  color:rgba(234,240,255,.9);
+}
+.compare{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px;
+}
+.compare-box{
+  padding:18px;
+  border-radius: var(--radius);
+  border:1px solid var(--line);
+}
+.compare-box.good{
+  background: rgba(65,215,167,.08);
+  border-color: rgba(65,215,167,.28);
+}
+.compare-box.neutral{
+  background: rgba(124,92,255,.08);
+  border-color: rgba(124,92,255,.22);
+}
+@media (max-width: 920px){
+  .flow{grid-template-columns: 1fr 1fr}
+  .flow-step:not(:last-child)::after{display:none}
+  .mini-kpis{grid-template-columns: 1fr 1fr}
+  .pillar-grid{grid-template-columns: 1fr 1fr}
+}
+@media (max-width: 520px){
+  .flow, .mini-kpis, .pillar-grid, .compare{grid-template-columns: 1fr}
+}
+
 </style>
 </head>
 
@@ -570,6 +677,63 @@ body::before{
     </div>
   </header>
 <!-- START HERE SELECTOR -->
+<section id="overview-visual">
+  <div class="container">
+    <div class="visual-band">
+      <div class="section-title" style="margin-bottom:14px;">
+        <div>
+          <h2>At a glance</h2>
+          <p>A quick visual view of how the journey works, who it helps, and what outcomes people usually seek.</p>
+        </div>
+      </div>
+
+      <div class="mini-kpis">
+        <div class="mini-kpi">
+          <b>4</b>
+          <span>Growth pillars</span>
+        </div>
+        <div class="mini-kpi">
+          <b>2</b>
+          <span>Learning tiers</span>
+        </div>
+        <div class="mini-kpi">
+          <b>3</b>
+          <span>Career stages</span>
+        </div>
+        <div class="mini-kpi">
+          <b>1</b>
+          <span>Practical system</span>
+        </div>
+      </div>
+
+      <div style="height:14px"></div>
+
+      <div class="flow">
+        <div class="flow-step">
+          <div class="icon-badge">🌱</div>
+          <h3>Start</h3>
+          <p>Become a Scrum Master or strengthen your foundations.</p>
+        </div>
+        <div class="flow-step">
+          <div class="icon-badge">🧭</div>
+          <h3>Lead</h3>
+          <p>Improve delivery predictability and stakeholder trust.</p>
+        </div>
+        <div class="flow-step">
+          <div class="icon-badge">📊</div>
+          <h3>Scale</h3>
+          <p>Operate with Program Management structure and visibility.</p>
+        </div>
+        <div class="flow-step">
+          <div class="icon-badge">🚀</div>
+          <h3>Accelerate</h3>
+          <p>Build Program Manager / TPM narratives, artifacts, and interview confidence.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="start">
   <div class="container">
     <div class="section-title">
@@ -616,48 +780,52 @@ body::before{
     <div class="section-title">
       <div>
         <h2>Your growth, built on 4 pillars</h2>
-        <p>Inspired by practical cohort-style programs: clear path, real artifacts, and measurable outcomes — designed for beginners and working professionals.</p>
+        <p>Less text, more structure: foundations, delivery, Program Management, and AI workflows.</p>
       </div>
     </div>
 
-    <div class="grid-2">
-      <div class="tile">
-        <h3>1) Become a Scrum Master</h3>
-        <p>Start from scratch: Scrum basics, facilitation, stakeholder handling, and real workplace expectations.</p>
+    <div class="pillar-grid">
+      <div class="pillar">
+        <div class="pillar-num">01</div>
+        <div class="icon-badge">🌱</div>
+        <h3>Become a Scrum Master</h3>
+        <p>Start from basics and learn how Scrum works in real teams.</p>
         <ul class="list">
-          <li><span class="check">✓</span> Roles, events, artifacts</li>
-          <li><span class="check">✓</span> User stories + estimation</li>
-          <li><span class="check">✓</span> Live practice with templates</li>
+          <li><span class="check">✓</span> Roles + events</li>
+          <li><span class="check">✓</span> Stories + facilitation</li>
         </ul>
       </div>
 
-      <div class="tile">
-        <h3>2) Delivery Leadership</h3>
-        <p>Move beyond ceremonies into outcomes: predictability, blockers, flow, and decision-making patterns.</p>
+      <div class="pillar">
+        <div class="pillar-num">02</div>
+        <div class="icon-badge">⚙️</div>
+        <h3>Delivery Leadership</h3>
+        <p>Move from ceremonies to outcomes, visibility, and execution discipline.</p>
         <ul class="list">
-          <li><span class="check">✓</span> Predictability system</li>
-          <li><span class="check">✓</span> RAID + escalation routines</li>
-          <li><span class="check">✓</span> Metrics leaders care about</li>
+          <li><span class="check">✓</span> Predictability</li>
+          <li><span class="check">✓</span> RAID + escalation</li>
         </ul>
       </div>
 
-      <div class="tile">
-        <h3>3) Program Management</h3>
-        <p>Operate at scale: sequencing, governance, dependencies, and crisp executive communication.</p>
+      <div class="pillar">
+        <div class="pillar-num">03</div>
+        <div class="icon-badge">📈</div>
+        <h3>Program Management</h3>
+        <p>Lead cross-team work with governance, planning, and executive communication.</p>
         <ul class="list">
-          <li><span class="check">✓</span> Planning + sequencing</li>
-          <li><span class="check">✓</span> Executive updates</li>
-          <li><span class="check">✓</span> Decision briefs</li>
+          <li><span class="check">✓</span> Sequencing</li>
+          <li><span class="check">✓</span> Updates + decisions</li>
         </ul>
       </div>
 
-      <div class="tile">
-        <h3>4) AI Workflows (Practical)</h3>
-        <p>Use AI safely to save time and raise quality across planning, communication, and interview prep.</p>
+      <div class="pillar">
+        <div class="pillar-num">04</div>
+        <div class="icon-badge">🤖</div>
+        <h3>AI Workflows</h3>
+        <p>Use AI to save time and improve clarity across planning, updates, and interviews.</p>
         <ul class="list">
-          <li><span class="check">✓</span> Prompts for ceremonies</li>
-          <li><span class="check">✓</span> Exec comms in minutes</li>
-          <li><span class="check">✓</span> STAR stories + portfolio</li>
+          <li><span class="check">✓</span> Prompt packs</li>
+          <li><span class="check">✓</span> Story acceleration</li>
         </ul>
       </div>
     </div>
@@ -667,7 +835,7 @@ body::before{
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>Your journey (2-tier model)</h2>
+          <h2>🧭 Your journey (2-tier model)</h2>
           <p>Choose your starting point. Many professionals start with Tier 1, then move to Tier 2 when targeting Program Manager / TPM interviews.</p>
         </div>
       </div>
@@ -712,11 +880,42 @@ body::before{
     </div>
   </section>
 
-  <section id="ai">
+  <section id="why-different">
+  <div class="container">
+    <div class="section-title">
+      <div>
+        <h2>Why this feels practical</h2>
+        <p>Built for real career movement and actual workplace execution, not only theory-heavy training.</p>
+      </div>
+    </div>
+
+    <div class="compare">
+      <div class="compare-box neutral">
+        <h3>What many programs do</h3>
+        <ul class="list">
+          <li><span class="check">•</span> More concept talk</li>
+          <li><span class="check">•</span> Fewer usable artifacts</li>
+          <li><span class="check">•</span> Limited real-work application</li>
+        </ul>
+      </div>
+
+      <div class="compare-box good">
+        <h3>What this site promises</h3>
+        <ul class="list">
+          <li><span class="check">✓</span> Real templates and examples</li>
+          <li><span class="check">✓</span> Clear ladder: Scrum Master → Program Management → TPM</li>
+          <li><span class="check">✓</span> Practical AI workflows</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ai">
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>AI for Scrum Masters & Program Managers</h2>
+          <h2>🤖 AI for Scrum Masters & Program Managers</h2>
           <p>Use AI as a practical leadership accelerator — improve clarity, speed, and decision-making. No coding required.</p>
         </div>
       </div>
@@ -767,7 +966,7 @@ body::before{
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>AI Coaching (how I help you)</h2>
+          <h2>🛠️ AI Coaching (how I help you)</h2>
           <p>We tailor AI workflows to your real projects so you save time and communicate like a delivery leader.</p>
         </div>
       </div>
@@ -821,7 +1020,7 @@ body::before{
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>AI Demo (try this today)</h2>
+          <h2>✨ AI Demo (try this today)</h2>
           <p>Copy the prompt below into ChatGPT and paste your real project notes. This is a real workflow you’ll learn in coaching.</p>
         </div>
       </div>
@@ -865,7 +1064,7 @@ Project updates:
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>Testimonials (verified)</h2>
+          <h2>💬 Testimonials (highlights)</h2>
           <p>See real reviews on Topmate.</p>
         </div>
         <a class="btn" href="#request-call" >See more feedback →</a>
@@ -914,7 +1113,7 @@ Project updates:
     <div class="container">
       <div class="section-title">
         <div>
-          <h2>Free samples (download)</h2>
+          <h2>📦 Free samples (download)</h2>
           <p>Keep PDFs in the same folder as this HTML file when you host it (GitHub Pages root).</p>
         </div>
       </div>
@@ -923,7 +1122,7 @@ Project updates:
         <div class="tile">
           <h3>RAID Log Template</h3>
           <p>Risks, assumptions, issues, dependencies — leadership visibility in one place.</p>
-          <a class="btn btn-primary" href="./Sample_RAID_Log_Template_Edited.pdf" download download="Harish_Raju_RAID_Log_Template.pdf">Download PDF</a>
+          <a class="btn btn-primary" href="./Sample_RAID_Log_Template.pdf" download download="Harish_Raju_RAID_Log_Template.pdf">Download PDF</a>
         </div>
         <div class="tile">
           <h3>Weekly Stakeholder Update</h3>
@@ -951,7 +1150,7 @@ Project updates:
   <div class="container">
     <div class="section-title">
       <div>
-        <h2>Website feedback</h2>
+        <h2>📝 Website feedback</h2>
         <p>Tell me what you liked, what confused you, and what you want to see next. I read every message.</p>
       </div>
       <a class="btn" href="mailto:hello@agilewithharish.com?subject=Feedback%20for%20AgileWithHarish%20Website" >Email feedback →</a>
@@ -1014,7 +1213,7 @@ Project updates:
   <div class="container">
     <div class="section-title">
       <div>
-        <h2>Request a call</h2>
+        <h2>📞 Request a call</h2>
         <p>Share your goal and I’ll reply with the best next step (Tier 1, Tier 2, or AI coaching). No redirects.</p>
       </div>
     </div>
@@ -1413,5 +1612,20 @@ alert("Thanks! Your feedback is captured. Harish will review it.");
   })();
 </script>
 
+</body> and replace G-XXXXXXXXXX
 
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-XXXXXXXXXX');
+       </script>
+
+    2) Cloudflare Web Analytics (privacy-friendly):
+       - Enable in Cloudflare dashboard, paste their snippet here.
+  */
+</script>
+
+</body>
 </html>
