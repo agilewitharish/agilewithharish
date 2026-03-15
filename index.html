@@ -47,46 +47,10 @@
         .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: #e2e8f0; }
         .icon-circle { width: 60px; height: 60px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8em; margin: 0 auto 20px; }
         .hero-img { max-width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15); object-fit: cover; }
-        .form-group { margin-bottom: 20px; text-align: left; }
-        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9em; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
         
         /* Syllabus Grid */
         .syllabus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
         .syllabus-item { background: white; padding: 18px; border-left: 4px solid var(--accent-color); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); font-size: 0.95em; }
-
-        /* Modal (Popup) Styling for Lead Gen */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px); z-index: 1000; align-items: center; justify-content: center; }
-        .modal-content { background: white; padding: 40px; border-radius: 16px; max-width: 400px; width: 90%; text-align: center; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
-        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.5em; cursor: pointer; color: #94a3b8; }
-        .close-modal:hover { color: #0f172a; }
-        .hidden { display: none !important; }
-
-        /* =========================================
-           NEW ANIMATION STYLES 
-           ========================================= */
-        
-        /* 1. Floating Animation for Hero Image */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0px); }
-        }
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        /* 2. Scroll Reveal Animations */
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
     </style>
 </head>
 <body>
@@ -117,13 +81,21 @@
                 <a href="#samples" class="btn btn-outline">Download Free Templates</a>
             </div>
         </div>
+        
         <div style="flex: 1; min-width: 300px; text-align: center; z-index: 2;">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Agile Planning" class="hero-img floating">
+            <lottie-player 
+                src="https://lottie.host/8b72e505-18db-4e94-9669-7928b584e0c3/tG38r92l6z.json" 
+                background="transparent" 
+                speed="1" 
+                style="width: 100%; max-width: 500px; margin: 0 auto;" 
+                loop 
+                autoplay>
+            </lottie-player>
         </div>
-    </div>
+        </div>
 </section>
 
-<section id="coaching" class="section container reveal">
+<section id="coaching" class="section container">
     <div style="text-align: center; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;">
         <h2 style="font-size: 2.5em; margin-bottom: 15px;">Your growth, built on 4 pillars</h2>
         <p style="font-size: 1.1em; color: var(--text-light);">Practical systems you can use immediately at work — zero theoretical fluff, just execution.</p>
@@ -152,7 +124,33 @@
     </div>
 </section>
 
-<section id="tpm-program" class="section bg-light reveal">
+<section id="samples" class="section bg-light">
     <div class="container">
-        <div style="text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
-            
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="font-size: 2.2em;">📦 Free Leadership Templates</h2>
+            <p style="font-size: 1.1em; color: var(--text-light);">Download exact artifacts used in Tier-1 tech companies.</p>
+        </div>
+        
+        <div class="grid-3">
+            <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 20px; cursor: pointer;">
+                <div style="background: #fee2e2; color: #ef4444; width: 45px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: bold; font-size: 0.8em;">PDF</div>
+                <div>
+                    <h4 style="margin: 0 0 5px 0; font-size: 1.1em;">RAID Log Matrix</h4>
+                    <span style="font-size: 0.9em; font-weight: 600; color: var(--accent-color);">Click to Unlock →</span>
+                </div>
+            </div>
+            <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 20px; cursor: pointer;">
+                <div style="background: #fee2e2; color: #ef4444; width: 45px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: bold; font-size: 0.8em;">PDF</div>
+                <div>
+                    <h4 style="margin: 0 0 5px 0; font-size: 1.1em;">Executive Memo</h4>
+                    <span style="font-size: 0.9em; font-weight: 600; color: var(--accent-color);">Click to Unlock →</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</body>
+</html>
