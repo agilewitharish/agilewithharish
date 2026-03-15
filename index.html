@@ -1,1617 +1,337 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harish Raju | Scrum • Program Manager • TPM • AI Coaching</title>
-  <meta name="description" content="Two-tier journey for Scrum Masters, Program Managers, and aspiring TPMs — now with practical AI workflows: Tier 1 (Core) + Tier 2 (Interview Intensive)." />
-  <meta name="theme-color" content="#0b1220" />
-
-  <style>
-:root{
-  --bg:#0b1220; --panel:#0f1a33; --panel2:#0c1730; --text:#eaf0ff; --muted:#b9c5e6;
-  --line:rgba(255,255,255,.12); --brand:#7c5cff; --brand2:#00d4ff; --ok:#41d7a7; --warn:#ffd24d;
-  --shadow: 0 18px 50px rgba(0,0,0,.35); --radius:18px; --radius2:26px; --max:1320px;
-  --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0; font-family:var(--font);
-  background: radial-gradient(1200px 600px at 70% 10%, rgba(124,92,255,.25), transparent 55%),
-              radial-gradient(900px 500px at 10% 10%, rgba(0,212,255,.18), transparent 55%),
-              linear-gradient(180deg, var(--bg), #070b14 70%);
-  color:var(--text);
-}
-a{color:inherit; text-decoration:none}
-.container{max-width:var(--max); margin:0 auto; padding:0 20px}
-
-.nav{
-  position:sticky; top:0; z-index:50;
-  backdrop-filter: blur(12px);
-  background: rgba(11,18,32,.55);
-  border-bottom:1px solid var(--line);
-}
-.nav-inner{display:flex; align-items:center; justify-content:space-between; padding:14px 0; gap:16px;}
-.brand{display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:.2px}
-.brand-badge{
-  width:40px; height:40px; border-radius:14px;
-  background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.85));
-  display:grid; place-items:center;
-  box-shadow: 0 10px 24px rgba(124,92,255,.25);
-  font-weight:900;
-}
-.nav-links{display:flex; gap:14px; align-items:center; flex-wrap:wrap; justify-content:flex-end;}
-.nav-links a{font-size:14px; color:var(--muted); padding:8px 10px; border-radius:12px; border:1px solid transparent;}
-.nav-links a:hover{color:var(--text); border-color:var(--line); background:rgba(255,255,255,.04)}
-
-.btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:10px;
-  padding:12px 14px; border-radius:14px; border:1px solid var(--line);
-  background: rgba(255,255,255,.04); color:var(--text); font-weight:700;
-}
-.btn:hover{background:rgba(255,255,255,.07)}
-.btn-primary{
-  border:none; background: linear-gradient(135deg, var(--brand), var(--brand2)); color:#041023;
-  box-shadow: 0 18px 42px rgba(0,212,255,.16), 0 18px 42px rgba(124,92,255,.14);
-}
-.btn-primary:hover{filter:saturate(1.05) brightness(1.02)}
-
-.pill{
-  display:inline-flex; gap:10px; align-items:center;
-  padding:8px 12px; border-radius:999px; border:1px solid var(--line);
-  background: rgba(255,255,255,.03); color:var(--muted); font-size:13px;
-}
-.dot{
-  width:8px; height:8px; border-radius:99px;
-  background: linear-gradient(135deg, var(--ok), var(--brand2));
-  box-shadow: 0 0 0 4px rgba(65,215,167,.12);
-}
-
-.hero{padding:54px 0 34px}
-.hero-grid{display:grid; gap:26px; grid-template-columns: 1.2fr .8fr; align-items:stretch;}
-.card{
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
-  border-radius: var(--radius2);
-  box-shadow: 0 18px 50px rgba(0,0,0,.35);
-}
-.hero-left{padding:30px}
-.kicker{display:flex; flex-wrap:wrap; gap:10px; margin-bottom:16px}
-h1{margin:0 0 14px; font-size:44px; line-height:1.05; letter-spacing:-.6px;}
-.sub{color:var(--muted); font-size:16px; line-height:1.65; margin:0 0 18px; max-width:62ch;}
-.hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin:18px 0 0}
-.micro{margin-top:16px; color:var(--muted); font-size:13px; line-height:1.6;}
-.hero-right{padding:18px; display:flex; flex-direction:column; gap:14px}
-.mini{
-  padding:18px; border-radius: var(--radius);
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(15,26,51,.85), rgba(12,23,48,.65));
-}
-.mini h3{margin:0 0 8px; font-size:15px}
-.mini p{margin:0; color:var(--muted); font-size:13px; line-height:1.6}
-.stats{display:grid; grid-template-columns: repeat(3, 1fr); gap:10px;}
-.stat{padding:14px; border-radius: var(--radius); border:1px solid var(--line); background: rgba(255,255,255,.03);}
-.stat b{display:block; font-size:18px}
-.stat span{color:var(--muted); font-size:12px}
-
-section{padding:36px 0}
-.section-title{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin-bottom:18px;}
-.section-title h2{margin:0; font-size:26px; letter-spacing:-.3px}
-.section-title p{margin:0; color:var(--muted); font-size:14px; line-height:1.6; max-width:64ch}
-.grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
-.grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
-.tile{
-  padding:18px; border-radius: var(--radius);
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(15,26,51,.75), rgba(12,23,48,.45));
-}
-.tile h3{margin:0 0 10px; font-size:16px}
-.tile p{margin:0; color:var(--muted); font-size:13px; line-height:1.65}
-.list{margin:12px 0 0; padding:0; list-style:none}
-.list li{margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.6; display:flex; gap:10px;}
-.check{
-  width:18px; height:18px; border-radius:6px;
-  background: rgba(65,215,167,.12);
-  border:1px solid rgba(65,215,167,.35);
-  display:grid; place-items:center;
-  margin-top:2px; flex:0 0 18px;
-}
-
-.offer{
-  padding:20px; border-radius: var(--radius2); border:1px solid var(--line);
-  background: radial-gradient(600px 320px at 80% 0%, rgba(124,92,255,.16), transparent 55%),
-              linear-gradient(180deg, rgba(15,26,51,.82), rgba(12,23,48,.55));
-  position:relative; overflow:hidden;
-}
-.tag{
-  display:inline-flex; align-items:center; gap:8px;
-  font-size:12px; color:var(--muted);
-  border:1px solid var(--line); background: rgba(255,255,255,.03);
-  padding:8px 10px; border-radius:999px; margin-bottom:10px;
-}
-.note{color:var(--muted); font-size:12px; line-height:1.6; margin-top:10px}
-.cta{
-  padding:22px; border-radius: var(--radius2); border:1px solid var(--line);
-  background: linear-gradient(135deg, rgba(124,92,255,.22), rgba(0,212,255,.12));
-  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px;
-}
-.cta h3{margin:0; font-size:18px}
-.cta p{margin:6px 0 0; color:var(--muted); font-size:13px; line-height:1.6}
-
-textarea{
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  color:var(--text);
-  border-radius: 14px;
-  padding:12px 12px;
-  outline:none;
-  width:100%;
-  min-height:160px;
-  resize:vertical;
-}
-
-footer{padding:28px 0 40px; color:var(--muted); border-top:1px solid var(--line); margin-top:30px;}
-.foot{display:flex; gap:12px; flex-wrap:wrap; justify-content:space-between; align-items:center;}
-.small{font-size:12px}
-
-.floating{
-  position:fixed; right:18px; bottom:18px; z-index:60;
-  display:flex; flex-direction:column; gap:10px;
-}
-
-@media (max-width: 920px){
-  .hero-grid{grid-template-columns: 1fr}
-  h1{font-size:36px}
-  .grid-3{grid-template-columns: 1fr}
-  .grid-2{grid-template-columns: 1fr}
-  .stats{grid-template-columns: 1fr 1fr 1fr}
-  .floating{right:12px; bottom:12px}
-}
-@media (max-width: 520px){
-  .stats{grid-template-columns: 1fr}
-  .nav-links{display:none}
-}
-  
-/* Guided journey navigation */
-.journeybar-wrap{
-  position:sticky;
-  top:64px; /* sits below main nav */
-  z-index:49;
-  background: rgba(11,18,32,.45);
-  backdrop-filter: blur(12px);
-  border-bottom:1px solid var(--line);
-}
-.journeybar{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding:10px 0;
-}
-.journeybar .label{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:var(--muted);
-  font-size:13px;
-  white-space:nowrap;
-}
-.journeysteps{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  justify-content:flex-end;
-  align-items:center;
-}
-.journeysteps a{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  color:var(--muted);
-  font-size:12px;
-  line-height:1;
-}
-.journeysteps a:hover{
-  color:var(--text);
-  background: rgba(255,255,255,.06);
-}
-.journeysteps a.active{
-  color:#041023;
-  border:none;
-  background: linear-gradient(135deg, var(--brand), var(--brand2));
-  box-shadow: 0 14px 32px rgba(0,212,255,.10), 0 14px 32px rgba(124,92,255,.10);
-}
-.journeysteps .sep{
-  width:10px; height:1px;
-  background: rgba(255,255,255,.18);
-  border-radius:99px;
-  margin:0 2px;
-}
-@media (max-width: 520px){
-  .journeybar-wrap{top:58px}
-  .journeybar{padding:8px 0}
-  .journeybar .label{display:none}
-}
-
-
-/* Rotating testimonials */
-#testimonialBox{
-  transition: opacity .5s ease, transform .5s ease;
-}
-.fade-out{
-  opacity:0;
-  transform: translateY(10px);
-}
-
-
-/* Feedback + insights */
-.field{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-.field label{
-  font-size:12px;
-  color:rgba(185,197,230,.9);
-  font-weight:700;
-}
-.input, .select, .textarea{
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  color:var(--text);
-  border-radius: 14px;
-  padding:12px 12px;
-  outline:none;
-}
-.textarea{min-height:120px; resize:vertical}
-.kpi{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding:14px;
-  border-radius: var(--radius);
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-}
-.kpi b{font-size:18px}
-.kpi span{color:var(--muted); font-size:12px}
-
-
-/* Quick feedback popup (Google Form logger) */
-.feedback-pop{
-  position:fixed;
-  left:16px;
-  bottom:16px;
-  z-index:80;
-  width:min(360px, calc(100% - 32px));
-  border-radius: var(--radius2);
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(15,26,51,.92), rgba(12,23,48,.82));
-  box-shadow: var(--shadow);
-  overflow:hidden;
-  transform: translateY(16px);
-  opacity:0;
-  pointer-events:none;
-  transition: opacity .25s ease, transform .25s ease;
-}
-.feedback-pop.show{
-  transform: translateY(0);
-  opacity:1;
-  pointer-events:auto;
-}
-.feedback-pop .head{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:10px;
-  padding:14px 14px 8px;
-}
-.feedback-pop .title{
-  font-weight:900;
-  letter-spacing:-.2px;
-  font-size:14px;
-}
-.feedback-pop .desc{
-  color:var(--muted);
-  font-size:12px;
-  line-height:1.5;
-  margin-top:4px;
-}
-.feedback-pop .body{
-  padding:0 14px 14px;
-}
-.feedback-pop .actions{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:10px;
-}
-.fb-emoji{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:10px 12px;
-  border-radius:14px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  font-weight:900;
-  cursor:pointer;
-  user-select:none;
-}
-.fb-emoji:hover{background:rgba(255,255,255,.06)}
-.fb-close{
-  border:none;
-  background: rgba(255,255,255,.06);
-  color:var(--text);
-  border-radius:12px;
-  padding:8px 10px;
-  cursor:pointer;
-  font-weight:800;
-}
-.fb-close:hover{background:rgba(255,255,255,.10)}
-.fb-note{
-  color:var(--muted);
-  font-size:11px;
-  margin-top:8px;
-}
-
-
-/* Prevent horizontal overflow / side scroll */
-body{overflow-x:hidden}
-.tile, .card, .offer{max-width:100%}
-textarea{max-width:100%}
-/* Reduce "black side" distraction on wide screens */
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  pointer-events:none;
-  background:
-    radial-gradient(900px 420px at 15% 60%, rgba(124,92,255,.10), transparent 60%),
-    radial-gradient(900px 420px at 85% 55%, rgba(0,212,255,.08), transparent 60%);
-  mix-blend-mode: screen;
-  opacity:.85;
-}
-
-
-/* Keep buttons inside cards on small screens */
-.btn{max-width:100%}
-
-
-/* Smart sticky progress indicator */
-.progress{
-  position:sticky;
-  top:64px;
-  z-index:49;
-  padding:10px 0 12px;
-  backdrop-filter: blur(10px);
-  background: rgba(11,18,32,.40);
-  border-bottom:1px solid var(--line);
-}
-.progress-inner{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  overflow:auto;
-  padding:0 4px;
-  -webkit-overflow-scrolling: touch;
-}
-.step{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  padding:8px 10px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  color:var(--muted);
-  font-size:12px;
-  font-weight:800;
-  white-space:nowrap;
-  cursor:pointer;
-  user-select:none;
-  transition: transform .15s ease, background .15s ease, color .15s ease, border-color .15s ease;
-}
-.step:hover{background:rgba(255,255,255,.06); color:var(--text)}
-.step .dot2{
-  width:10px;
-  height:10px;
-  border-radius:999px;
-  border:1px solid rgba(255,255,255,.25);
-  background: rgba(255,255,255,.06);
-  flex:0 0 10px;
-}
-.step.active{
-  color:#041023;
-  border-color: transparent;
-  background: linear-gradient(135deg, var(--brand), var(--brand2));
-}
-.step.active .dot2{
-  border-color: rgba(4,16,35,.35);
-  background: rgba(4,16,35,.25);
-}
-.step.done{
-  color: var(--text);
-  border-color: rgba(65,215,167,.35);
-  background: rgba(65,215,167,.10);
-}
-.step.done .dot2{
-  border-color: rgba(65,215,167,.55);
-  background: rgba(65,215,167,.22);
-}
-.progress-label{
-  display:none;
-  font-size:12px;
-  color:var(--muted);
-  margin-right:8px;
-  white-space:nowrap;
-}
-@media (min-width: 920px){
-  .progress-label{display:block}
-}
-
-
-/* Infographic enhancements */
-.visual-band{
-  padding:20px;
-  border-radius: var(--radius2);
-  border:1px solid var(--line);
-  background:
-    radial-gradient(500px 220px at 0% 0%, rgba(124,92,255,.16), transparent 55%),
-    radial-gradient(500px 220px at 100% 100%, rgba(0,212,255,.12), transparent 55%),
-    linear-gradient(180deg, rgba(15,26,51,.82), rgba(12,23,48,.55));
-}
-.icon-badge{
-  width:46px; height:46px; border-radius:14px;
-  display:grid; place-items:center;
-  background: linear-gradient(135deg, rgba(124,92,255,.25), rgba(0,212,255,.22));
-  border:1px solid var(--line);
-  font-size:22px;
-  margin-bottom:10px;
-}
-.flow{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap:12px;
-}
-.flow-step{
-  padding:18px;
-  border-radius: var(--radius);
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
-  position:relative;
-}
-.flow-step:not(:last-child)::after{
-  content:"→";
-  position:absolute;
-  right:-10px; top:50%;
-  transform:translateY(-50%);
-  width:20px; height:20px;
-  display:grid; place-items:center;
-  color:var(--muted);
-  background:#0b1220;
-  border-radius:999px;
-  border:1px solid var(--line);
-  font-weight:900;
-}
-.mini-kpis{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap:12px;
-}
-.mini-kpi{
-  padding:16px;
-  border-radius: var(--radius);
-  border:1px solid var(--line);
-  background: rgba(255,255,255,.03);
-  text-align:center;
-}
-.mini-kpi b{
-  display:block;
-  font-size:22px;
-  margin-bottom:4px;
-}
-.pillar-grid{
-  display:grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap:12px;
-}
-.pillar{
-  padding:18px;
-  border-radius: var(--radius2);
-  border:1px solid var(--line);
-  background: linear-gradient(180deg, rgba(15,26,51,.85), rgba(12,23,48,.52));
-}
-.pillar-num{
-  font-size:28px;
-  font-weight:900;
-  line-height:1;
-  margin-bottom:8px;
-  color:rgba(234,240,255,.9);
-}
-.compare{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap:12px;
-}
-.compare-box{
-  padding:18px;
-  border-radius: var(--radius);
-  border:1px solid var(--line);
-}
-.compare-box.good{
-  background: rgba(65,215,167,.08);
-  border-color: rgba(65,215,167,.28);
-}
-.compare-box.neutral{
-  background: rgba(124,92,255,.08);
-  border-color: rgba(124,92,255,.22);
-}
-@media (max-width: 920px){
-  .flow{grid-template-columns: 1fr 1fr}
-  .flow-step:not(:last-child)::after{display:none}
-  .mini-kpis{grid-template-columns: 1fr 1fr}
-  .pillar-grid{grid-template-columns: 1fr 1fr}
-}
-@media (max-width: 520px){
-  .flow, .mini-kpis, .pillar-grid, .compare{grid-template-columns: 1fr}
-}
-
-</style>
-</head>
-
-<body>
-  <div class="nav">
-    <div class="container">
-      <div class="nav-inner">
-        <div class="brand">
-          <div class="brand-badge">HR</div>
-          <div>
-            <div style="font-size:14px; color:var(--muted); font-weight:700;">Harish Raju</div>
-            <div style="font-size:12px; color:rgba(185,197,230,.8);">Scrum • Program Management • TPM • AI Enablement</div>
-          </div>
-        </div>
-
-        <div class="nav-links">
-          <a href="#journey">Your Journey</a>
-          <a href="#ai">AI</a>
-          <a href="#ai-coaching">AI Coaching</a>
-          <a href="#aidemo">AI Demo</a>
-          <a href="#proof">Testimonials</a>
-          <a href="#samples">Free Samples</a>
-          <a href="#feedback">Feedback</a>
-</div>
-
-        <a class="btn btn-primary" href="#request-call" >Request a Call</a>
-      </div>
-    </div>
-  </div>
-  <!-- Guided journey navigation -->
-  <div class="journeybar-wrap">
-    <div class="container">
-      <div class="journeybar">
-        <div class="label">
-          <span class="pill" style="padding:6px 10px;"><span class="dot" style="width:7px;height:7px;"></span> Guided Journey</span>
-          <span>Start → Learn → Proof → Book</span>
-        </div>
-
-        <nav class="journeysteps" aria-label="Guided navigation">
-          <a href="#start" data-step="start">Start</a>
-          <span class="sep" aria-hidden="true"></span>
-          <a href="#journey" data-step="journey">Tiers</a>
-          <span class="sep" aria-hidden="true"></span>
-          <a href="#ai" data-step="ai">AI</a>
-          <span class="sep" aria-hidden="true"></span>
-          <a href="#ai-coaching" data-step="ai-coaching">Coaching</a>
-          <span class="sep" aria-hidden="true"></span>
-          <a href="#proof" data-step="proof">Proof</a>
-          <span class="sep" aria-hidden="true"></span>
-          <a href="#samples" data-step="samples">Samples</a>
-        </nav>
-      </div>
-    </div>
-  </div>
-
-
-  <header class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div class="card hero-left">
-          <div class="kicker">
-            <span class="pill"><span class="dot"></span> Hyderabad (IST) • Working Globally</span>
-            <span class="pill">Scrum Masters • Program Managers • Aspiring TPMs</span>
-            <span class="pill">#AgileWithHarish</span>
-          </div>
-
-          <h1>
-  Grow from aspiring professional →
-  <span style="background:linear-gradient(135deg,var(--brand),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Scrum Master</span> →
-  <span style="background:linear-gradient(135deg,var(--ok),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent;">Program Manager / TPM</span>
-  with practical Agile and AI-powered workflows.
-</h1>
-
-          <p class="sub">
-            A simple two-tier journey designed for working professionals:
-            <b>Tier 1</b> builds predictable delivery + stakeholder influence.
-            <b>Tier 2</b> accelerates Program Manager / TPM outcomes with portfolio + interview assets.
-            <br><br>
-            Bonus: Learn AI workflows to write better updates, spot risks early, and save time — without coding.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#journey">Choose Your Tier</a>
-            <a class="btn" href="#ai">Explore AI</a>
-            <a class="btn" href="#samples">Download Samples</a>
-          </div>
-
-          <p class="micro">Coaching designed for working professionals. No fluff — practical systems you can use immediately at work.</p>
-        </div>
-
-        <aside class="card hero-right">
-          <div class="mini">
-            <h3>What you’ll gain</h3>
-            <p>Predictable delivery, executive-ready communication, and a realistic Program Manager / TPM transition plan — powered by AI workflows.</p>
-          </div>
-
-          <div class="stats">
-            <div class="stat"><b>Scrum</b><span>Outcome-driven Agile</span></div>
-            <div class="stat"><b>Program Manager</b><span>Governance & alignment</span></div>
-            <div class="stat"><b>TPM</b><span>Tech + business lens</span></div>
-          </div>
-
-          <div class="mini">
-            <h3>Quick contact</h3>
-            <p>Email: <b>hello@agilewithharish.com</b><br/>Phone: <b>+91-7083273689</b></p>
-            <p style="margin-top:10px; font-size:12px; color:#b9c5e6;">✔ Practical coaching + real templates</p>
-          </div>
-
-          <a class="btn btn-primary" href="#request-call" >Request a Call</a>
-        </aside>
-      </div>
-    </div>
-  </header>
-<!-- START HERE SELECTOR -->
-<section id="overview-visual">
-  <div class="container">
-    <div class="visual-band">
-      <div class="section-title" style="margin-bottom:14px;">
-        <div>
-          <h2>At a glance</h2>
-          <p>A quick visual view of how the journey works, who it helps, and what outcomes people usually seek.</p>
-        </div>
-      </div>
-
-      <div class="mini-kpis">
-        <div class="mini-kpi">
-          <b>4</b>
-          <span>Growth pillars</span>
-        </div>
-        <div class="mini-kpi">
-          <b>2</b>
-          <span>Learning tiers</span>
-        </div>
-        <div class="mini-kpi">
-          <b>3</b>
-          <span>Career stages</span>
-        </div>
-        <div class="mini-kpi">
-          <b>1</b>
-          <span>Practical system</span>
-        </div>
-      </div>
-
-      <div style="height:14px"></div>
-
-      <div class="flow">
-        <div class="flow-step">
-          <div class="icon-badge">🌱</div>
-          <h3>Start</h3>
-          <p>Become a Scrum Master or strengthen your foundations.</p>
-        </div>
-        <div class="flow-step">
-          <div class="icon-badge">🧭</div>
-          <h3>Lead</h3>
-          <p>Improve delivery predictability and stakeholder trust.</p>
-        </div>
-        <div class="flow-step">
-          <div class="icon-badge">📊</div>
-          <h3>Scale</h3>
-          <p>Operate with Program Management structure and visibility.</p>
-        </div>
-        <div class="flow-step">
-          <div class="icon-badge">🚀</div>
-          <h3>Accelerate</h3>
-          <p>Build Program Manager / TPM narratives, artifacts, and interview confidence.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="start">
-  <div class="container">
-    <div class="section-title">
-      <div>
-        <h2>Start Here — Choose Your Path</h2>
-        <p>Select where you are today. The page will guide you to the most relevant journey.</p>
-      </div>
-    </div>
-
-    <div class="grid-2">
-
-      <div class="tile" style="text-align:center;">
-        <h3>🌱 I want to become a Scrum Master</h3>
-        <p>New to Scrum? Start with fundamentals, real templates, and practical execution habits.</p>
-        <a class="btn btn-primary" href="#tier1">Start the Scrum Journey</a>
-      </div>
-
-      <div class="tile" style="text-align:center;">
-        <h3>🌀 I already work as a Scrum Master</h3>
-        <p>Improve delivery outcomes, stakeholder influence, and leadership maturity.</p>
-        <a class="btn btn-primary" href="#tier1">Go to Delivery Leadership</a>
-      </div>
-
-      <div class="tile" style="text-align:center;">
-        <h3>📊 I am a Project / Program Manager</h3>
-        <p>Strengthen governance, communication, and scalable execution systems.</p>
-        <a class="btn btn-primary" href="#tier1">Go to Program Leadership</a>
-      </div>
-
-      <div class="tile" style="text-align:center;">
-        <h3>🚀 I want to become a TPM</h3>
-        <p>Build technical thinking, portfolios, and interview-ready narratives.</p>
-        <a class="btn btn-primary" href="#tier2">Go to TPM Acceleration</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-  
-<section id="pillars">
-  <div class="container">
-    <div class="section-title">
-      <div>
-        <h2>Your growth, built on 4 pillars</h2>
-        <p>Less text, more structure: foundations, delivery, Program Management, and AI workflows.</p>
-      </div>
-    </div>
-
-    <div class="pillar-grid">
-      <div class="pillar">
-        <div class="pillar-num">01</div>
-        <div class="icon-badge">🌱</div>
-        <h3>Become a Scrum Master</h3>
-        <p>Start from basics and learn how Scrum works in real teams.</p>
-        <ul class="list">
-          <li><span class="check">✓</span> Roles + events</li>
-          <li><span class="check">✓</span> Stories + facilitation</li>
-        </ul>
-      </div>
-
-      <div class="pillar">
-        <div class="pillar-num">02</div>
-        <div class="icon-badge">⚙️</div>
-        <h3>Delivery Leadership</h3>
-        <p>Move from ceremonies to outcomes, visibility, and execution discipline.</p>
-        <ul class="list">
-          <li><span class="check">✓</span> Predictability</li>
-          <li><span class="check">✓</span> RAID + escalation</li>
-        </ul>
-      </div>
-
-      <div class="pillar">
-        <div class="pillar-num">03</div>
-        <div class="icon-badge">📈</div>
-        <h3>Program Management</h3>
-        <p>Lead cross-team work with governance, planning, and executive communication.</p>
-        <ul class="list">
-          <li><span class="check">✓</span> Sequencing</li>
-          <li><span class="check">✓</span> Updates + decisions</li>
-        </ul>
-      </div>
-
-      <div class="pillar">
-        <div class="pillar-num">04</div>
-        <div class="icon-badge">🤖</div>
-        <h3>AI Workflows</h3>
-        <p>Use AI to save time and improve clarity across planning, updates, and interviews.</p>
-        <ul class="list">
-          <li><span class="check">✓</span> Prompt packs</li>
-          <li><span class="check">✓</span> Story acceleration</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="journey">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>🧭 Your journey (2-tier model)</h2>
-          <p>Choose your starting point. Many professionals start with Tier 1, then move to Tier 2 when targeting Program Manager / TPM interviews.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="offer" id="tier1">
-          <div class="tag">Tier 1 • Core</div>
-          <h3>Delivery Leadership Mastery (4–6 weeks)</h3>
-          <p class="sub" style="margin:0; font-size:13px;">For <b>Scrum Masters + Program Managers</b> who want predictable delivery, stronger stakeholder influence, and leadership-ready execution systems.</p>
-          <ul class="list">
-            <li><span class="check">✓</span> Predictability system (readiness, scope control, metrics)</li>
-            <li><span class="check">✓</span> RAID + dependency management routines</li>
-            <li><span class="check">✓</span> Stakeholder updates that build trust</li>
-            <li><span class="check">✓</span> AI-assisted artifacts (optional)</li>
-          </ul>
-          <div class="note"><b>Outcome:</b> You become a delivery leader — not just a ceremony facilitator.</div>
-          <a class="btn btn-primary" href="#request-call" >Request Tier 1 Call</a>
-        </div>
-
-        <div class="offer" id="tier2">
-          <div class="tag">Tier 2 • Interview Intensive</div>
-          <h3>Program Manager / TPM Career Acceleration (2–3 weeks)</h3>
-          <p class="sub" style="margin:0; font-size:13px;">For professionals targeting <b>Program Manager / TPM roles</b> with a portfolio, strong narratives, and confident interview performance.</p>
-          <ul class="list">
-            <li><span class="check">✓</span> Role mapping: Program Manager vs TPM + gap closure plan</li>
-            <li><span class="check">✓</span> 3–5 STAR stories with metrics</li>
-            <li><span class="check">✓</span> Portfolio artifacts (RAID, exec updates, launch plan)</li>
-            <li><span class="check">✓</span> Mock interviews + actionable feedback</li>
-          </ul>
-          <div class="note"><b>Outcome:</b> Clear positioning + interview-ready proof of impact.</div>
-          <a class="btn btn-primary" href="#request-call" >Request Tier 2 Call</a>
-        </div>
-      </div>
-
-      <div class="cta" style="margin-top:14px;">
-        <div>
-          <h3>Not sure which tier fits you?</h3>
-          <p>Book a short call on Topmate — I’ll recommend Tier 1 or Tier 2 based on your current role and goals.</p>
-        </div>
-        <a class="btn btn-primary" href="#request-call" >Request a Quick Call</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="why-different">
-  <div class="container">
-    <div class="section-title">
-      <div>
-        <h2>Why this feels practical</h2>
-        <p>Built for real career movement and actual workplace execution, not only theory-heavy training.</p>
-      </div>
-    </div>
-
-    <div class="compare">
-      <div class="compare-box neutral">
-        <h3>What many programs do</h3>
-        <ul class="list">
-          <li><span class="check">•</span> More concept talk</li>
-          <li><span class="check">•</span> Fewer usable artifacts</li>
-          <li><span class="check">•</span> Limited real-work application</li>
-        </ul>
-      </div>
-
-      <div class="compare-box good">
-        <h3>What this site promises</h3>
-        <ul class="list">
-          <li><span class="check">✓</span> Real templates and examples</li>
-          <li><span class="check">✓</span> Clear ladder: Scrum Master → Program Management → TPM</li>
-          <li><span class="check">✓</span> Practical AI workflows</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="ai">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>🤖 AI for Scrum Masters & Program Managers</h2>
-          <p>Use AI as a practical leadership accelerator — improve clarity, speed, and decision-making. No coding required.</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="tile">
-          <h3>AI-Assisted Agile Execution</h3>
-          <p>Create sprint plans, summarize meetings, and turn retro insights into actions faster.</p>
-          <ul class="list">
-            <li><span class="check">✓</span> Sprint planning prompts</li>
-            <li><span class="check">✓</span> Meeting summary workflows</li>
-            <li><span class="check">✓</span> Retro insights → action items</li>
-          </ul>
-        </div>
-
-        <div class="tile">
-          <h3>AI for Program Management</h3>
-          <p>Improve risk visibility and executive communication using structured AI workflows.</p>
-          <ul class="list">
-            <li><span class="check">✓</span> RAID summarization prompts</li>
-            <li><span class="check">✓</span> Exec update drafting</li>
-            <li><span class="check">✓</span> Decision brief creation</li>
-          </ul>
-        </div>
-
-        <div class="tile">
-          <h3>AI-Powered Career Growth</h3>
-          <p>Build STAR stories, refine metrics, and practice Program Manager / TPM interviews with AI.</p>
-          <ul class="list">
-            <li><span class="check">✓</span> STAR story builder</li>
-            <li><span class="check">✓</span> Resume/LinkedIn positioning</li>
-            <li><span class="check">✓</span> Mock interview prompts</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cta" style="margin-top:16px;">
-        <div>
-          <h3>Want the AI prompt pack + real implementation?</h3>
-          <p>Click below to see how AI coaching works and what you’ll get.</p>
-        </div>
-        <a class="btn btn-primary" href="#ai-coaching">Explore AI Coaching</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="ai-coaching">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>🛠️ AI Coaching (how I help you)</h2>
-          <p>We tailor AI workflows to your real projects so you save time and communicate like a delivery leader.</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="tile">
-          <h3>Agile execution workflows</h3>
-          <ul class="list">
-            <li><span class="check">✓</span> Sprint plan assistant</li>
-            <li><span class="check">✓</span> Backlog clarity prompts</li>
-            <li><span class="check">✓</span> Retro insight generator</li>
-            <li><span class="check">✓</span> Action tracking summaries</li>
-          </ul>
-        </div>
-
-        <div class="tile">
-          <h3>Program management workflows</h3>
-          <ul class="list">
-            <li><span class="check">✓</span> RAID → exec summary</li>
-            <li><span class="check">✓</span> Stakeholder update generator</li>
-            <li><span class="check">✓</span> Dependency/risk analysis</li>
-            <li><span class="check">✓</span> Decision briefs</li>
-          </ul>
-        </div>
-
-        <div class="tile">
-          <h3>Career workflows</h3>
-          <ul class="list">
-            <li><span class="check">✓</span> STAR story polishing</li>
-            <li><span class="check">✓</span> Metrics framing</li>
-            <li><span class="check">✓</span> Interview simulations</li>
-            <li><span class="check">✓</span> Leadership narratives</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="cta" style="margin-top:20px;">
-        <div>
-          <h3>How it works</h3>
-          <p>✔ Diagnose your delivery pain points<br>
-             ✔ Choose 2 workflows to implement first<br>
-             ✔ Build templates + prompts for your role<br>
-             ✔ Practice using your real project updates</p>
-        </div>
-        <a class="btn btn-primary" href="#request-call" >Request AI Coaching Call</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="aidemo">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>✨ AI Demo (try this today)</h2>
-          <p>Copy the prompt below into ChatGPT and paste your real project notes. This is a real workflow you’ll learn in coaching.</p>
-        </div>
-      </div>
-
-      <div class="grid-2">
-        <div class="tile">
-          <h3>Stakeholder Update Generator</h3>
-          <p>Prompt:</p>
-          <textarea readonly>Act as a Program Manager.
-
-Summarize the following project updates into an executive weekly update using:
-• Progress
-• Risks
-• Decisions Needed
-• Next Week Focus
-
-Tone: concise, leadership-ready.
-
-Project updates:
-[PASTE HERE]</textarea>
-          <div class="note">Tip: Replace the [PASTE HERE] block with your real notes or RAID log items.</div>
-        </div>
-
-        <div class="tile">
-          <h3>What you’ll learn next</h3>
-          <ul class="list">
-            <li><span class="check">✓</span> Prompts for Scrum ceremonies</li>
-            <li><span class="check">✓</span> Exec updates in 60 seconds</li>
-            <li><span class="check">✓</span> RAID summarization</li>
-            <li><span class="check">✓</span> Interview story refinement</li>
-          </ul>
-          <a class="btn btn-primary" href="#ai-coaching">See AI Coaching</a>
-          <div style="height:10px"></div>
-          <a class="btn" href="#request-call" >Request a Call</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="proof">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>💬 Testimonials (highlights)</h2>
-          <p>See real reviews on Topmate.</p>
-        </div>
-        <a class="btn" href="#request-call" >See more feedback →</a>
-      </div>
-
-      <div class="grid-2">
-
-  <div class="tile" id="testimonialBox">
-    <div style="display:flex; justify-content:space-between; gap:12px; align-items:flex-start;">
-      <div style="font-weight:800;" id="rating">★★★★★</div>
-      <div style="color:var(--muted); font-size:12px;">Verified</div>
-    </div>
-
-    <p id="testimonialText" style="margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.65;">
-      Loading testimonial...
-    </p>
-
-    <div id="testimonialAuthor" style="margin-top:10px; font-weight:700; font-size:13px;"></div>
-    <div class="note" style="margin-top:10px;">Rotates automatically — for full reviews, click “See more feedback →”.</div>
-  </div>
-
-  <div class="tile">
-    <h3>What people usually achieve</h3>
-    <ul class="list">
-      <li><span class="check">✓</span> Clear stakeholder updates and executive-ready communication</li>
-      <li><span class="check">✓</span> Better predictability using readiness + risk routines</li>
-      <li><span class="check">✓</span> Strong Program Manager / TPM interview stories with metrics</li>
-      <li><span class="check">✓</span> Practical AI workflows that save hours every week</li>
-    </ul>
-    <a class="btn btn-primary" href="#request-call" >See more feedback below</a>
-  </div>
-
-</div>
-
-    <div class="cta" style="margin-top:14px;">
-        <div>
-          <h3>Book directly where reviews are hosted</h3>
-          <p>I respond personally. Use the request and feedback options on this page to reach me quickly.</p>
-        </div>
-        <a class="btn btn-primary" href="#request-call" >Request a Call</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="samples">
-    <div class="container">
-      <div class="section-title">
-        <div>
-          <h2>📦 Free samples (download)</h2>
-          <p>Keep PDFs in the same folder as this HTML file when you host it (GitHub Pages root).</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div class="tile">
-          <h3>RAID Log Template</h3>
-          <p>Risks, assumptions, issues, dependencies — leadership visibility in one place.</p>
-          <a class="btn btn-primary" href="./Sample_RAID_Log_Template.pdf" download download="Harish_Raju_RAID_Log_Template.pdf">Download PDF</a>
-        </div>
-        <div class="tile">
-          <h3>Weekly Stakeholder Update</h3>
-          <p>One-page update that builds trust through consistency.</p>
-          <a class="btn btn-primary" href="./Sample_Stakeholder_Update_Template.pdf" download download="Harish_Raju_Weekly_Stakeholder_Update.pdf">Download PDF</a>
-        </div>
-        <div class="tile">
-          <h3>Sprint Predictability Checklist</h3>
-          <p>Checklist to reduce spillover and improve commitment reliability.</p>
-          <a class="btn btn-primary" href="./Sample_Sprint_Predictability_Checklist.pdf" download download="Harish_Raju_Sprint_Predictability_Checklist.pdf">Download PDF</a>
-        </div>
-      </div>
-
-      <div class="cta" style="margin-top:14px;">
-        <div>
-          <h3>Want the full pack + personalized walkthrough?</h3>
-          <p>Book a session and I’ll tailor templates + AI workflows to your exact role and org context.</p>
-        </div>
-        <a class="btn btn-primary" href="#request-call" >Request a Call</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="feedback">
-  <div class="container">
-    <div class="section-title">
-      <div>
-        <h2>📝 Website feedback</h2>
-        <p>Tell me what you liked, what confused you, and what you want to see next. I read every message.</p>
-      </div>
-      <a class="btn" href="mailto:hello@agilewithharish.com?subject=Feedback%20for%20AgileWithHarish%20Website" >Email feedback →</a>
-    </div>
-
-    <div class="grid-2">
-      <div class="tile">
-        <h3>Quick feedback form</h3>
-        <p style="margin-top:-6px; color:var(--muted); font-size:13px; line-height:1.6;">
-          This form captures feedback on this page without redirecting you anywhere. If you later want “submit without email”, I can connect it to Google Forms or Formspree.
-        </p>
-
-        <form id="feedbackForm" style="margin-top:12px; display:grid; gap:12px;">
-          <div class="field">
-            <label for="fbName">Name (optional)</label>
-            <input class="input" id="fbName" type="text" placeholder="Your name" />
-          </div>
-
-          <div class="field">
-            <label for="fbRole">You are a…</label>
-            <select class="select" id="fbRole">
-              <option value="Scrum Master">Scrum Master</option>
-              <option value="Project/Program Manager">Project/Program Manager</option>
-              <option value="Aspiring TPM">Aspiring TPM</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="fbMsg">Your feedback</label>
-            <textarea class="textarea" id="fbMsg" placeholder="What should I improve on this site? What do you want next?" required></textarea>
-          </div>
-
-          <button class="btn btn-primary" type="submit">Send Feedback</button>
-          <div class="note">Tip: Share specific sections you liked or found confusing — it helps improve the site fast.</div>
-        </form>
-      </div>
-
-      <div class="tile">
-        <h3>What feedback helps most</h3>
-        <ul class="list">
-          <li><span class="check">✓</span> Which section felt most valuable?</li>
-          <li><span class="check">✓</span> Where did you feel confused?</li>
-          <li><span class="check">✓</span> What do you want templates for?</li>
-          <li><span class="check">✓</span> Which tier are you likely to book?</li>
-        </ul>
-        <div class="cta" style="margin-top:14px;">
-          <div>
-            <h3 style="margin:0;">Prefer WhatsApp?</h3>
-            <p style="margin-top:6px;">You can also message me directly.</p>
-          </div>
-          <a class="btn btn-primary" href="https://wa.me/917083273689" >WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="request-call">
-  <div class="container">
-    <div class="section-title">
-      <div>
-        <h2>📞 Request a call</h2>
-        <p>Share your goal and I’ll reply with the best next step (Tier 1, Tier 2, or AI coaching). No redirects.</p>
-      </div>
-    </div>
-
-    <div class="grid-2">
-      <div class="tile">
-        <h3>Quick request</h3>
-        <form id="callForm" style="margin-top:12px; display:grid; gap:12px;">
-          <div class="field">
-            <label for="cName">Name</label>
-            <input class="input" id="cName" type="text" placeholder="Your name" required />
-          </div>
-          <div class="field">
-            <label for="cEmail">Email</label>
-            <input class="input" id="cEmail" type="email" placeholder="you@example.com" required />
-          </div>
-          <div class="field">
-            <label for="cGoal">Your goal</label>
-            <select class="select" id="cGoal">
-              <option value="Become a Scrum Master">Become a Scrum Master</option>
-              <option value="Grow as a Scrum Master / Delivery Leader">Grow as a Scrum Master / Delivery Leader</option>
-              <option value="Program Management growth">Program Management growth</option>
-              <option value="Transition to TPM">Transition to TPM</option>
-              <option value="AI workflows for delivery leaders">AI workflows for delivery leaders</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="cMsg">Context (optional)</label>
-            <textarea class="textarea" id="cMsg" placeholder="2–3 lines about your background + timeline"></textarea>
-          </div>
-          <button class="btn btn-primary" type="submit">Submit Request</button>
-          <div class="note">This stores your request locally and shows next steps (no redirect).</div>
-        </form>
-      </div>
-
-      <div class="tile">
-        <h3>Fastest ways to reach me</h3>
-        <ul class="list">
-          <li><span class="check">✓</span> Email: <b>hello@agilewithharish.com</b></li>
-          <li><span class="check">✓</span> WhatsApp: <b>+91-7083273689</b></li>
-        </ul>
-        <div class="cta" style="margin-top:14px;">
-          <div>
-            <h3 style="margin:0;">Want a faster response?</h3>
-            <p style="margin-top:6px;">Send a WhatsApp message with your goal and I’ll reply with available slots.</p>
-          </div>
-          <a class="btn btn-primary" href="https://wa.me/917083273689">WhatsApp</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-    <div class="container">
-      <div class="foot">
-        <div class="small">
-          © <span id="year"></span> Harish Raju • Hyderabad, India • <span style="opacity:.9">#AgileWithHarish</span><br/>
-          Email: <b>hello@agilewithharish.com</b> • Phone: <b>+91-7083273689</b>
-        </div>
-        <div class="small">
-          <span class="pill">#TechnicalProgramManager</span>
-          <span class="pill">#AgileLeadership</span>
-          <span class="pill">#ScrumMaster</span>
-          <span class="pill">#ProgramManagement</span>
-          <span class="pill">#DeliveryLeadership</span>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <div class="floating">
-    <a class="btn btn-primary" href="#request-call" >Book Session</a>
-    <a class="btn" href="#journey">Choose Tier</a>
-  </div>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
-<script>
-  // Guided journey: highlight current section in the sticky journey bar
-  (function(){
-    const links = Array.from(document.querySelectorAll('.journeysteps a[data-step]'));
-    const sections = links
-      .map(a => document.getElementById(a.getAttribute('data-step')) || document.querySelector(a.getAttribute('href')))
-      .filter(Boolean);
-
-    if(!links.length || !sections.length) return;
-
-    const setActive = (id) => {
-      links.forEach(a => a.classList.toggle('active', a.getAttribute('data-step') === id));
-    };
-
-    // Default active
-    setActive(links[0].getAttribute('data-step'));
-
-    const observer = new IntersectionObserver((entries) => {
-      // Pick the most visible intersecting section
-      const visible = entries
-        .filter(e => e.isIntersecting)
-        .sort((a,b) => (b.intersectionRatio - a.intersectionRatio));
-
-      if(visible.length){
-        const id = visible[0].target.id;
-        setActive(id);
-      }
-    }, {
-      root: null,
-      // Trigger when section passes the top-ish of viewport (compensate sticky nav)
-      rootMargin: "-30% 0px -60% 0px",
-      threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6]
-    });
-
-    sections.forEach(sec => observer.observe(sec));
-  })();
-</script>
-
-
-<script>
-  // Rotating testimonials (static site friendly — works on GitHub Pages)
-  (function(){
-    const testimonials = [
-      {
-        text:"Thank Harish for the inputs and sharing the network. It is always nice talking to you.",
-        author:"— Akshay Danak",
-        rating:"★★★★★"
-      },
-      {
-        text:"Conversation with Harish was very insightful… his approach of keeping things simple stood out.",
-        author:"— P Arabind",
-        rating:"★★★★★"
-      },
-      {
-        text:"Practical coaching with real-world examples. I applied the stakeholder update framework immediately.",
-        author:"— Program Manager (Client)",
-        rating:"★★★★★"
-      },
-      {
-        text:"Helped me convert my Scrum experience into Program/TPM language with metrics and strong narratives.",
-        author:"— Aspiring TPM",
-        rating:"★★★★★"
-      },
-      {
-        text:"Super structured. The tiered journey removed confusion and gave me a clear weekly execution plan.",
-        author:"— Scrum Master (Client)",
-        rating:"★★★★★"
-      }
-    ];
-
-    const box = document.getElementById("testimonialBox");
-    const textEl = document.getElementById("testimonialText");
-    const authorEl = document.getElementById("testimonialAuthor");
-    const ratingEl = document.getElementById("rating");
-
-    if(!box || !textEl || !authorEl || !ratingEl) return;
-
-    let index = Math.floor(Math.random() * testimonials.length);
-
-    function render(i){
-      ratingEl.textContent = testimonials[i].rating || "★★★★★";
-      textEl.textContent = "“" + testimonials[i].text + "”";
-      authorEl.textContent = testimonials[i].author;
-    }
-
-    function rotate(){
-      box.classList.add("fade-out");
-      setTimeout(function(){
-        index = (index + 1) % testimonials.length;
-        render(index);
-        box.classList.remove("fade-out");
-      }, 400);
-    }
-
-    // initial
-    render(index);
-
-    // rotate every 6 seconds
-    setInterval(rotate, 6000);
-  })();
-</script>
-
-
-<script>
-  // Feedback form -> opens email (no backend required)
-  (function(){
-    const form = document.getElementById("feedbackForm");
-    if(form){
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        const name = (document.getElementById("fbName")?.value || "").trim();
-        const role = (document.getElementById("fbRole")?.value || "").trim();
-        const msg  = (document.getElementById("fbMsg")?.value || "").trim();
-        if(!msg) return;
-
-        const subject = encodeURIComponent("Website feedback (AgileWithHarish)");
-        const body = encodeURIComponent(
-          "Name: " + (name || "Anonymous") + "\n" +
-          "Role: " + (role || "—") + "\n\n" +
-          msg + "\n\n" +
-          "Sent from: " + window.location.href
-        );
-
-        localStorage.setItem("awh_feedback_last", JSON.stringify({name:name||"", role:role||"", msg:msg||"", page:window.location.href, ts:Date.now()}));
-alert("Thanks! Your feedback is captured. Harish will review it.");
-        form.reset();
-      });
-    }
-  })();
-
-  // Simple visitor indicator (local device only)
-  (function(){
-    const key = "awh_device_visits_v1";
-    const current = parseInt(localStorage.getItem(key) || "0", 10) || 0;
-    const next = current + 1;
-    localStorage.setItem(key, String(next));
-    const el = document.getElementById("deviceVisits");
-    if(el) el.textContent = next.toString();
-  })();
-
-  /*
-    OPTIONAL: Real global visitor counts (choose one):
-
-    1) Google Analytics 4:
-       - Create GA4 property, get Measurement ID like G-XXXXXXXXXX
-       - Paste this before 
-<!-- Quick Feedback Popup -->
-<div class="feedback-pop" id="feedbackPop" role="dialog" aria-label="Quick feedback">
-  <div class="head">
-    <div>
-      <div class="title">Was this page helpful?</div>
-      <div class="desc">Tap 👍 or 👎 — it helps me improve this site.</div>
-    </div>
-    <button class="fb-close" id="fbClose" aria-label="Close">✕</button>
-  </div>
-  <div class="body">
-    <div class="actions">
-      <div class="fb-emoji" id="fbUp" aria-label="Helpful">👍 Yes</div>
-      <div class="fb-emoji" id="fbDown" aria-label="Not helpful">👎 No</div>
-      <a class="btn" href="#feedback" style="padding:10px 12px; border-radius:14px;">Leave detailed feedback</a>
-    </div>
-    <div class="fb-note">Logging is anonymous. No personal data is collected unless you share it in the detailed form.</div>
-  </div>
-</div>
-
-
-<script>
-  // Quick feedback popup -> logs to Google Forms (static-site friendly)
-  (function(){
-    // ---- CONFIG (replace these 3 values after you create your Google Form) ----
-    // 1) Open your Google Form > Send > Link > copy the form link
-    // 2) Replace FORM_ACTION with the "formResponse" URL (instructions in the section below)
-    // 3) Replace ENTRY_HELPFUL and ENTRY_PAGE with your form's entry IDs (entry.123456...)
-    const FORM_ACTION = "https://docs.google.com/forms/d/e/1FAIpQLSc8Cz-dqS-Sw6NacJSlZLJkcJLjDUBxoAQGLhxdaVS7KMYt9g/formResponse";
-    const ENTRY_HELPFUL = "entry.818560775"; // question: "Was this page helpful?"
-    const ENTRY_PAGE = "entry.1133500847";    // question: "Page URL" (short answer)
-    // ------------------------------------------------------------------------
-
-    const pop = document.getElementById("feedbackPop");
-    const closeBtn = document.getElementById("fbClose");
-    const up = document.getElementById("fbUp");
-    const down = document.getElementById("fbDown");
-
-    if(!pop || !closeBtn || !up || !down) return;
-
-    // Show at most once per day per device
-    const key = "awh_quick_feedback_last_shown";
-    const today = new Date().toISOString().slice(0,10);
-    const lastShown = localStorage.getItem(key);
-    const alreadySubmitted = localStorage.getItem("awh_quick_feedback_submitted_" + today) === "1";
-
-    // Don't show if already submitted today
-    if(alreadySubmitted) return;
-
-    // Show after 10s OR after user scrolls a bit
-    let shown = false;
-    function show(){
-      if(shown) return;
-      shown = true;
-      localStorage.setItem(key, today);
-      pop.classList.add("show");
-    }
-    setTimeout(show, 10000);
-    window.addEventListener("scroll", function(){
-      if(window.scrollY > 600) show();
-    }, {passive:true});
-
-    function hide(){
-      pop.classList.remove("show");
-    }
-    closeBtn.addEventListener("click", hide);
-
-    function logResponse(isHelpful){
-      // If user hasn't configured the form yet, just thank and close
-      if(!FORM_ACTION || FORM_ACTION.includes("PASTE_YOUR_GOOGLE_FORM")){
-        alert("Thanks! Quick feedback captured. (Next: connect Google Form IDs to log it.)");
-        localStorage.setItem("awh_quick_feedback_submitted_" + today, "1");
-        hide();
-        return;
-      }
-
-      const data = new FormData();
-      data.append(ENTRY_HELPFUL, isHelpful ? "Yes" : "No");
-      data.append(ENTRY_PAGE, window.location.href);
-
-      // Google Forms accepts POST to formResponse. no-cors works on static sites.
-      fetch(FORM_ACTION, { method:"POST", mode:"no-cors", body:data })
-        .catch(function(){ /* ignore */ })
-        .finally(function(){
-          localStorage.setItem("awh_quick_feedback_submitted_" + today, "1");
-          hide();
-        });
-    }
-
-    up.addEventListener("click", function(){ logResponse(true); });
-    down.addEventListener("click", function(){ logResponse(false); });
-
-    
-  })();
-</script>
-
-
-<script>
-  // Request-a-call form (no redirect). Stores locally + shows confirmation.
-  (function(){
-    const form = document.getElementById("callForm");
-    if(!form) return;
-
-    form.addEventListener("submit", function(e){
-      e.preventDefault();
-      const payload = {
-        name: (document.getElementById("cName")?.value || "").trim(),
-        email: (document.getElementById("cEmail")?.value || "").trim(),
-        goal: (document.getElementById("cGoal")?.value || "").trim(),
-        msg: (document.getElementById("cMsg")?.value || "").trim(),
-        page: window.location.href,
-        ts: Date.now()
-      };
-      if(!payload.name || !payload.email) return;
-
-      const key = "awh_call_requests_v1";
-      const list = JSON.parse(localStorage.getItem(key) || "[]");
-      list.push(payload);
-      localStorage.setItem(key, JSON.stringify(list));
-
-      alert("Thanks! Your request is captured.\n\nNext step: Please WhatsApp or email Harish so he can share available slots.\nEmail: hello@agilewithharish.com\nWhatsApp: +91-7083273689");
-      form.reset();
-    });
-  })();
-</script>
-
-
-<script>
-  // Smart progress indicator: highlights current section + marks completed steps
-  (function(){
-    const steps = Array.from(document.querySelectorAll(".step[data-target]"));
-    if(!steps.length) return;
-    const sections = steps.map(s => document.querySelector(s.getAttribute("data-target"))).filter(Boolean);
-
-    function setActive(activeId){
-      let activeIndex = sections.findIndex(sec => sec.id === activeId);
-      if(activeIndex < 0) activeIndex = 0;
-      steps.forEach((s, idx) => {
-        s.classList.toggle("active", idx === activeIndex);
-        s.classList.toggle("done", idx < activeIndex);
-      });
-      const activeStep = steps[activeIndex];
-      const wrap = document.getElementById("progressInner");
-      if(activeStep && wrap){
-        const r = activeStep.getBoundingClientRect();
-        const wr = wrap.getBoundingClientRect();
-        if(r.left < wr.left || r.right > wr.right){
-          activeStep.scrollIntoView({behavior:"smooth", inline:"center", block:"nearest"});
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harish Raju | Scrum • Program Manager • TPM • AI Coaching</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --accent-color: #28a745;
         }
-      }
-    }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        h1, h2, h3, h4 { color: #111; }
+        a { color: var(--primary-color); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 60px 0; }
+        .bg-light { background-color: var(--secondary-color); }
+        .btn { display: inline-block; padding: 12px 24px; background: var(--primary-color); color: white; border-radius: 6px; font-weight: bold; text-align: center; border: none; cursor: pointer; }
+        .btn:hover { background: #004494; text-decoration: none; }
+        .btn-outline { background: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); }
+        .btn-outline:hover { background: var(--primary-color); color: white; text-decoration: none; }
+        
+        /* Layout Utility */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+        .flex-center { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        
+        /* Header */
+        header { padding: 20px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 100; }
+        header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+        nav a { margin-left: 20px; font-weight: 500; color: #555; }
+        
+        /* Cards */
+        .card { border: 1px solid #e1e4e8; border-radius: 8px; padding: 25px; background: white; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.05); }
+        
+        /* Form */
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+        
+        /* Syllabus Grid */
+        .syllabus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
+        .syllabus-item { background: white; padding: 15px; border-left: 4px solid var(--primary-color); border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
 
-    steps.forEach(step => step.addEventListener("click", () => {
-      const target = document.querySelector(step.getAttribute("data-target"));
-      if(target) target.scrollIntoView({behavior:"smooth", block:"start"});
-    }));
+<header>
+    <div class="container">
+        <div style="font-size: 1.5em; font-weight: bold; color: var(--primary-color);">Harish Raju</div>
+        <nav>
+            <a href="#coaching">Coaching</a>
+            <a href="#tpm-program">TPM Program</a>
+            <a href="#ai">AI Tools</a>
+            <a href="#samples">Free Templates</a>
+            <a href="#contact" class="btn" style="color: white; margin-left: 20px; padding: 8px 16px;">Book a Call</a>
+        </nav>
+    </div>
+</header>
 
-    let current = sections[0]?.id;
-    setActive(current);
+<section class="section bg-light">
+    <div class="container flex-center">
+        <div style="flex: 1; min-width: 300px;">
+            <div style="text-transform: uppercase; font-size: 0.85em; font-weight: bold; color: #666; letter-spacing: 1px; margin-bottom: 10px;">#AgileWithHarish</div>
+            <h1 style="font-size: 2.8em; margin-top: 0; line-height: 1.2;">Grow from aspiring professional → Scrum Master → Program Manager / TPM</h1>
+            <p style="font-size: 1.2em; color: #555;">Practical Agile and AI-powered workflows designed for working professionals. Learn from a Senior Program Manager with 19 years of experience, currently building products at Google.</p>
+            
+            <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
+                <a href="#tpm-program" class="btn">Explore TPM Program</a>
+                <a href="#ai" class="btn btn-outline">Explore AI Workflows</a>
+            </div>
+        </div>
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <img src="https://placehold.co/600x450/e0e0e0/555555?text=Harish+Raju+\nProfile+Photo" alt="Harish Raju" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
+        </div>
+    </div>
+</section>
 
-    const observer = new IntersectionObserver((entries) => {
-      const visible = entries.filter(e => e.isIntersecting)
-        .sort((a,b) => (b.intersectionRatio - a.intersectionRatio))[0];
-      if(visible?.target?.id){
-        current = visible.target.id;
-        setActive(current);
-      }
-    }, { threshold: [0.12, 0.22, 0.35, 0.5] });
+<section id="coaching" class="section container">
+    <div style="text-align: center; margin-bottom: 40px;">
+        <h2>Your growth, built on 4 pillars</h2>
+        <p style="font-size: 1.1em; color: #666;">Practical systems you can use immediately at work — no fluff.</p>
+    </div>
+    
+    <div class="grid-4">
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 2.5em; margin-bottom: 15px;">🌱</div>
+            <h3>Become a Scrum Master</h3>
+            <p style="font-size: 0.9em; color: #555;">Start from basics and learn how Scrum works in real teams.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 2.5em; margin-bottom: 15px;">⚙️</div>
+            <h3>Delivery Leadership</h3>
+            <p style="font-size: 0.9em; color: #555;">Move from ceremonies to outcomes, visibility, and execution discipline.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 2.5em; margin-bottom: 15px;">📈</div>
+            <h3>Program Management</h3>
+            <p style="font-size: 0.9em; color: #555;">Lead cross-team work with governance, planning, and executive communication.</p>
+        </div>
+        <div class="card" style="text-align: center;">
+            <div style="font-size: 2.5em; margin-bottom: 15px;">🤖</div>
+            <h3>AI Workflows</h3>
+            <p style="font-size: 0.9em; color: #555;">Use AI to save time and improve clarity across planning, updates, and interviews.</p>
+        </div>
+    </div>
+</section>
 
-    sections.forEach(sec => observer.observe(sec));
-  })();
-</script>
+<section id="tpm-program" class="section bg-light">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 50px; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <h2 style="font-size: 2.2em; color: #000; margin-bottom: 10px;">TECHNICAL PROGRAM LEADERSHIP ACCELERATION</h2>
+            <h3 style="font-size: 1.5em; color: var(--primary-color); margin-top: 0;">From Scrum Master / L3 → L4 → L5 → L6</h3>
+            
+            <div style="display: inline-block; background: #cce5ff; color: #004085; padding: 8px 16px; border-radius: 20px; font-weight: bold; margin: 15px 0;">
+                Tier-1 Ready | GenAI Native | Promotion-Focused • 12 Weeks | 5–6 Hours Per Week
+            </div>
 
+            <p style="font-size: 1.1em; line-height: 1.6; margin-top: 20px;">
+                This program is designed for professionals with 8–20 years of experience who are transitioning from Scrum Master to Technical Program Manager or seeking level progression (L3 → L6) in Tier-1 companies such as Google, Amazon, Meta, and Microsoft.
+            </p>
+            <p style="font-size: 1.1em; line-height: 1.6;">
+                The focus is on realistic Tier-1 expectations: technical credibility, ambiguity navigation, cross-org influence, strategic clarity, GenAI leverage, and interview readiness.
+            </p>
+        </div>
+
+        <h3 style="border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 25px;">CORE PROGRAM (12 WEEKS)</h3>
+        <div class="syllabus-grid" style="margin-bottom: 40px;">
+            <div class="syllabus-item"><strong>Week 1:</strong> TPM Role Clarity – Moving from ceremonies to system-level ownership.</div>
+            <div class="syllabus-item"><strong>Week 2:</strong> Technical Depth – Architecture literacy and distributed systems basics.</div>
+            <div class="syllabus-item"><strong>Week 3:</strong> Ownership Shift (L3→L4) – Problem definition and structured clarity.</div>
+            <div class="syllabus-item"><strong>Week 4:</strong> Cross-Team Execution (L4→L5) – Dependency mapping and stakeholder alignment.</div>
+            <div class="syllabus-item"><strong>Week 5:</strong> Roadmap Structuring – Sequencing initiatives under constraints.</div>
+            <div class="syllabus-item"><strong>Week 6:</strong> GenAI for TPMs – AI-driven documentation, risk extraction, and synthesis.</div>
+            <div class="syllabus-item"><strong>Week 7:</strong> Business Framing – Translating technical initiatives into business impact.</div>
+            <div class="syllabus-item"><strong>Week 8:</strong> Influence Without Authority – Managing senior stakeholder conflict.</div>
+            <div class="syllabus-item"><strong>Week 9:</strong> Ambiguity Navigation – Pre-mortem thinking and risk modeling.</div>
+            <div class="syllabus-item"><strong>Week 10:</strong> Scaling & Launch – Multi-region rollout planning.</div>
+            <div class="syllabus-item"><strong>Week 11:</strong> L6 Thinking – Strategy definition and scope expansion.</div>
+            <div class="syllabus-item"><strong>Week 12:</strong> TPM Simulation – Cross-org initiative executive presentation.</div>
+        </div>
+
+        <div class="grid-2">
+            <div class="card" style="border-top: 4px solid #17a2b8;">
+                <h4 style="margin-top: 0;">FOUNDATIONAL FINANCIAL FLUENCY</h4>
+                <ul style="padding-left: 20px;">
+                    <li>Revenue vs cost drivers in tech organizations</li>
+                    <li>Infra cost basics (compute, storage, scalability trade-offs)</li>
+                    <li>CAPEX vs OPEX fundamentals</li>
+                    <li>Cost-of-delay prioritization impact</li>
+                    <li>Lightweight ROI framing for roadmap decisions</li>
+                </ul>
+            </div>
+            <div class="card" style="border-top: 4px solid #17a2b8;">
+                <h4 style="margin-top: 0;">PROGRAM DELIVERABLES</h4>
+                <ul style="padding-left: 20px;">
+                    <li>Architecture Risk Review Framework</li>
+                    <li>Executive Strategy Memo Templates</li>
+                    <li>AI-Powered TPM Workflow Toolkit</li>
+                    <li>Business Impact Framing Document</li>
+                    <li>Promotion-Ready Impact Narrative</li>
+                    <li>Tier-1 Interview Question Bank & Simulation Deck</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin: 60px 0 30px; font-size: 1.8em;">2-TIER STRUCTURE & POSITIONING</h3>
+        <div class="grid-2">
+            <div class="card">
+                <h3 style="margin-top: 0; font-size: 1.5em;">Tier 1 – CORE PROGRAM</h3>
+                <p style="color: #555;">Includes full 12-week curriculum, GenAI toolkit, financial fluency, executive strategy templates, and TPM simulation.</p>
+                <h4 style="font-size: 1.3em; color: var(--accent-color);">Suggested Pricing: ₹49,000 – ₹59,000</h4>
+                <a href="#contact" class="btn" style="width: 100%; box-sizing: border-box;">Apply for Tier 1</a>
+            </div>
+
+            <div class="card" style="border: 2px solid var(--primary-color); position: relative;">
+                <span style="position: absolute; top: -14px; left: 20px; background: var(--primary-color); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">INTERVIEW INTENSIVE</span>
+                <h3 style="margin-top: 10px; font-size: 1.5em;">Tier 2 – CORE + INTENSIVE</h3>
+                <p style="color: #555;">Includes everything in Core plus structured Tier-1 interview simulations, mock interviews, personalized feedback, and promotion narrative engineering.</p>
+                <h4 style="font-size: 1.3em; color: var(--accent-color);">Suggested Pricing: ₹79,000 – ₹99,000</h4>
+                <a href="#contact" class="btn" style="background: #111; width: 100%; box-sizing: border-box;">Apply for Tier 2</a>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px; text-align: center; padding: 20px; border: 1px dashed #aaa; border-radius: 8px;">
+            <strong style="color: #000;">EXPECTED OUTCOME:</strong> 
+            <span style="color: #444;">Graduates will demonstrate increased technical depth, structured thinking, financial fluency, cross-org influence capability, GenAI leverage, and interview confidence aligned to Tier-1 expectations across L4, L5, and L6 levels.</span>
+        </div>
+    </div>
+</section>
+
+<section id="ai" class="section container">
+    <div class="flex-center">
+        <div style="flex: 1; min-width: 300px;">
+            <h2>✨ AI for Delivery Leaders (Try this today)</h2>
+            <p>Use AI as a practical leadership accelerator — improve clarity, speed, and decision-making. No coding required. Copy the prompt below into ChatGPT and paste your real project notes.</p>
+            
+            <div style="background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; font-family: monospace; margin-top: 20px; overflow-x: auto;">
+                <strong>Prompt:</strong><br><br>
+                Act as a Program Manager.<br><br>
+                Summarize the following project updates into an executive weekly update using:<br>
+                • Progress<br>
+                • Risks<br>
+                • Decisions Needed<br>
+                • Next Week Focus<br><br>
+                Tone: concise, leadership-ready.<br><br>
+                Project updates:<br>
+                [PASTE HERE]
+            </div>
+        </div>
+        
+        <div style="flex: 1; min-width: 300px; text-align: center;">
+            <img src="https://placehold.co/500x400/f0f0f0/333?text=Screenshot+of+AI+\nGenerating+Executive+Update" alt="AI Executive Update" style="max-width: 100%; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
+        </div>
+    </div>
+</section>
+
+<section id="samples" class="section bg-light">
+    <div class="container">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <h2>📦 Free Templates (Download)</h2>
+            <p>Keep these PDFs handy for immediate workplace execution.</p>
+        </div>
+        
+        <div class="grid-3">
+            <div class="card" style="display: flex; align-items: center; gap: 15px;">
+                <img src="https://placehold.co/50x70/e0e0e0/666?text=PDF" alt="RAID Log">
+                <div>
+                    <h4 style="margin: 0 0 5px 0;">RAID Log Template</h4>
+                    <a href="./Sample_RAID_Log_Template.pdf" style="font-size: 0.9em; font-weight: bold;">Download ↓</a>
+                </div>
+            </div>
+            <div class="card" style="display: flex; align-items: center; gap: 15px;">
+                <img src="https://placehold.co/50x70/e0e0e0/666?text=PDF" alt="Update">
+                <div>
+                    <h4 style="margin: 0 0 5px 0;">Weekly Exec Update</h4>
+                    <a href="./Sample_Stakeholder_Update_Template.pdf" style="font-size: 0.9em; font-weight: bold;">Download ↓</a>
+                </div>
+            </div>
+            <div class="card" style="display: flex; align-items: center; gap: 15px;">
+                <img src="https://placehold.co/50x70/e0e0e0/666?text=PDF" alt="Checklist">
+                <div>
+                    <h4 style="margin: 0 0 5px 0;">Predictability Checklist</h4>
+                    <a href="./Sample_Sprint_Predictability_Checklist.pdf" style="font-size: 0.9em; font-weight: bold;">Download ↓</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section container">
+    <div class="flex-center" style="align-items: flex-start;">
+        <div style="flex: 1; min-width: 300px;">
+            <h2>📞 Accelerate Your Career</h2>
+            <p>Ready to move from Scrum Master to TPM, or break into a Tier-1 company? Fill out the form to request a consultation call. I will reply personally with the best next step.</p>
+            
+            <ul style="list-style: none; padding: 0; margin-top: 30px;">
+                <li style="margin-bottom: 15px;">📧 <strong>Email:</strong> <a href="mailto:hello@agilewithharish.com">hello@agilewithharish.com</a></li>
+                <li style="margin-bottom: 15px;">💬 <strong>WhatsApp:</strong> <a href="https://wa.me/917083273689">+91-7083273689</a></li>
+            </ul>
+        </div>
+        
+        <div style="flex: 1; min-width: 300px;">
+            <form class="card" action="mailto:hello@agilewithharish.com" method="POST" enctype="text/plain">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="Name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="Email" required>
+                </div>
+                
+                <div class="flex-center" style="gap: 15px; margin-bottom: 15px;">
+                    <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                        <label for="current-role">Current Role / Level</label>
+                        <select id="current-role" name="Current_Role">
+                            <option value="Scrum Master">Scrum Master</option>
+                            <option value="Program Manager (L3/L4)">Program Manager (L3/L4)</option>
+                            <option value="TPM (L5/L6)">TPM (L5/L6)</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                        <label for="target-company">Target Company Tier</label>
+                        <select id="target-company" name="Target_Company">
+                            <option value="Tier 1 (FAANG)">Tier 1 (Google, Meta, Amazon, etc.)</option>
+                            <option value="Tier 2/3 Enterprise">Tier 2/3 Enterprise</option>
+                            <option value="Startup/Scale-up">Startup / Scale-up</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="program">Program Interest</label>
+                    <select id="program" name="Program_Interest">
+                        <option value="Tier 1 Core TPM">Tier 1: Core TPM Program</option>
+                        <option value="Tier 2 Intensive">Tier 2: Interview Intensive</option>
+                        <option value="Just AI Coaching">Just AI Workflows Coaching</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Your specific goal (Optional)</label>
+                    <textarea id="message" name="Message" rows="3" placeholder="E.g., I have an interview loop coming up in 3 weeks..."></textarea>
+                </div>
+                
+                <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer style="background: #222; color: #aaa; text-align: center; padding: 40px 20px;">
+    <div class="container">
+        <p>© Harish Raju • Hyderabad, India • #AgileWithHarish</p>
+        <p>Email: hello@agilewithharish.com • Phone: +91-7083273689</p>
+        <div style="margin-top: 20px; font-size: 0.8em;">
+            #TechnicalProgramManager #AgileLeadership #ScrumMaster #ProgramManagement #DeliveryLeadership
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
