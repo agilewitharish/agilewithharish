@@ -1,156 +1,1256 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harish Raju | Agile & TPM Coaching</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #0f172a; 
-            --secondary-color: #f8fafc; 
-            --accent-color: #2563eb; 
-            --text-main: #334155;
-            --text-light: #64748b;
-        }
-        
-        body { font-family: 'Inter', sans-serif; line-height: 1.7; color: var(--text-main); margin: 0; padding: 0; background-color: #ffffff; -webkit-font-smoothing: antialiased; }
-        h1, h2, h3, h4 { color: var(--primary-color); font-weight: 800; line-height: 1.2; }
-        a { color: var(--accent-color); text-decoration: none; transition: all 0.2s ease; }
-        a:hover { color: #1d4ed8; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-        .section { padding: 80px 0; }
-        .bg-light { background-color: var(--secondary-color); }
-        
-        /* Buttons */
-        .btn { display: inline-block; padding: 14px 28px; background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white !important; border-radius: 8px; font-weight: 600; text-align: center; border: none; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3); }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); }
-        .btn-outline { background: transparent; color: var(--primary-color) !important; border: 2px solid #e2e8f0; box-shadow: none; }
-        .btn-outline:hover { border-color: var(--primary-color); transform: translateY(-2px); background: transparent; }
-        
-        /* Layout */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
-        .flex-center { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-        
-        /* Header */
-        header { padding: 20px 0; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #f1f5f9; }
-        header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        nav a { margin-left: 25px; font-weight: 600; color: var(--text-main); font-size: 0.95em; }
-        
-        /* Cards & Forms */
-        .card { background: white; border: 1px solid #f1f5f9; border-radius: 16px; padding: 32px; transition: all 0.3s ease; box-shadow: 0 10px 25px rgba(0,0,0,0.03); }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); border-color: #e2e8f0; }
-        .icon-circle { width: 60px; height: 60px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8em; margin: 0 auto 20px; }
-        .hero-img { max-width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15); object-fit: cover; }
-        
-        /* Syllabus Grid */
-        .syllabus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
-        .syllabus-item { background: white; padding: 18px; border-left: 4px solid var(--accent-color); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); font-size: 0.95em; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agile With Harish | Startup-Style Career Accelerator</title>
+  <meta name="description" content="Agile With Harish helps aspiring Scrum Masters, Program Managers, and Technical Program Managers build technical depth, leadership clarity, and Tier-1 career readiness through a premium startup-style learning experience." />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-2: #0a1022;
+      --surface: rgba(255,255,255,0.07);
+      --surface-2: rgba(255,255,255,0.1);
+      --border: rgba(255,255,255,0.12);
+      --text: #eef4ff;
+      --muted: #b6c2da;
+      --primary: #6ea8ff;
+      --primary-2: #8b5cf6;
+      --accent: #34d399;
+      --shadow: 0 24px 80px rgba(0,0,0,0.35);
+      --radius: 26px;
+      --max: 1180px;
+    }* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  line-height: 1.6;
+  background:
+    radial-gradient(circle at 8% 5%, rgba(110,168,255,0.18), transparent 22%),
+    radial-gradient(circle at 92% 10%, rgba(139,92,246,0.18), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(52,211,153,0.08), transparent 26%),
+    linear-gradient(180deg, #040713 0%, #091121 40%, #0a1223 100%);
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+.container { width: min(92%, var(--max)); margin: 0 auto; }
+.section { padding: 88px 0; }
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05));
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.orb {
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(55px);
+  pointer-events: none;
+  opacity: 0.55;
+  z-index: 0;
+}
+.orb-one {
+  width: 260px; height: 260px; left: -60px; top: 110px;
+  background: rgba(110,168,255,0.2);
+}
+.orb-two {
+  width: 280px; height: 280px; right: -80px; top: 420px;
+  background: rgba(139,92,246,0.18);
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(18px);
+  background: rgba(5,8,22,0.7);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.nav-inner {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.brand {
+  font-size: 1.08rem;
+  font-weight: 800;
+  letter-spacing: 0.2px;
+}
+.brand span {
+  background: linear-gradient(135deg, #a7c8ff, #c3a8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.nav-links a:hover { color: var(--text); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 22px;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: 0.25s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  box-shadow: 0 18px 40px rgba(110,168,255,0.28);
+}
+.btn-secondary {
+  border-color: rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+.hero {
+  position: relative;
+  padding: 90px 0 64px;
+  z-index: 1;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.06fr 0.94fr;
+  gap: 42px;
+  align-items: center;
+}
+.eyebrow {
+  display: inline-flex;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(52,211,153,0.08);
+  border: 1px solid rgba(52,211,153,0.2);
+  color: #86efac;
+  font-size: 0.88rem;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.hero-badge {
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #dfe9ff;
+}
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -2px;
+  margin-bottom: 18px;
+  max-width: 800px;
+}
+.hero p {
+  color: var(--muted);
+  font-size: 1.08rem;
+  max-width: 700px;
+  margin-bottom: 24px;
+}
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.trust-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 20px;
+  color: #dbe6fb;
+  font-size: 0.94rem;
+  margin-bottom: 18px;
+}
+.trust-row span::before {
+  content: "✦";
+  margin-right: 8px;
+  color: #93c5fd;
+}
+.career-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.career-step {
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #e7efff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  box-shadow: var(--shadow);
+}
+.career-arrow {
+  color: #97bfff;
+  font-weight: 800;
+  font-size: 1rem;
+}
+.hero-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+}
+.hero-proof-card {
+  padding: 16px;
+  border-radius: 20px;
+}
+.hero-proof-card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.98rem;
+}
+.hero-proof-card span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.feature-marquee {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+.feature-chip {
+  padding: 12px 14px;
+  border-radius: 18px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #dfe9ff;
+}
+
+.hero-card {
+  position: relative;
+  padding: 18px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.hero-card::before {
+  content: "";
+  position: absolute;
+  inset: auto 8% -16% 8%;
+  height: 140px;
+  background: radial-gradient(circle, rgba(110,168,255,0.35), transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
+}
+.mini-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.mini-stat {
+  padding: 13px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+.mini-stat strong {
+  display: block;
+  color: white;
+  font-size: 1rem;
+  margin-top: 4px;
+}
+.hero-visual {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow);
+}
+.hero-visual img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 860px;
+  margin: 0 auto 42px;
+}
+.section-kicker {
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #dbe7ff;
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.section-header h2 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  letter-spacing: -1px;
+  margin-bottom: 12px;
+}
+.section-header p { color: var(--muted); font-size: 1.05rem; }
+
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+
+.card {
+  padding: 26px;
+  border-radius: var(--radius);
+}
+.card h3 { margin-bottom: 10px; font-size: 1.16rem; }
+.card p { color: var(--muted); }
+.icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, rgba(110,168,255,0.2), rgba(139,92,246,0.18));
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.signal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.signal-card { padding: 20px; border-radius: 22px; }
+.signal-card strong { display: block; margin-bottom: 6px; font-size: 1rem; }
+.signal-card span { color: var(--muted); font-size: 0.92rem; }
+
+.metric-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.metric-card { padding: 22px; border-radius: 24px; }
+.metric-card strong {
+  display: block;
+  color: white;
+  font-size: 1.95rem;
+  letter-spacing: -1px;
+  margin-bottom: 6px;
+}
+.metric-card span { color: var(--muted); font-size: 0.92rem; }
+
+.list {
+  list-style: none;
+  display: grid;
+  gap: 13px;
+  margin-top: 18px;
+}
+.list li {
+  position: relative;
+  padding-left: 28px;
+  color: var(--muted);
+}
+.list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #6ee7b7;
+  font-weight: 800;
+}
+.band {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+.tag {
+  padding: 9px 13px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #d8e6ff;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.service-card, .pricing-card, .testimonial-card, .signal-card, .metric-card, .hero-proof-card, .feature-chip, .founder-card, .week-card, .timeline-phase, .roadmap-node, .roadmap-outcome, .startup-panel, .card, .hero-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.11), rgba(255,255,255,0.05));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+.service-card::after, .week-card::after, .roadmap-node::after {
+  content: "";
+  position: absolute;
+  inset: auto -18% -26% auto;
+  width: 140px;
+  height: 140px;
+  background: radial-gradient(circle, rgba(110,168,255,0.12), transparent 70%);
+  pointer-events: none;
+}
+
+.startup-panel {
+  padding: 30px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.roadmap-shell { position: relative; }
+.roadmap-shell::before,
+.timeline-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  filter: blur(10px);
+  background:
+    radial-gradient(circle at 15% 15%, rgba(110,168,255,0.14), transparent 24%),
+    radial-gradient(circle at 85% 15%, rgba(139,92,246,0.12), transparent 24%),
+    radial-gradient(circle at 50% 100%, rgba(52,211,153,0.08), transparent 30%);
+}
+.roadmap-board {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 70px 1fr 70px 1fr 70px 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+.roadmap-node {
+  position: relative;
+  border-radius: 28px;
+  padding: 26px;
+  overflow: hidden;
+}
+.roadmap-step {
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #dce8ff;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-bottom: 14px;
+}
+.roadmap-node h3 { font-size: 1.24rem; margin-bottom: 10px; }
+.roadmap-node p { color: var(--muted); margin-bottom: 16px; }
+.roadmap-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.roadmap-arrow::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(110,168,255,0.2), rgba(110,168,255,0.92), rgba(139,92,246,0.85));
+  border-radius: 999px;
+  box-shadow: 0 0 24px rgba(110,168,255,0.32);
+}
+.roadmap-arrow span {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, rgba(110,168,255,0.22), rgba(139,92,246,0.22));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: var(--shadow);
+  font-weight: 800;
+}
+.roadmap-focus {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+.roadmap-focus span {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #dce8ff;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.roadmap-outcome {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 22px;
+  text-align: center;
+  color: #ebf2ff;
+  font-weight: 700;
+}
+
+.split-card {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 24px;
+  align-items: center;
+}
+.showcase {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow);
+  min-height: 100%;
+}
+.showcase img {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  object-fit: cover;
+}
+
+.timeline-shell { position: relative; }
+.timeline-header-band {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.timeline-phase {
+  padding: 16px 18px;
+  border-radius: 20px;
+}
+.timeline-phase strong { display: block; margin-bottom: 4px; }
+.timeline-phase span { color: var(--muted); font-size: 0.9rem; }
+.timeline-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.timeline-col { position: relative; padding-top: 26px; }
+.timeline-col::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 26px;
+  width: calc(100% - 26px);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(110,168,255,0.7), rgba(139,92,246,0.7));
+  border-radius: 999px;
+}
+.timeline-col::after {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 14px;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  box-shadow: 0 0 0 6px rgba(110,168,255,0.12);
+  border: 1px solid rgba(255,255,255,0.14);
+}
+.week-card {
+  position: relative;
+  border-radius: 22px;
+  padding: 18px;
+  overflow: hidden;
+}
+.week-card + .week-card { margin-top: 14px; }
+.week-pill {
+  display: inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #dce8ff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.week-card h3 { font-size: 1rem; line-height: 1.3; margin-bottom: 8px; }
+.week-card p { color: var(--muted); font-size: 0.92rem; margin-bottom: 12px; }
+.week-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.week-tags span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #d5e4ff;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.timeline-note {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 22px;
+  text-align: center;
+  color: #e9f1ff;
+  font-weight: 700;
+}
+
+.audience-grid .card strong { display: block; color: white; margin-bottom: 8px; }
+
+.pricing-card { position: relative; }
+.pricing-card.popular {
+  outline: 2px solid rgba(110,168,255,0.45);
+  transform: translateY(-8px);
+  background: linear-gradient(180deg, rgba(110,168,255,0.16), rgba(255,255,255,0.08));
+}
+.badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: white;
+  font-size: 0.78rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.price {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin: 10px 0 2px;
+}
+.small { color: var(--muted); font-size: 0.92rem; }
+
+.founder-card {
+  padding: 32px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.founder-grid {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  gap: 28px;
+  align-items: center;
+}
+.founder-visual {
+  min-height: 320px;
+  border-radius: 26px;
+  display: grid;
+  place-items: center;
+  font-size: 4rem;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, rgba(110,168,255,0.24), rgba(139,92,246,0.2));
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: var(--shadow);
+}
+.founder-points {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+}
+.founder-point {
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #dfeaff;
+  font-size: 0.94rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.testimonial-card {
+  padding: 24px;
+  border-radius: 24px;
+}
+.testimonial-card p {
+  color: #eef4ff;
+  font-size: 0.98rem;
+  margin-bottom: 16px;
+}
+.testimonial-meta strong {
+  display: block;
+  color: white;
+  font-size: 0.95rem;
+}
+.testimonial-meta span {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.faq details {
+  padding: 18px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: var(--shadow);
+}
+.faq details + details { margin-top: 14px; }
+.faq summary { cursor: pointer; font-weight: 800; color: white; }
+.faq p { color: var(--muted); margin-top: 12px; }
+
+.cta {
+  text-align: center;
+  background: linear-gradient(180deg, rgba(110,168,255,0.12), rgba(139,92,246,0.08));
+}
+.cta p {
+  max-width: 760px;
+  margin: 0 auto 22px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.footer {
+  padding: 28px 0 44px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.sticky-cta {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 1200;
+  padding: 14px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: white;
+  font-weight: 800;
+  border: 1px solid rgba(255,255,255,0.14);
+  box-shadow: 0 18px 40px rgba(110,168,255,0.3);
+  backdrop-filter: blur(14px);
+}
+
+@media (max-width: 1024px) {
+  .hero-grid, .grid-2, .grid-3, .grid-4, .split-card, .metric-grid, .signal-grid, .testimonials-grid, .founder-grid, .feature-marquee { grid-template-columns: 1fr 1fr; }
+  .roadmap-board { grid-template-columns: 1fr; }
+  .roadmap-arrow { min-height: 72px; }
+  .roadmap-arrow::before {
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(110,168,255,0.2), rgba(110,168,255,0.92), rgba(139,92,246,0.85));
+  }
+  .roadmap-arrow span { transform: rotate(90deg); }
+  .timeline-header-band, .timeline-grid, .hero-proof-grid { grid-template-columns: 1fr 1fr; }
+  .pricing-card.popular { transform: none; }
+}
+
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .hero { padding-top: 60px; }
+  .btn { width: 100%; }
+  .hero-actions { flex-direction: column; }
+  .section { padding: 62px 0; }
+  h1 { letter-spacing: -1px; }
+  .mini-grid, .timeline-header-band, .timeline-grid, .hero-proof-grid, .metric-grid, .signal-grid, .testimonials-grid, .founder-grid, .feature-marquee, .grid-4 { grid-template-columns: 1fr; }
+  .career-strip { align-items: stretch; }
+  .sticky-cta { left: 14px; right: 14px; text-align: center; }
+}
+
+  </style>
 </head>
 <body>
-
-<header>
-    <div class="container">
-        <div style="font-size: 1.5em; font-weight: 800; color: var(--primary-color); letter-spacing: -0.5px;">Harish Raju.</div>
-        <nav>
-            <a href="#coaching">The Framework</a>
-            <a href="#tpm-program">TPM Program</a>
-            <a href="#samples">Templates</a>
-            <a href="#contact" class="btn" style="color: white; margin-left: 25px; padding: 10px 20px; font-size: 0.9em; box-shadow: none;">Book Strategy Call</a>
-        </nav>
+  <div class="orb orb-one"></div>
+  <div class="orb orb-two"></div>  <header class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#">Agile <span>With Harish</span></a>
+      <nav class="nav-links">
+        <a href="#programs">Program</a>
+        <a href="#curriculum">Curriculum</a>
+        <a href="#tiers">2-Tier Model</a>
+        <a href="#audience">Who It’s For</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact" class="btn btn-primary">Apply / Enquire</a>
+      </nav>
     </div>
-</header>
-
-<section class="section bg-light" style="overflow: hidden; position: relative;">
-    <div class="container flex-center">
-        <div style="flex: 1; min-width: 300px; z-index: 2;">
-            <div style="display: inline-block; padding: 6px 14px; background: #e0e7ff; color: #4338ca; border-radius: 20px; font-size: 0.85em; font-weight: 700; margin-bottom: 20px;">
-                #AgileWithHarish
+  </header>  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">12 Weeks · 5–6 Hours Per Week · Tier-1 Ready · GenAI Native · Promotion-Focused</div>
+          <div class="hero-badges">
+            <div class="hero-badge">For new Scrum Masters</div>
+            <div class="hero-badge">For PM → TPM growth</div>
+            <div class="hero-badge">Startup-style premium program</div>
+          </div>
+          <h1>Agile Leadership Acceleration for people starting as Scrum Masters and growing toward Program Manager and Technical Program Manager roles</h1>
+          <p>
+            Agile With Harish helps aspiring Scrum Masters and experienced professionals build technical credibility, strategic clarity,
+            cross-functional execution strength, GenAI leverage, financial fluency, and interview readiness for stronger career growth across L3, L4, L5, and L6 pathways.
+          </p>
+          <div class="hero-actions">
+            <a href="#tiers" class="btn btn-primary">View Program Options</a>
+            <a href="#curriculum" class="btn btn-secondary">See What You’ll Learn</a>
+          </div>
+          <div class="trust-row">
+            <span>Scrum Master to TPM</span>
+            <span>L3 → L4 → L5 → L6</span>
+            <span>Tier-1 Interview Ready</span>
+            <span>India + Global Relevance</span>
+          </div>
+          <div class="career-strip">
+            <div class="career-step">Aspiring Scrum Master</div>
+            <div class="career-arrow">→</div>
+            <div class="career-step">Scrum Master</div>
+            <div class="career-arrow">→</div>
+            <div class="career-step">Program Manager</div>
+            <div class="career-arrow">→</div>
+            <div class="career-step">Technical Program Manager</div>
+          </div>
+          <div class="hero-proof-grid">
+            <div class="hero-proof-card glass">
+              <strong>Career transformation</strong>
+              <span>Start from agile basics or level up into higher-scope program leadership.</span>
             </div>
-            <h1 style="font-size: 3.2em; margin-top: 0; margin-bottom: 20px; letter-spacing: -1px;">Grow from Scrum Master to <span style="color: var(--accent-color);">Program Manager / TPM</span></h1>
-            <p style="font-size: 1.2em; color: var(--text-light); margin-bottom: 35px;">Practical Agile and AI-powered workflows designed for working professionals. Learn from a Senior Program Manager with 19 years of experience, currently building products at Google.</p>
-            
-            <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="#contact" class="btn">Book a Call</a>
-                <a href="#samples" class="btn btn-outline">Download Free Templates</a>
+            <div class="hero-proof-card glass">
+              <strong>Business + technical fluency</strong>
+              <span>Learn systems, influence, GenAI leverage, and financial framing together.</span>
             </div>
-        </div>
-        
-        <div style="flex: 1; min-width: 300px; text-align: center; z-index: 2;">
-            <lottie-player 
-                src="https://lottie.host/8b72e505-18db-4e94-9669-7928b584e0c3/tG38r92l6z.json" 
-                background="transparent" 
-                speed="1" 
-                style="width: 100%; max-width: 500px; margin: 0 auto;" 
-                loop 
-                autoplay>
-            </lottie-player>
-        </div>
-        </div>
+            <div class="hero-proof-card glass">
+              <strong>Interview + promotion ready</strong>
+              <span>Build stronger stories, executive communication, and Tier-1 confidence.</span>
+            </div>
+          </div>
+          <div class="feature-marquee">
+            <div class="feature-chip glass">Agile Foundations</div>
+            <div class="feature-chip glass">Systems Thinking</div>
+            <div class="feature-chip glass">GenAI Workflows</div>
+            <div class="feature-chip glass">Business Framing</div>
+            <div class="feature-chip glass">Interview Readiness</div>
+          </div>
+        </div><div class="hero-card glass">
+      <div class="mini-grid">
+        <div class="mini-stat">Program Length<strong>12 Weeks</strong></div>
+        <div class="mini-stat">Weekly Effort<strong>5–6 Hours</strong></div>
+        <div class="mini-stat">Best For<strong>New + Experienced</strong></div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Professionals discussing strategy, systems, and execution planning" loading="lazy" />
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="coaching" class="section container">
-    <div style="text-align: center; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;">
-        <h2 style="font-size: 2.5em; margin-bottom: 15px;">Your growth, built on 4 pillars</h2>
-        <p style="font-size: 1.1em; color: var(--text-light);">Practical systems you can use immediately at work — zero theoretical fluff, just execution.</p>
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Why this feels premium</div>
+      <h2>Built like a modern career product, not a generic coaching page</h2>
+      <p>Your offer is framed around transformation, capability building, and professional readiness — much closer to how premium startup landing pages position high-value products.</p>
     </div>
-    <div class="grid-4">
-        <div class="card" style="text-align: center;">
-            <div class="icon-circle">🌱</div>
-            <h3 style="font-size: 1.2em;">Become a Scrum Master</h3>
-            <p style="font-size: 0.95em; color: var(--text-light);">Master the fundamentals and learn how to run highly effective Scrum events in real teams.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-            <div class="icon-circle">⚙️</div>
-            <h3 style="font-size: 1.2em;">Delivery Leadership</h3>
-            <p style="font-size: 0.95em; color: var(--text-light);">Move from simple facilitation to driving predictability, visibility, and execution discipline.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-            <div class="icon-circle">📈</div>
-            <h3 style="font-size: 1.2em;">Program Management</h3>
-            <p style="font-size: 0.95em; color: var(--text-light);">Lead complex, cross-team initiatives with strong governance and executive communication.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-            <div class="icon-circle">🤖</div>
-            <h3 style="font-size: 1.2em;">AI Workflows</h3>
-            <p style="font-size: 0.95em; color: var(--text-light);">Leverage generative AI to save hours on planning, risk tracking, and stakeholder updates.</p>
-        </div>
+    <div class="signal-grid">
+      <div class="signal-card glass"><strong>Clear path</strong><span>From entering Scrum Master roles to growing into Technical Program Management.</span></div>
+      <div class="signal-card glass"><strong>Premium curriculum</strong><span>Systems thinking, GenAI, financial fluency, business framing, and executive communication.</span></div>
+      <div class="signal-card glass"><strong>Role-based outcomes</strong><span>Built for transitions, scope expansion, interview readiness, and level growth.</span></div>
+      <div class="signal-card glass"><strong>India + global fit</strong><span>Relevant for professionals targeting both Indian and international opportunities.</span></div>
     </div>
+  </div>
 </section>
 
-<section id="samples" class="section bg-light">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 50px;">
-            <h2 style="font-size: 2.2em;">📦 Free Leadership Templates</h2>
-            <p style="font-size: 1.1em; color: var(--text-light);">Download exact artifacts used in Tier-1 tech companies.</p>
-        </div>
-        
-        <div class="grid-3">
-            <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 20px; cursor: pointer;">
-                <div style="background: #fee2e2; color: #ef4444; width: 45px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: bold; font-size: 0.8em;">PDF</div>
-                <div>
-                    <h4 style="margin: 0 0 5px 0; font-size: 1.1em;">RAID Log Matrix</h4>
-                    <span style="font-size: 0.9em; font-weight: 600; color: var(--accent-color);">Click to Unlock →</span>
-                </div>
-            </div>
-            <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 20px; cursor: pointer;">
-                <div style="background: #fee2e2; color: #ef4444; width: 45px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: bold; font-size: 0.8em;">PDF</div>
-                <div>
-                    <h4 style="margin: 0 0 5px 0; font-size: 1.1em;">Executive Memo</h4>
-                    <span style="font-size: 0.9em; font-weight: 600; color: var(--accent-color);">Click to Unlock →</span>
-                </div>
-            </div>
-        </div>
+<section class="section">
+  <div class="container">
+    <div class="startup-panel glass">
+      <div class="section-header" style="margin-bottom:28px;">
+        <div class="section-kicker">Proof of seriousness</div>
+        <h2>Designed to feel like a premium accelerator</h2>
+        <p>These outcome signals make the page feel credible, premium, and closer to a high-value product experience.</p>
+      </div>
+      <div class="metric-grid">
+        <div class="metric-card glass"><strong>12</strong><span>Weeks of structured transformation</span></div>
+        <div class="metric-card glass"><strong>4</strong><span>Career stages covered clearly</span></div>
+        <div class="metric-card glass"><strong>2</strong><span>Program tiers for fit and depth</span></div>
+        <div class="metric-card glass"><strong>1</strong><span>Unified path from agile entry to TPM growth</span></div>
+      </div>
     </div>
+  </div>
 </section>
 
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<section class="section" id="careerpath">
+  <div class="container">
+    <div class="section-header">
+      <h2>A premium roadmap from Aspiring Scrum Master to Technical Program Manager</h2>
+      <p>This visual path makes the transformation obvious: you are not selling isolated sessions, you are guiding professionals through a higher-value career evolution.</p>
+    </div>
+
+    <div class="roadmap-shell">
+      <div class="roadmap-board">
+        <div class="roadmap-node glass">
+          <div class="roadmap-step">Stage 00</div>
+          <h3>Aspiring Scrum Master</h3>
+          <p>For professionals transitioning into Agile roles with no prior Scrum Master background.</p>
+          <ul class="list">
+            <li>Agile fundamentals and Scrum framework</li>
+            <li>Understanding roles, ceremonies, and artifacts</li>
+            <li>Facilitating standups, sprint planning, retrospectives</li>
+            <li>Working with product owners and engineering teams</li>
+          </ul>
+          <div class="roadmap-focus">
+            <span>Agile Basics</span><span>Scrum Framework</span><span>Team Facilitation</span>
+          </div>
+        </div>
+
+        <div class="roadmap-arrow"><span>→</span></div>
+
+        <div class="roadmap-node glass">
+          <div class="roadmap-step">Stage 01</div>
+          <h3>Scrum Master</h3>
+          <p>Build execution discipline, agile delivery rhythm, facilitation confidence, and team-level accountability.</p>
+          <ul class="list">
+            <li>Sprint execution and delivery cadence</li>
+            <li>Team facilitation and conflict resolution</li>
+            <li>Backlog and stakeholder coordination</li>
+            <li>Delivery metrics and predictability</li>
+          </ul>
+          <div class="roadmap-focus">
+            <span>Execution</span><span>Facilitation</span><span>Delivery Basics</span>
+          </div>
+        </div>
+
+        <div class="roadmap-arrow"><span>→</span></div>
+
+        <div class="roadmap-node glass">
+          <div class="roadmap-step">Stage 02</div>
+          <h3>Program Manager</h3>
+          <p>Expand from one team to multi-team orchestration, structured planning, executive updates, and dependency management.</p>
+          <ul class="list">
+            <li>Cross-team dependency management</li>
+            <li>Program roadmap sequencing</li>
+            <li>Risk escalation and alignment</li>
+            <li>Executive status communication</li>
+          </ul>
+          <div class="roadmap-focus">
+            <span>Cross-Org</span><span>Roadmaps</span><span>Stakeholder Influence</span>
+          </div>
+        </div>
+
+        <div class="roadmap-arrow"><span>→</span></div>
+
+        <div class="roadmap-node glass">
+          <div class="roadmap-step">Stage 03</div>
+          <h3>Technical Program Manager</h3>
+          <p>Operate with stronger technical fluency, system design literacy, business framing, and platform-scale execution.</p>
+          <ul class="list">
+            <li>Architecture and system design literacy</li>
+            <li>Technical trade-off discussions</li>
+            <li>Large-scale launches and platform programs</li>
+            <li>Executive strategy and impact framing</li>
+          </ul>
+          <div class="roadmap-focus">
+            <span>Technical Depth</span><span>Scale</span><span>Strategic Impact</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="roadmap-outcome glass">End result: a stronger path from agile delivery coordination to technical leadership, with clearer readiness for L3 → L4 → L5 → L6 growth.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="programs">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Core offer</div>
+      <h2>A serious TPM growth program, not generic coaching</h2>
+      <p>This program is designed for realistic progression into Tier-1 style TPM expectations: technical depth, structured thinking, cross-org influence, business framing, and executive communication.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card service-card glass">
+        <div class="icon">🧭</div>
+        <h3>Core 12-Week Program</h3>
+        <p>Build role clarity, technical literacy, stakeholder influence, roadmap structuring, launch thinking, and executive-level communication.</p>
+      </div>
+      <div class="card service-card glass">
+        <div class="icon">🤖</div>
+        <h3>GenAI + Financial Fluency</h3>
+        <p>Learn AI-assisted TPM workflows and practical financial concepts like infra cost basics, CAPEX vs OPEX, ROI framing, and cost-of-delay.</p>
+      </div>
+      <div class="card service-card glass">
+        <div class="icon">🎯</div>
+        <h3>Interview Intensive Add-On</h3>
+        <p>Prepare for Google, Amazon, Meta, and Microsoft style TPM interviews through mock interviews, scenario drills, and executive simulation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="curriculum">
+  <div class="container">
+    <div class="card split-card glass">
+      <div>
+        <h2 style="font-size:2rem; margin-bottom:14px;">What I will be teaching</h2>
+        <p style="color: var(--muted);">The curriculum is positioned around what professionals actually need to progress: system-level ownership, technical clarity, business framing, ambiguity handling, and promotion-ready thinking.</p>
+        <ul class="list">
+          <li><strong>Week 1:</strong> TPM role clarity — moving from ceremonies to system-level ownership</li>
+          <li><strong>Week 2:</strong> Technical depth — architecture literacy and distributed systems basics</li>
+          <li><strong>Week 3:</strong> Ownership shift — problem definition and structured clarity from L3 to L4</li>
+          <li><strong>Week 4:</strong> Cross-team execution — dependency mapping and stakeholder alignment from L4 to L5</li>
+          <li><strong>Week 5:</strong> Roadmap structuring — sequencing initiatives under constraints</li>
+          <li><strong>Week 6:</strong> GenAI for TPMs — AI-driven documentation, synthesis, and risk extraction</li>
+          <li><strong>Week 7:</strong> Business framing — connecting technical initiatives to business impact</li>
+          <li><strong>Week 8:</strong> Influence without authority — handling senior stakeholder conflict</li>
+          <li><strong>Week 9:</strong> Ambiguity navigation — pre-mortems, risk modeling, and decision framing</li>
+          <li><strong>Week 10:</strong> Scaling and launch — multi-region rollout planning</li>
+          <li><strong>Week 11:</strong> L6 thinking — strategy definition, scope expansion, and leverage</li>
+          <li><strong>Week 12:</strong> TPM simulation — executive presentation for a cross-org initiative</li>
+        </ul>
+        <div class="band">
+          <span class="tag">Architecture Literacy</span>
+          <span class="tag">Distributed Systems Basics</span>
+          <span class="tag">GenAI Toolkit</span>
+          <span class="tag">Financial Fluency</span>
+          <span class="tag">Executive Simulation</span>
+        </div>
+      </div>
+      <div class="showcase">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1400&q=80" alt="Technical leadership learning experience with planning and systems thinking" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">12-week journey</div>
+      <h2>How the 12 weeks unfold</h2>
+      <p>This visual timeline turns the curriculum into a premium journey — closer to a product roadmap than a coaching outline.</p>
+    </div>
+
+    <div class="timeline-shell">
+      <div class="timeline-header-band">
+        <div class="timeline-phase glass"><strong>Phase 1</strong><span>Foundation & role reset</span></div>
+        <div class="timeline-phase glass"><strong>Phase 2</strong><span>Execution & technical fluency</span></div>
+        <div class="timeline-phase glass"><strong>Phase 3</strong><span>Influence, ambiguity, business framing</span></div>
+        <div class="timeline-phase glass"><strong>Phase 4</strong><span>Scale, strategy, executive readiness</span></div>
+      </div>
+
+      <div class="timeline-grid">
+        <div class="timeline-col">
+          <div class="week-card glass"><div class="week-pill">Week 1</div><h3>TPM Role Clarity</h3><p>Move from team ceremonies to system-level ownership and higher-scope thinking.</p><div class="week-tags"><span>Identity Shift</span><span>Ownership</span></div></div>
+          <div class="week-card glass"><div class="week-pill">Week 2</div><h3>Technical Depth Basics</h3><p>Understand architecture literacy and distributed systems in practical leadership language.</p><div class="week-tags"><span>Architecture</span><span>Systems</span></div></div>
+          <div class="week-card glass"><div class="week-pill">Week 3</div><h3>Structured Problem Definition</h3><p>Learn how stronger TPMs frame problem statements, scope, and clarity at the L3→L4 level.</p><div class="week-tags"><span>Problem Framing</span><span>Clarity</span></div></div>
+        </div>
+        <div class="timeline-col">
+          <div class="week-card glass"><div class="week-pill">Week 4</div><h3>Cross-Team Execution</h3><p>Map dependencies, manage alignment, and improve multi-team delivery confidence.</p><div class="week-tags"><span>Dependencies</span><span>Alignment</span></div></div>
+          <div class="week-card glass"><div class="week-pill">Week 5</div><h3>Roadmap Structuring</h3><p>Sequence initiatives under real-world constraints and communicate trade-offs clearly.</p><div class="week-tags"><span>Roadmaps</span><span>Trade-offs</span></div></div>
+          <div class="week-card glass"><div class="week-pill">Week 6</div><h3>GenAI for TPMs</h3><p>Use AI for synthesis, documentation, risk extraction, briefing notes, and faster execution support.</p><div class="week-tags"><span>GenAI</span><span>Leverage</span></div></div>
+        </div>
+        <div class="timeline-col">
+          <div class="week-card glass"><div class="week-pill">Week 7</div><h3>Business Impact Framing</h3><p>Connect technical programs to business outcomes, prioritization logic, and ROI thinking.</p><div class="week-tags"><span>Business Value</span><span>ROI</span></div></div>
+          <div class="week-card glass"><div class="week-pill">Week 8</div><h3>Influence Without Authority</h3><p>Navigate senior stakeholder conflict and align people who do not report to you.</p><div class="week-tags"><span>Influence</span><span>Stakeholders</span></div></div>
+          <div class="week-card glass"><div class="week-pill">Week 9</div><h3>Ambiguity Navigation</h3><p>Use pre-mortems, risk modeling, and decision framing to lead through uncertainty.</p><div class="week-tags"><span>Risk</span><span>Decisioning</span></div></div>
+        </div>
+        <div class="timeline-col">
+          <div class="week-card glass"><div class="week-pill">Week 10</div><h3>Scaling & Launch</h3><p>Plan for multi-region rollout, platform implications, launch readiness, and execution sequencing.</p><div class="week-tags"><span>Launches</span><span>Scale</span></div></div>
+          <div class="week-card glass"><div class="week-pill">Week 11</div><h3>L6 Thinking</h3><p>Learn scope expansion, strategy definition, leverage, and leadership signals expected at higher levels.</p><div class="week-tags"><span>Strategy</span><span>Leadership</span></div></div>
+          <div class="week-card glass"><div class="week-pill">Week 12</div><h3>Executive TPM Simulation</h3><p>Present a cross-org initiative with senior-level framing, executive communication, and structured recommendations.</p><div class="week-tags"><span>Simulation</span><span>Exec Presence</span></div></div>
+        </div>
+      </div>
+
+      <div class="timeline-note glass">The journey intentionally moves from role clarity → execution depth → business and influence maturity → scale and executive readiness.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Integrated strengths</div>
+      <h2>Foundations that make TPMs stronger</h2>
+      <p>Beyond delivery mechanics, participants learn the business and financial lens expected in stronger leadership roles.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card glass"><div class="icon">💸</div><h3>Foundational Financial Fluency</h3><p>Revenue vs cost drivers, compute and storage cost basics, CAPEX vs OPEX, cost-of-delay, and lightweight ROI framing for roadmaps.</p></div>
+      <div class="card glass"><div class="icon">📊</div><h3>Business Impact Framing</h3><p>Translate technical efforts into outcomes leaders understand: business value, strategic fit, prioritization logic, and operating trade-offs.</p></div>
+      <div class="card glass"><div class="icon">🧰</div><h3>Real TPM Deliverables</h3><p>Use strategy memos, alignment plans, impact narratives, AI-assisted workflows, and architecture risk review frameworks.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="audience">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Audience fit</div>
+      <h2>Who this program is designed for</h2>
+      <p>This program supports both new entrants into agile careers and experienced professionals seeking a higher-credibility path into TPM-style leadership.</p>
+    </div>
+    <div class="grid-4 audience-grid">
+      <div class="card glass"><strong>Aspiring Scrum Masters</strong><p>Professionals from testing, operations, support, business analysis, or other domains who want to transition into Agile roles and start their career as a Scrum Master.</p></div>
+      <div class="card glass"><strong>Experienced Scrum Masters</strong><p>Professionals ready to move beyond facilitation and ceremonies into system-level ownership, stronger business framing, and broader strategic contribution.</p></div>
+      <div class="card glass"><strong>Program Managers seeking technical depth</strong><p>Leaders who already manage execution but want stronger architecture literacy, launch planning, and technical fluency for more demanding roles.</p></div>
+      <div class="card glass"><strong>Ambitious L3/L4/L5 professionals</strong><p>Individuals targeting higher-scope roles and Tier-1 expectations across promotion readiness, cross-org influence, and executive communication.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="tiers">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Choose your path</div>
+      <h2>2-tier program structure</h2>
+      <p>Designed so learners can choose either the core growth path or add an advanced interview-intensive layer.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card pricing-card glass">
+        <h3>Tier 1 — Core Program</h3>
+        <div class="price">₹49K–₹59K</div>
+        <div class="small">12-week leadership acceleration program</div>
+        <ul class="list">
+          <li>Full 12-week curriculum</li>
+          <li>GenAI workflow toolkit</li>
+          <li>Financial fluency integration</li>
+          <li>Executive strategy templates</li>
+          <li>TPM simulation and applied exercises</li>
+        </ul>
+        <div style="margin-top:20px;"><a href="#contact" class="btn btn-secondary">Enquire for Core</a></div>
+      </div>
+      <div class="card pricing-card popular glass">
+        <div class="badge">Best Value</div>
+        <h3>Tier 2 — Core + Interview Intensive</h3>
+        <div class="price">₹79K–₹99K</div>
+        <div class="small">Advanced Tier-1 interview preparation add-on</div>
+        <ul class="list">
+          <li>Everything in Core</li>
+          <li>Company-specific interview frameworks</li>
+          <li>Behavioral + system design mock interviews</li>
+          <li>STAR+ impact narrative structuring</li>
+          <li>Executive presentation simulation and feedback</li>
+        </ul>
+        <div style="margin-top:20px;"><a href="#contact" class="btn btn-primary">Enquire for Full Track</a></div>
+      </div>
+      <div class="card pricing-card glass">
+        <h3>Expected Outcome</h3>
+        <div class="price" style="font-size:1.6rem; line-height:1.2;">Technical depth + interview confidence</div>
+        <div class="small">What graduates should be able to demonstrate</div>
+        <ul class="list">
+          <li>More structured technical thinking</li>
+          <li>Better cross-org influence and clarity</li>
+          <li>Improved financial and business framing</li>
+          <li>Stronger executive communication</li>
+          <li>Tier-1 aligned TPM readiness</li>
+        </ul>
+        <div style="margin-top:20px;"><a href="#contact" class="btn btn-secondary">Discuss Fit</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="founder-card glass">
+      <div class="founder-grid">
+        <div class="founder-visual">H</div>
+        <div>
+          <div class="section-kicker">Why learn from Harish</div>
+          <h2 style="font-size:2.1rem; margin-bottom:12px;">A founder-style credibility section that makes the page convert better</h2>
+          <p style="color: var(--muted);">This section is intentionally designed like a premium SaaS founder block. Replace the copy below with your final bio, background, and learner outcomes to make the page feel more trustworthy and original.</p>
+          <div class="founder-points">
+            <div class="founder-point">Helps professionals move from new Scrum Master roles toward Program Manager and TPM career growth.</div>
+            <div class="founder-point">Combines agile delivery, technical fluency, systems thinking, GenAI leverage, and business framing.</div>
+            <div class="founder-point">Designed for India + global career ambition with structured readiness for higher-bar roles.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">Social proof</div>
+      <h2>Add testimonial energy like a startup landing page</h2>
+      <p>These placeholders make the page feel more alive. Replace them with real participant feedback later.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card glass"><p>“This finally gave me a structured path from agile delivery work into a more credible Program Manager and TPM journey.”</p><div class="testimonial-meta"><strong>Participant placeholder</strong><span>Career transition learner</span></div></div>
+      <div class="testimonial-card glass"><p>“The program felt much more strategic than normal coaching. It connected execution, technical thinking, and interview confidence.”</p><div class="testimonial-meta"><strong>Participant placeholder</strong><span>Experienced Scrum Master</span></div></div>
+      <div class="testimonial-card glass"><p>“The mix of GenAI, business framing, and roadmap thinking made it feel modern and practical.”</p><div class="testimonial-meta"><strong>Participant placeholder</strong><span>Aspiring TPM</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-kicker">FAQ</div>
+      <h2>Frequently asked questions</h2>
+      <p>FAQ sections reduce hesitation and improve conversions.</p>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>Is this only for people already working as TPMs?</summary>
+        <p>No. The core audience includes aspiring Scrum Masters, Scrum Masters, Program Managers, and other experienced professionals transitioning toward stronger TPM-style roles.</p>
+      </details>
+      <details>
+        <summary>Is this beginner-friendly?</summary>
+        <p>It is beginner-friendly for agile and technical leadership concepts, but it is not a casual overview course. It is designed for people serious about building a stronger career path.</p>
+      </details>
+      <details>
+        <summary>Will financial concepts and GenAI be covered too?</summary>
+        <p>Yes. Foundational financial fluency and practical GenAI workflows are integrated into the program because modern TPMs need both business and leverage thinking.</p>
+      </details>
+      <details>
+        <summary>What is the difference between Tier 1 and Tier 2?</summary>
+        <p>Tier 1 includes the full 12-week core program. Tier 2 includes everything in Tier 1 plus advanced interview simulations, mock interviews, and personalized feedback.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="card cta glass" id="contact">
+      <h2 style="font-size:2rem; margin-bottom:12px;">Ready to explore whether this program fits your next career move?</h2>
+      <p>This page is now structured like a startup-style premium accelerator. Replace the buttons below with your enquiry form, WhatsApp, email, or application flow.</p>
+      <div class="hero-actions" style="justify-content:center; margin-bottom:0;">
+        <a href="#" class="btn btn-primary">Apply for the Program</a>
+        <a href="#" class="btn btn-secondary">Request Curriculum Details</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Agile With Harish. All rights reserved.</div>
+      <div><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">LinkedIn</a></div>
+    </div>
+  </footer><a class="sticky-cta" href="#contact">Apply / Enquire Now</a>
 
 </body>
 </html>
