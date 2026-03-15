@@ -51,12 +51,42 @@
         .form-group label { display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.9em; }
         .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #cbd5e1; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
         
+        /* Syllabus Grid */
+        .syllabus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+        .syllabus-item { background: white; padding: 18px; border-left: 4px solid var(--accent-color); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); font-size: 0.95em; }
+
         /* Modal (Popup) Styling for Lead Gen */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(5px); z-index: 1000; align-items: center; justify-content: center; }
         .modal-content { background: white; padding: 40px; border-radius: 16px; max-width: 400px; width: 90%; text-align: center; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
         .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.5em; cursor: pointer; color: #94a3b8; }
         .close-modal:hover { color: #0f172a; }
         .hidden { display: none !important; }
+
+        /* =========================================
+           NEW ANIMATION STYLES 
+           ========================================= */
+        
+        /* 1. Floating Animation for Hero Image */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* 2. Scroll Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
     </style>
 </head>
 <body>
@@ -88,12 +118,12 @@
             </div>
         </div>
         <div style="flex: 1; min-width: 300px; text-align: center; z-index: 2;">
-            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Agile Planning" class="hero-img">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=80" alt="Agile Planning" class="hero-img floating">
         </div>
     </div>
 </section>
 
-<section id="coaching" class="section container">
+<section id="coaching" class="section container reveal">
     <div style="text-align: center; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto;">
         <h2 style="font-size: 2.5em; margin-bottom: 15px;">Your growth, built on 4 pillars</h2>
         <p style="font-size: 1.1em; color: var(--text-light);">Practical systems you can use immediately at work — zero theoretical fluff, just execution.</p>
@@ -122,208 +152,7 @@
     </div>
 </section>
 
-<section id="tpm-program" class="section bg-light">
+<section id="tpm-program" class="section bg-light reveal">
     <div class="container">
         <div style="text-align: center; margin-bottom: 60px; max-width: 800px; margin-left: auto; margin-right: auto;">
-            <h2 style="font-size: 2.5em; margin-bottom: 10px; letter-spacing: -0.5px;">Technical Program Leadership</h2>
-            <h3 style="font-size: 1.4em; color: var(--text-light); font-weight: 400; margin-top: 0;">Acceleration Path: Scrum Master / L3 → L4 → L5 → L6</h3>
-            <div style="display: inline-block; background: #dbeafe; color: #1e40af; padding: 10px 20px; border-radius: 30px; font-weight: 700; font-size: 0.9em; margin: 25px 0;">
-                Tier-1 Ready | GenAI Native | Promotion-Focused • 12 Weeks
-            </div>
-        </div>
-
-        <div class="grid-2">
-            <div class="card">
-                <h3 style="margin-top: 0; font-size: 1.5em;">Tier 1 – CORE PROGRAM</h3>
-                <p style="color: var(--text-light);">Includes full 12-week curriculum, GenAI toolkit, financial fluency, executive strategy templates, and TPM simulation.</p>
-                <h4 style="font-size: 1.3em; color: #10b981; margin-bottom: 20px;">₹49,000 – ₹59,000</h4>
-                <a href="#contact" class="btn" style="width: 100%; box-sizing: border-box;">Apply for Tier 1</a>
-            </div>
-
-            <div class="card" style="border: 2px solid var(--accent-color); position: relative;">
-                <span style="position: absolute; top: -14px; left: 20px; background: var(--accent-color); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">INTERVIEW INTENSIVE</span>
-                <h3 style="margin-top: 10px; font-size: 1.5em;">Tier 2 – CORE + INTENSIVE</h3>
-                <p style="color: var(--text-light);">Everything in Core plus Tier-1 interview simulations, behavioral/system mock interviews, and promotion narrative engineering.</p>
-                <h4 style="font-size: 1.3em; color: #10b981; margin-bottom: 20px;">₹79,000 – ₹99,000</h4>
-                <a href="#contact" class="btn" style="background: var(--primary-color); width: 100%; box-sizing: border-box;">Apply for Tier 2</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="samples" class="section container">
-    <div style="text-align: center; margin-bottom: 50px;">
-        <h2 style="font-size: 2.2em;">📦 Free Leadership Templates</h2>
-        <p style="font-size: 1.1em; color: var(--text-light);">Download exact artifacts used in Tier-1 tech companies.</p>
-    </div>
-    
-    <div class="grid-3">
-        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 20px; cursor: pointer;" onclick="openLeadModal()">
-            <div style="background: #fee2e2; color: #ef4444; width: 45px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: bold; font-size: 0.8em;">PDF</div>
-            <div>
-                <h4 style="margin: 0 0 5px 0; font-size: 1.1em;">RAID Log Matrix</h4>
-                <span style="font-size: 0.9em; font-weight: 600; color: var(--accent-color);">Click to Unlock →</span>
-            </div>
-        </div>
-        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 20px; cursor: pointer;" onclick="openLeadModal()">
-            <div style="background: #fee2e2; color: #ef4444; width: 45px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: bold; font-size: 0.8em;">PDF</div>
-            <div>
-                <h4 style="margin: 0 0 5px 0; font-size: 1.1em;">Weekly Exec Update</h4>
-                <span style="font-size: 0.9em; font-weight: 600; color: var(--accent-color);">Click to Unlock →</span>
-            </div>
-        </div>
-        <div class="card" style="display: flex; align-items: center; gap: 20px; padding: 20px; cursor: pointer;" onclick="openLeadModal()">
-            <div style="background: #fee2e2; color: #ef4444; width: 45px; height: 55px; display: flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: bold; font-size: 0.8em;">PDF</div>
-            <div>
-                <h4 style="margin: 0 0 5px 0; font-size: 1.1em;">Predictability Checklist</h4>
-                <span style="font-size: 0.9em; font-weight: 600; color: var(--accent-color);">Click to Unlock →</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="section bg-light">
-    <div class="container flex-center" style="align-items: flex-start;">
-        <div style="flex: 1; min-width: 300px;">
-            <h2 style="font-size: 2.5em; margin-bottom: 10px;">📞 Book a Strategy Call</h2>
-            <p style="font-size: 1.1em; color: var(--text-light); margin-bottom: 30px;">Ready to move from Scrum Master to TPM, or break into a Tier-1 company? Fill out the form and I will reply personally with the best next step.</p>
             
-            <div style="background: white; padding: 25px; border-radius: 12px; border: 1px solid #e2e8f0; margin-bottom: 20px;">
-                <h4 style="margin-top: 0;">Direct Contact</h4>
-                <ul style="list-style: none; padding: 0; margin: 0; color: var(--text-light);">
-                    <li style="margin-bottom: 10px;">📧 <a href="mailto:hello@agilewithharish.com" style="color: inherit;">hello@agilewithharish.com</a></li>
-                    <li>💬 <a href="https://wa.me/917083273689" style="color: inherit;">WhatsApp: +91-7083273689</a></li>
-                </ul>
-            </div>
-        </div>
-        
-        <div style="flex: 1; min-width: 320px;">
-            <form class="card" action="mailto:hello@agilewithharish.com" method="POST" enctype="text/plain" style="box-shadow: 0 20px 40px rgba(0,0,0,0.05);">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="Name" required placeholder="Jane Doe">
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="Email" required placeholder="jane@example.com">
-                </div>
-                
-                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <div class="form-group" style="flex: 1; min-width: 140px;">
-                        <label>Current Role</label>
-                        <select name="Current_Role">
-                            <option>Scrum Master</option>
-                            <option>Program Manager (L3/L4)</option>
-                            <option>TPM (L5/L6)</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="flex: 1; min-width: 140px;">
-                        <label>Target Company</label>
-                        <select name="Target_Company">
-                            <option>Tier 1 (FAANG)</option>
-                            <option>Tier 2/3 Enterprise</option>
-                            <option>Startup / Scale-up</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>Specific Goal (Optional)</label>
-                    <textarea name="Message" rows="3" placeholder="E.g., I have an interview loop coming up in 3 weeks..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn" style="width: 100%;">Request Consultation</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<footer style="background: var(--primary-color); color: #94a3b8; text-align: center; padding: 60px 20px;">
-    <div class="container">
-        <h3 style="color: white; margin-bottom: 10px;">Harish Raju</h3>
-        <p style="margin-bottom: 20px;">© 2026 • Hyderabad, India • #AgileWithHarish</p>
-        
-        <a href="mailto:hello@agilewithharish.com?subject=Website%20Feedback" class="btn-outline" style="color: white !important; border-color: #334155; padding: 8px 16px; font-size: 0.9em; border-radius: 20px; display: inline-block; margin-bottom: 30px;">
-            📝 Share Site Feedback
-        </a>
-
-        <div style="font-size: 0.85em; opacity: 0.5;">
-            #TechnicalProgramManager #AgileLeadership #ScrumMaster #ProgramManagement 
-        </div>
-    </div>
-</footer>
-
-<div id="leadModal" class="modal-overlay">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeLeadModal()">&times;</span>
-        <h3 style="margin-top: 0; font-size: 1.8em;">Unlock the Templates</h3>
-        <p style="color: var(--text-light); margin-bottom: 25px;">Enter your email below to instantly access the RAID Log, Exec Update, and Predictability Checklist PDFs.</p>
-        
-        <form id="leadForm" onsubmit="handleLeadSubmit(event)">
-            <div class="form-group">
-                <input type="email" id="userEmail" placeholder="Enter your best email..." required style="padding: 15px; font-size: 1em;">
-            </div>
-            <button type="submit" class="btn" style="width: 100%;">Get Instant Access</button>
-            <p style="font-size: 0.8em; color: #94a3b8; margin-top: 15px;">No spam. Just practical Agile frameworks.</p>
-        </form>
-
-        <div id="downloadLinks" class="hidden" style="text-align: left;">
-            <div style="background: #ecfdf5; color: #065f46; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; font-weight: bold;">
-                Success! Here are your downloads:
-            </div>
-            <ul style="list-style: none; padding: 0;">
-                <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">📄 <a href="./Sample_RAID_Log_Template.pdf" target="_blank" style="font-weight: bold;">RAID Log Template</a></li>
-                <li style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px;">📄 <a href="./Sample_Stakeholder_Update_Template.pdf" target="_blank" style="font-weight: bold;">Weekly Exec Update</a></li>
-                <li>📄 <a href="./Sample_Sprint_Predictability_Checklist.pdf" target="_blank" style="font-weight: bold;">Predictability Checklist</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<script>
-    function openLeadModal() {
-        document.getElementById('leadModal').style.display = 'flex';
-    }
-
-    function closeLeadModal() {
-        document.getElementById('leadModal').style.display = 'none';
-        // Reset form for next time
-        document.getElementById('leadForm').classList.remove('hidden');
-        document.getElementById('downloadLinks').classList.add('hidden');
-        document.getElementById('userEmail').value = '';
-    }
-
-    function handleLeadSubmit(event) {
-        event.preventDefault(); // Prevents page reload
-        
-        let email = document.getElementById('userEmail').value;
-        
-        /* NOTE TO HARISH:
-           Right now, this form just visually unlocks the downloads for the user.
-           To actually collect and save their emails to a database, you can sign up for a free 
-           Formspree.io account. You would send a background request here like this:
-           
-           fetch("https://formspree.io/f/YOUR_FORM_ID", {
-               method: "POST",
-               headers: { "Content-Type": "application/json" },
-               body: JSON.stringify({ email: email })
-           });
-        */
-
-        // Hide the form and show the actual download links
-        document.getElementById('leadForm').classList.add('hidden');
-        document.getElementById('downloadLinks').classList.remove('hidden');
-    }
-
-    // Close modal if user clicks outside the white box
-    window.onclick = function(event) {
-        let modal = document.getElementById('leadModal');
-        if (event.target == modal) {
-            closeLeadModal();
-        }
-    }
-</script>
-
-</body>
-</html>
