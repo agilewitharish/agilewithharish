@@ -3,335 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harish Raju | Scrum • Program Manager • TPM • AI Coaching</title>
+    <title>Harish Raju | Agile & TPM Coaching</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #0056b3;
-            --secondary-color: #f8f9fa;
-            --text-color: #333;
-            --accent-color: #28a745;
+            --primary-color: #0f172a; /* Deep Slate */
+            --secondary-color: #f8fafc; /* Light Gray/Blue */
+            --accent-color: #2563eb; /* Vibrant Blue */
+            --text-main: #334155;
+            --text-light: #64748b;
         }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
             margin: 0;
             padding: 0;
             background-color: #ffffff;
+            -webkit-font-smoothing: antialiased;
         }
-        h1, h2, h3, h4 { color: #111; }
-        a { color: var(--primary-color); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .section { padding: 60px 0; }
+        
+        h1, h2, h3, h4 { color: var(--primary-color); font-weight: 800; line-height: 1.2; }
+        a { color: var(--accent-color); text-decoration: none; transition: all 0.2s ease; }
+        a:hover { color: #1d4ed8; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 80px 0; }
         .bg-light { background-color: var(--secondary-color); }
-        .btn { display: inline-block; padding: 12px 24px; background: var(--primary-color); color: white; border-radius: 6px; font-weight: bold; text-align: center; border: none; cursor: pointer; }
-        .btn:hover { background: #004494; text-decoration: none; }
-        .btn-outline { background: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); }
-        .btn-outline:hover { background: var(--primary-color); color: white; text-decoration: none; }
         
-        /* Layout Utility */
-        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
-        .flex-center { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 30px; }
+        /* Modern Buttons with Gradients & Shadows */
+        .btn { 
+            display: inline-block; 
+            padding: 14px 28px; 
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); 
+            color: white !important; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            text-align: center; 
+            border: none; 
+            cursor: pointer; 
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+        }
+        .btn:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4); 
+        }
+        .btn-outline { 
+            background: transparent; 
+            color: var(--primary-color) !important; 
+            border: 2px solid #e2e8f0; 
+            box-shadow: none;
+        }
+        .btn-outline:hover { 
+            border-color: var(--primary-color); 
+            transform: translateY(-2px); 
+            background: transparent;
+        }
         
-        /* Header */
-        header { padding: 20px 0; border-bottom: 1px solid #eee; position: sticky; top: 0; background: white; z-index: 100; }
+        /* Layout Grids */
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; }
+        .flex-center { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+        
+        /* Header styling */
+        header { padding: 20px 0; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #f1f5f9; }
         header .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-        nav a { margin-left: 20px; font-weight: 500; color: #555; }
+        nav a { margin-left: 25px; font-weight: 600; color: var(--text-main); font-size: 0.95em; }
         
-        /* Cards */
-        .card { border: 1px solid #e1e4e8; border-radius: 8px; padding: 25px; background: white; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-3px); box-shadow: 0 8px 15px rgba(0,0,0,0.05); }
+        /* High-End Cards */
+        .card { 
+            background: white; 
+            border: 1px solid #f1f5f9; 
+            border-radius: 16px; 
+            padding: 32px; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.03); 
+        }
+        .card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08); 
+            border-color: #e2e8f0;
+        }
         
-        /* Form */
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
-        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
-        
+        /* Icon Circles */
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: #eff6ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            margin: 0 auto 20px;
+        }
+
+        /* Hero Image Enhancement */
+        .hero-img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+            object-fit: cover;
+        }
+
         /* Syllabus Grid */
-        .syllabus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; }
-        .syllabus-item { background: white; padding: 15px; border-left: 4px solid var(--primary-color); border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .syllabus-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
+        .syllabus-item { background: white; padding: 18px; border-left: 4px solid var(--accent-color); border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); font-size: 0.95em; }
     </style>
 </head>
 <body>
 
 <header>
     <div class="container">
-        <div style="font-size: 1.5em; font-weight: bold; color: var(--primary-color);">Harish Raju</div>
+        <div style="font-size: 1.5em; font-weight: 800; color: var(--primary-color); letter-spacing: -0.5px;">Harish Raju.</div>
         <nav>
-            <a href="#coaching">Coaching</a>
+            <a href="#coaching">The Framework</a>
             <a href="#tpm-program">TPM Program</a>
             <a href="#ai">AI Tools</a>
-            <a href="#samples">Free Templates</a>
-            <a href="#contact" class="btn" style="color: white; margin-left: 20px; padding: 8px 16px;">Book a Call</a>
+            <a href="#contact" class="btn" style="color: white; margin-left: 25px; padding: 10px 20px; font-size: 0.9em; box-shadow: none;">Book Strategy Call</a>
         </nav>
     </div>
 </header>
 
-<section class="section bg-light">
+<section class="section bg-light" style="overflow: hidden; position: relative;">
     <div class="container flex-center">
-        <div style="flex: 1; min-width: 300px;">
-            <div style="text-transform: uppercase; font-size: 0.85em; font-weight: bold; color: #666; letter-spacing: 1px; margin-bottom: 10px;">#AgileWithHarish</div>
-            <h1 style="font-size: 2.8em; margin-top: 0; line-height: 1.2;">Grow from aspiring professional → Scrum Master → Program Manager / TPM</h1>
-            <p style="font-size: 1.2em; color: #555;">Practical Agile and AI-powered workflows designed for working professionals. Learn from a Senior Program Manager with 19 years of experience, currently building products at Google.</p>
-            
-            <div style="margin-top: 30px; display: flex; gap: 15px; flex-wrap: wrap;">
-                <a href="#tpm-program" class="btn">Explore TPM Program</a>
-                <a href="#ai" class="btn btn-outline">Explore AI Workflows</a>
+        <div style="flex: 1; min-width: 300px; z-index: 2;">
+            <div style="display: inline-block; padding: 6px 14px; background: #e0e7ff; color: #4338ca; border-radius: 20px; font-size: 0.85em; font-weight: 700; margin-bottom: 20px;">
+                #AgileWithHarish
             </div>
-        </div>
-        <div style="flex: 1; min-width: 300px; text-align: center;">
-            <img src="https://placehold.co/600x450/e0e0e0/555555?text=Harish+Raju+\nProfile+Photo" alt="Harish Raju" style="max-width: 100%; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
-        </div>
-    </div>
-</section>
-
-<section id="coaching" class="section container">
-    <div style="text-align: center; margin-bottom: 40px;">
-        <h2>Your growth, built on 4 pillars</h2>
-        <p style="font-size: 1.1em; color: #666;">Practical systems you can use immediately at work — no fluff.</p>
-    </div>
-    
-    <div class="grid-4">
-        <div class="card" style="text-align: center;">
-            <div style="font-size: 2.5em; margin-bottom: 15px;">🌱</div>
-            <h3>Become a Scrum Master</h3>
-            <p style="font-size: 0.9em; color: #555;">Start from basics and learn how Scrum works in real teams.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-            <div style="font-size: 2.5em; margin-bottom: 15px;">⚙️</div>
-            <h3>Delivery Leadership</h3>
-            <p style="font-size: 0.9em; color: #555;">Move from ceremonies to outcomes, visibility, and execution discipline.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-            <div style="font-size: 2.5em; margin-bottom: 15px;">📈</div>
-            <h3>Program Management</h3>
-            <p style="font-size: 0.9em; color: #555;">Lead cross-team work with governance, planning, and executive communication.</p>
-        </div>
-        <div class="card" style="text-align: center;">
-            <div style="font-size: 2.5em; margin-bottom: 15px;">🤖</div>
-            <h3>AI Workflows</h3>
-            <p style="font-size: 0.9em; color: #555;">Use AI to save time and improve clarity across planning, updates, and interviews.</p>
-        </div>
-    </div>
-</section>
-
-<section id="tpm-program" class="section bg-light">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 50px; max-width: 900px; margin-left: auto; margin-right: auto;">
-            <h2 style="font-size: 2.2em; color: #000; margin-bottom: 10px;">TECHNICAL PROGRAM LEADERSHIP ACCELERATION</h2>
-            <h3 style="font-size: 1.5em; color: var(--primary-color); margin-top: 0;">From Scrum Master / L3 → L4 → L5 → L6</h3>
-            
-            <div style="display: inline-block; background: #cce5ff; color: #004085; padding: 8px 16px; border-radius: 20px; font-weight: bold; margin: 15px 0;">
-                Tier-1 Ready | GenAI Native | Promotion-Focused • 12 Weeks | 5–6 Hours Per Week
-            </div>
-
-            <p style="font-size: 1.1em; line-height: 1.6; margin-top: 20px;">
-                This program is designed for professionals with 8–20 years of experience who are transitioning from Scrum Master to Technical Program Manager or seeking level progression (L3 → L6) in Tier-1 companies such as Google, Amazon, Meta, and Microsoft.
-            </p>
-            <p style="font-size: 1.1em; line-height: 1.6;">
-                The focus is on realistic Tier-1 expectations: technical credibility, ambiguity navigation, cross-org influence, strategic clarity, GenAI leverage, and interview readiness.
-            </p>
-        </div>
-
-        <h3 style="border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-bottom: 25px;">CORE PROGRAM (12 WEEKS)</h3>
-        <div class="syllabus-grid" style="margin-bottom: 40px;">
-            <div class="syllabus-item"><strong>Week 1:</strong> TPM Role Clarity – Moving from ceremonies to system-level ownership.</div>
-            <div class="syllabus-item"><strong>Week 2:</strong> Technical Depth – Architecture literacy and distributed systems basics.</div>
-            <div class="syllabus-item"><strong>Week 3:</strong> Ownership Shift (L3→L4) – Problem definition and structured clarity.</div>
-            <div class="syllabus-item"><strong>Week 4:</strong> Cross-Team Execution (L4→L5) – Dependency mapping and stakeholder alignment.</div>
-            <div class="syllabus-item"><strong>Week 5:</strong> Roadmap Structuring – Sequencing initiatives under constraints.</div>
-            <div class="syllabus-item"><strong>Week 6:</strong> GenAI for TPMs – AI-driven documentation, risk extraction, and synthesis.</div>
-            <div class="syllabus-item"><strong>Week 7:</strong> Business Framing – Translating technical initiatives into business impact.</div>
-            <div class="syllabus-item"><strong>Week 8:</strong> Influence Without Authority – Managing senior stakeholder conflict.</div>
-            <div class="syllabus-item"><strong>Week 9:</strong> Ambiguity Navigation – Pre-mortem thinking and risk modeling.</div>
-            <div class="syllabus-item"><strong>Week 10:</strong> Scaling & Launch – Multi-region rollout planning.</div>
-            <div class="syllabus-item"><strong>Week 11:</strong> L6 Thinking – Strategy definition and scope expansion.</div>
-            <div class="syllabus-item"><strong>Week 12:</strong> TPM Simulation – Cross-org initiative executive presentation.</div>
-        </div>
-
-        <div class="grid-2">
-            <div class="card" style="border-top: 4px solid #17a2b8;">
-                <h4 style="margin-top: 0;">FOUNDATIONAL FINANCIAL FLUENCY</h4>
-                <ul style="padding-left: 20px;">
-                    <li>Revenue vs cost drivers in tech organizations</li>
-                    <li>Infra cost basics (compute, storage, scalability trade-offs)</li>
-                    <li>CAPEX vs OPEX fundamentals</li>
-                    <li>Cost-of-delay prioritization impact</li>
-                    <li>Lightweight ROI framing for roadmap decisions</li>
-                </ul>
-            </div>
-            <div class="card" style="border-top: 4px solid #17a2b8;">
-                <h4 style="margin-top: 0;">PROGRAM DELIVERABLES</h4>
-                <ul style="padding-left: 20px;">
-                    <li>Architecture Risk Review Framework</li>
-                    <li>Executive Strategy Memo Templates</li>
-                    <li>AI-Powered TPM Workflow Toolkit</li>
-                    <li>Business Impact Framing Document</li>
-                    <li>Promotion-Ready Impact Narrative</li>
-                    <li>Tier-1 Interview Question Bank & Simulation Deck</li>
-                </ul>
-            </div>
-        </div>
-
-        <h3 style="text-align: center; margin: 60px 0 30px; font-size: 1.8em;">2-TIER STRUCTURE & POSITIONING</h3>
-        <div class="grid-2">
-            <div class="card">
-                <h3 style="margin-top: 0; font-size: 1.5em;">Tier 1 – CORE PROGRAM</h3>
-                <p style="color: #555;">Includes full 12-week curriculum, GenAI toolkit, financial fluency, executive strategy templates, and TPM simulation.</p>
-                <h4 style="font-size: 1.3em; color: var(--accent-color);">Suggested Pricing: ₹49,000 – ₹59,000</h4>
-                <a href="#contact" class="btn" style="width: 100%; box-sizing: border-box;">Apply for Tier 1</a>
-            </div>
-
-            <div class="card" style="border: 2px solid var(--primary-color); position: relative;">
-                <span style="position: absolute; top: -14px; left: 20px; background: var(--primary-color); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; font-weight: bold;">INTERVIEW INTENSIVE</span>
-                <h3 style="margin-top: 10px; font-size: 1.5em;">Tier 2 – CORE + INTENSIVE</h3>
-                <p style="color: #555;">Includes everything in Core plus structured Tier-1 interview simulations, mock interviews, personalized feedback, and promotion narrative engineering.</p>
-                <h4 style="font-size: 1.3em; color: var(--accent-color);">Suggested Pricing: ₹79,000 – ₹99,000</h4>
-                <a href="#contact" class="btn" style="background: #111; width: 100%; box-sizing: border-box;">Apply for Tier 2</a>
-            </div>
-        </div>
-        
-        <div style="margin-top: 30px; text-align: center; padding: 20px; border: 1px dashed #aaa; border-radius: 8px;">
-            <strong style="color: #000;">EXPECTED OUTCOME:</strong> 
-            <span style="color: #444;">Graduates will demonstrate increased technical depth, structured thinking, financial fluency, cross-org influence capability, GenAI leverage, and interview confidence aligned to Tier-1 expectations across L4, L5, and L6 levels.</span>
-        </div>
-    </div>
-</section>
-
-<section id="ai" class="section container">
-    <div class="flex-center">
-        <div style="flex: 1; min-width: 300px;">
-            <h2>✨ AI for Delivery Leaders (Try this today)</h2>
-            <p>Use AI as a practical leadership accelerator — improve clarity, speed, and decision-making. No coding required. Copy the prompt below into ChatGPT and paste your real project notes.</p>
-            
-            <div style="background: #2d2d2d; color: #f8f8f2; padding: 20px; border-radius: 8px; font-family: monospace; margin-top: 20px; overflow-x: auto;">
-                <strong>Prompt:</strong><br><br>
-                Act as a Program Manager.<br><br>
-                Summarize the following project updates into an executive weekly update using:<br>
-                • Progress<br>
-                • Risks<br>
-                • Decisions Needed<br>
-                • Next Week Focus<br><br>
-                Tone: concise, leadership-ready.<br><br>
-                Project updates:<br>
-                [PASTE HERE]
-            </div>
-        </div>
-        
-        <div style="flex: 1; min-width: 300px; text-align: center;">
-            <img src="https://placehold.co/500x400/f0f0f0/333?text=Screenshot+of+AI+\nGenerating+Executive+Update" alt="AI Executive Update" style="max-width: 100%; border-radius: 8px; border: 1px solid #ddd; box-shadow: 0 5px 15px rgba(0,0,0,0.08);">
-        </div>
-    </div>
-</section>
-
-<section id="samples" class="section bg-light">
-    <div class="container">
-        <div style="text-align: center; margin-bottom: 40px;">
-            <h2>📦 Free Templates (Download)</h2>
-            <p>Keep these PDFs handy for immediate workplace execution.</p>
-        </div>
-        
-        <div class="grid-3">
-            <div class="card" style="display: flex; align-items: center; gap: 15px;">
-                <img src="https://placehold.co/50x70/e0e0e0/666?text=PDF" alt="RAID Log">
-                <div>
-                    <h4 style="margin: 0 0 5px 0;">RAID Log Template</h4>
-                    <a href="./Sample_RAID_Log_Template.pdf" style="font-size: 0.9em; font-weight: bold;">Download ↓</a>
-                </div>
-            </div>
-            <div class="card" style="display: flex; align-items: center; gap: 15px;">
-                <img src="https://placehold.co/50x70/e0e0e0/666?text=PDF" alt="Update">
-                <div>
-                    <h4 style="margin: 0 0 5px 0;">Weekly Exec Update</h4>
-                    <a href="./Sample_Stakeholder_Update_Template.pdf" style="font-size: 0.9em; font-weight: bold;">Download ↓</a>
-                </div>
-            </div>
-            <div class="card" style="display: flex; align-items: center; gap: 15px;">
-                <img src="https://placehold.co/50x70/e0e0e0/666?text=PDF" alt="Checklist">
-                <div>
-                    <h4 style="margin: 0 0 5px 0;">Predictability Checklist</h4>
-                    <a href="./Sample_Sprint_Predictability_Checklist.pdf" style="font-size: 0.9em; font-weight: bold;">Download ↓</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="section container">
-    <div class="flex-center" style="align-items: flex-start;">
-        <div style="flex: 1; min-width: 300px;">
-            <h2>📞 Accelerate Your Career</h2>
-            <p>Ready to move from Scrum Master to TPM, or break into a Tier-1 company? Fill out the form to request a consultation call. I will reply personally with the best next step.</p>
-            
-            <ul style="list-style: none; padding: 0; margin-top: 30px;">
-                <li style="margin-bottom: 15px;">📧 <strong>Email:</strong> <a href="mailto:hello@agilewithharish.com">hello@agilewithharish.com</a></li>
-                <li style="margin-bottom: 15px;">💬 <strong>WhatsApp:</strong> <a href="https://wa.me/917083273689">+91-7083273689</a></li>
-            </ul>
-        </div>
-        
-        <div style="flex: 1; min-width: 300px;">
-            <form class="card" action="mailto:hello@agilewithharish.com" method="POST" enctype="text/plain">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="Name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="Email" required>
-                </div>
-                
-                <div class="flex-center" style="gap: 15px; margin-bottom: 15px;">
-                    <div class="form-group" style="flex: 1; margin-bottom: 0;">
-                        <label for="current-role">Current Role / Level</label>
-                        <select id="current-role" name="Current_Role">
-                            <option value="Scrum Master">Scrum Master</option>
-                            <option value="Program Manager (L3/L4)">Program Manager (L3/L4)</option>
-                            <option value="TPM (L5/L6)">TPM (L5/L6)</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="flex: 1; margin-bottom: 0;">
-                        <label for="target-company">Target Company Tier</label>
-                        <select id="target-company" name="Target_Company">
-                            <option value="Tier 1 (FAANG)">Tier 1 (Google, Meta, Amazon, etc.)</option>
-                            <option value="Tier 2/3 Enterprise">Tier 2/3 Enterprise</option>
-                            <option value="Startup/Scale-up">Startup / Scale-up</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="program">Program Interest</label>
-                    <select id="program" name="Program_Interest">
-                        <option value="Tier 1 Core TPM">Tier 1: Core TPM Program</option>
-                        <option value="Tier 2 Intensive">Tier 2: Interview Intensive</option>
-                        <option value="Just AI Coaching">Just AI Workflows Coaching</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Your specific goal (Optional)</label>
-                    <textarea id="message" name="Message" rows="3" placeholder="E.g., I have an interview loop coming up in 3 weeks..."></textarea>
-                </div>
-                
-                <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<footer style="background: #222; color: #aaa; text-align: center; padding: 40px 20px;">
-    <div class="container">
-        <p>© Harish Raju • Hyderabad, India • #AgileWithHarish</p>
-        <p>Email: hello@agilewithharish.com • Phone: +91-7083273689</p>
-        <div style="margin-top: 20px; font-size: 0.8em;">
-            #TechnicalProgramManager #AgileLeadership #ScrumMaster #ProgramManagement #DeliveryLeadership
-        </div>
-    </div>
-</footer>
-
-</body>
-</html>
+            <h1 style="font-size: 3.2em; margin-top: 0; margin-bottom: 20px; letter-spacing: -1px;">Grow from Scrum Master
